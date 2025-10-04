@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="tj">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панели Администратор</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        /* Smooth animation for toast notifications */
+        .toast {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.5s, transform 0.5s, visibility 0.5s;
+            transform: translateY(20px);
+        }
+        .toast.show {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Custom checkbox style */
+        .custom-checkbox:checked {
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+        }
+        /* Ensure table doesn't overflow on mobile */
+        .table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col font-sans">
+    <header class="bg-indigo-700 text-white py-3 sm:py-4 shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <h1 class="text-xl sm:text-2xl md:text-3xl font-bold">Панели Администратор</h1>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 w-full">
+        <div class="text-center mb-6 sm:mb-8">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-indigo-700">Сабти Давомот</h1>
+            <p class="text-gray-500 mt-2 text-sm sm:text-base">Ҷараёни бақайдгирии ҳозир ва ғоиби донишҷӯён</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 mb-6">
+            <div class="flex items-center mb-4 sm:mb-6">
+                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-base sm:text-lg mr-3 sm:mr-4">1</div>
+                <h2 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800">Интихоби Гурӯҳ</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                <div>
+                    <label for="course-select" class="block text-sm font-medium text-gray-700 mb-1">Курс</label>
+                    <select id="course-select" class="p-3 border border-gray-200 rounded-lg w-full bg-gray-50 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition text-sm sm:text-base" onchange="loadGroups()"></select>
+                </div>
+                <div>
+                    <label for="group-select" class="block text-sm font-medium text-gray-700 mb-1">Гурӯҳ</label>
+                    <select id="group-select" class="p-3 border border-gray-200 rounded-lg w-full bg-gray-50 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition text-sm sm:text-base" onchange="loadStudents()"></select>
+                </div>
+            </div>
+        </div>
+
+        <div id="students-panel" class="bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 hidden">
+            <div class="flex items-center mb-4 sm:mb-6">
+                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-base sm:text-lg mr-3 sm:mr-4">2</div>
+                <div>
+                    <h2 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800">Рӯйхати Донишҷӯён</h2>
+                    <p id="panel-subtitle" class="text-gray-500 text-xs sm:text-sm"></p>
+                </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row justify-end gap-3 mb-4">
+                <button onclick="toggleAllCheckboxes(true)" class="text-sm bg-indigo-100 text-indigo-700 px-3 py-2 sm:px-4 sm:py-2 rounded-lg hover:bg-indigo-200 transition w-full sm:w-auto">Ҳамаро ҳозиранд</button>
+                <button onclick="toggleAllCheckboxes(false)" class="text-sm bg-gray-100 text-gray-700 px-3 py-2 sm:px-4 sm:py-2 rounded-lg hover:bg-gray-200 transition w-full sm:w-auto">Бекор кардан</button>
+            </div>
+            
+            <div class="table-container max-h-96 border border-gray-200 rounded-lg">
+                <table class="w-full text-left min-w-[320px]">
+                    <thead class="bg-gray-50 border-b border-gray-200 sticky top-0">
+                        <tr>
+                            <th class="p-3 sm:p-4 text-xs sm:text-sm font-semibold text-gray-600">Номи Донишҷӯ</th>
+                            <th class="p-3 sm:p-4 text-xs sm:text-sm font-semibold text-gray-600 text-center w-16 sm:w-24">Ҳозир</th>
+                        </tr>
+                    </thead>
+                    <tbody id="students-table" class="divide-y divide-gray-200"></tbody>
+                </table>
+            </div>
+
+            <button id="save-button" onclick="saveAttendance()" 
+                    class="bg-indigo-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg w-full mt-4 sm:mt-6 hover:bg-indigo-700 transition font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 flex items-center justify-center gap-2 text-sm sm:text-base">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 sm:w-5 h-4 sm:h-5" 
+                     fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" 
+                          d="M17 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" 
+                          d="M7 3v5h10V3" />
+                </svg>
+                <span>Сабт кардан</span>
+            </button>
+        </div>
+
+        <div id="toast" class="toast fixed bottom-5 right-3 sm:right-5 bg-green-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg shadow-lg flex items-center gap-2 sm:gap-3 max-w-[90%] sm:max-w-md">
+            <span id="toast-icon"></span>
+            <span id="toast-message" class="text-sm sm:text-base"></span>
+        </div>
+    </main>
+
+    <footer class="bg-indigo-700 text-white py-3 sm:py-4 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-xs sm:text-sm">Барномасоз: Anushervon</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Variables ---
+        const courseSelect = document.getElementById("course-select");
+        const groupSelect = document.getElementById("group-select");
+        const studentsPanel = document.getElementById("students-panel");
+        const studentsTable = document.getElementById("students-table");
+        const saveButton = document.getElementById("save-button");
+
+        // --- Utility Functions ---
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById("toast");
+            const toastMessage = document.getElementById("toast-message");
+            const toastIcon = document.getElementById("toast-icon");
+            
+            toast.className = 'toast fixed bottom-5 right-3 sm:right-5 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg shadow-lg flex items-center gap-2 sm:gap-3 max-w-[90%] sm:max-w-md';
+            if (type === 'success') {
+                toast.classList.add('bg-green-600');
+                toastIcon.innerHTML = `<svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
+            } else {
+                toast.classList.add('bg-red-600');
+                toastIcon.innerHTML = `<svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
+            }
+
+            toastMessage.textContent = message;
+            toast.classList.add("show");
+            setTimeout(() => { toast.classList.remove("show"); }, 3000);
+        }
+
+        function showLoading(tableBody) {
+            tableBody.innerHTML = `<tr><td colspan="2" class="p-6 sm:p-8 text-center"><div class="flex justify-center items-center gap-2 text-gray-500"><div class="animate-spin rounded-full h-6 sm:h-8 w-6 sm:w-8 border-b-2 border-indigo-600"></div><span class="text-sm sm:text-base">Маълумот бор шуда истодааст...</span></div></td></tr>`;
+        }
+
+        // --- Core Logic ---
+        async function loadCourses() {
+            try {
+                const response = await axios.get("/api/courses");
+                courseSelect.innerHTML = '<option value="">Курсро интихоб кунед</option>' + response.data.map(c => `<option value="${c.id}">Курси ${c.year}</option>`).join("");
+            } catch (error) {
+                showToast('Хатогӣ дар боркунии курсҳо!', 'error');
+            }
+        }
+
+        async function loadGroups() {
+            const courseId = courseSelect.value;
+            if (!courseId) {
+                groupSelect.innerHTML = '<option value="">Аввал курсро интихоб кунед</option>';
+                studentsPanel.classList.add('hidden');
+                return;
+            }
+            try {
+                const response = await axios.get(`/api/groups?course_id=${courseId}`);
+                groupSelect.innerHTML = '<option value="">Гурӯҳро интихоб кунед</option>' + response.data.map(g => `<option value="${g.id}">${g.number}</option>`).join("");
+                studentsPanel.classList.add('hidden');
+            } catch (error) {
+                showToast('Хатогӣ дар боркунии гурӯҳҳо!', 'error');
+            }
+        }
+
+        async function loadStudents() {
+            const groupId = groupSelect.value;
+            if (!groupId) {
+                studentsPanel.classList.add('hidden');
+                return;
+            }
+
+            studentsPanel.classList.remove('hidden');
+            showLoading(studentsTable);
+            
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('panel-subtitle').textContent = `Санаи имрӯза: ${today}`;
+
+            try {
+                const [studentsRes, attendanceRes] = await Promise.all([
+                    axios.get(`/api/students?group_id=${groupId}`),
+                    axios.get(`/api/attendance/today?group_id=${groupId}`)
+                ]);
+
+                const students = studentsRes.data;
+                const presentStudentIds = new Set(attendanceRes.data.map(att => att.student_id));
+                
+                if (students.length === 0) {
+                    studentsTable.innerHTML = `<tr><td colspan="2" class="text-center p-6 sm:p-8 text-gray-500 text-sm sm:text-base">Дар ин гурӯҳ донишҷū вуҷуд надорад.</td></tr>`;
+                    return;
+                }
+
+                studentsTable.innerHTML = students.map(s => {
+                    const isPresent = presentStudentIds.has(s.id);
+                    return `<tr class="hover:bg-gray-50 transition-colors">
+                        <td class="p-3 sm:p-4 text-gray-800 font-medium text-sm sm:text-base">${s.name}</td>
+                        <td class="p-3 sm:p-4 text-center">
+                            <input type="checkbox" data-id="${s.id}" ${isPresent ? 'checked' : ''} 
+                                   class="custom-checkbox w-5 h-5 sm:w-6 sm:h-6 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 focus:ring-2 cursor-pointer">
+                        </td>
+                    </tr>`;
+                }).join("");
+
+            } catch (error) {
+                showToast('Хатогӣ дар гирифтани рӯйхати донишҷūён!', 'error');
+                studentsTable.innerHTML = `<tr><td colspan="2" class="text-center p-6 sm:p-8 text-red-600 text-sm sm:text-base">Хатогӣ! Маълумотро гирифта натавонистем.</td></tr>`;
+            }
+        }
+
+        function toggleAllCheckboxes(checked) {
+            const checkboxes = document.querySelectorAll("#students-table input[type='checkbox']");
+            checkboxes.forEach(cb => cb.checked = checked);
+        }
+
+        async function saveAttendance() {
+            const groupId = groupSelect.value;
+            if (!groupId) {
+                showToast("Лутфан гурӯҳро интихоб кунед!", "error");
+                return;
+            }
+
+            const checkboxes = document.querySelectorAll("#students-table input[type='checkbox']");
+            const present_students = Array.from(checkboxes)
+                .filter(cb => cb.checked)
+                .map(cb => cb.dataset.id)
+                .join(",");
+            
+            const date = new Date().toISOString().split('T')[0];
+
+            saveButton.disabled = true;
+            saveButton.innerHTML = `<div class="animate-spin rounded-full h-4 sm:h-5 w-4 sm:w-5 border-b-2 border-white"></div><span class="text-sm sm:text-base">Ирсол шуда истодааст...</span>`;
+
+            try {
+                const response = await axios.post("/api/attendance", new URLSearchParams({ date, group_id: groupId, present_students }).toString(), {
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" }
+                });
+
+                if (response.data.status === "success" || response.data.status === "updated") {
+                    showToast(response.data.message, 'success');
+                    await loadStudents(); // Reload to reflect updated attendance
+                } else {
+                    throw new Error("Нокомӣ дар сабт кардан");
+                }
+            } catch (error) {
+                console.error("Хатогӣ:", error.response ? error.response.data.detail : error.message);
+                showToast("Хатогӣ ҳангоми сабт кардан!", "error");
+            } finally {
+                saveButton.disabled = false;
+                saveButton.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 sm:w-5 h-4 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 3v5h10V3" />
+                    </svg>
+                    <span class="text-sm sm:text-base">Сабт кардан</span>`;
+            }
+        }
+
+        // --- Initial Load ---
+        document.addEventListener('DOMContentLoaded', loadCourses);
+    </script>
+</body>
+</html>

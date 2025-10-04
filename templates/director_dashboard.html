@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="tj">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панели Директор</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        /* Барои аниматсияи ҳамвор */
+        .smooth-show {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        .smooth-show.visible {
+            max-height: 1000px; /* Қимати калон барои он ки ҳамаи контент ҷойгир шавад */
+        }
+
+        /* Responsive tables for mobile */
+        @media (max-width: 640px) {
+            table {
+                display: block;
+            }
+            thead {
+                display: none;
+            }
+            tr {
+                display: block;
+                margin-bottom: 1rem;
+                border-bottom: 1px solid #e5e7eb;
+            }
+            td {
+                display: flex;
+                justify-content: space-between;
+                padding: 0.5rem 1rem;
+                border-bottom: 1px solid #e5e7eb;
+            }
+            td:last-child {
+                border-bottom: none;
+            }
+            td::before {
+                content: attr(data-label);
+                font-weight: 600;
+                color: #4b5563;
+                width: 50%;
+            }
+        }
+
+        /* Buttons stack vertically on small screens */
+        @media (max-width: 640px) {
+            .space-x-4 {
+                flex-direction: column;
+                space-x-0;
+                space-y-4;
+            }
+            .space-x-4 button {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Cards adjustments for very small screens */
+        @media (max-width: 400px) {
+            .grid > div {
+                padding: 1rem;
+                min-width: 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col font-sans">
+    <header class="bg-indigo-700 text-white py-4 shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <h1 class="text-2xl md:text-3xl font-bold">Панели Идоракунӣ</h1>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+        
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Омори умумӣ (имрӯз)</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl shadow-lg p-6 flex items-center space-x-4">
+                    <div class="bg-blue-100 p-3 rounded-full">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-sm font-medium">Шумораи донишҷӯён</p>
+                        <p id="total-students" class="text-2xl font-bold text-gray-800">...</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 flex items-center space-x-4">
+                    <div class="bg-green-100 p-3 rounded-full">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-sm font-medium">Ҳозирон</p>
+                        <p id="total-present" class="text-2xl font-bold text-gray-800">...</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 flex items-center space-x-4">
+                    <div class="bg-red-100 p-3 rounded-full">
+                        <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-sm font-medium">Ғоибон</p>
+                        <p id="total-absent" class="text-2xl font-bold text-gray-800">...</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 flex items-center space-x-4">
+                    <div class="bg-indigo-100 p-3 rounded-full">
+                         <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"></path></svg>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-sm font-medium">Давомоти умумӣ</p>
+                        <p id="total-percentage" class="text-2xl font-bold text-gray-800">...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8">
+            <section class="mb-8 md:flex justify-between items-center">
+                <div>
+                    <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-2">Вазъи гурӯҳҳо</h2>
+                    <p class="text-gray-500">Интихоб кунед, то гурӯҳҳои курси муайянро бубинед.</p>
+                </div>
+                <select id="course-select"
+                    class="mt-4 md:mt-0 p-3 border border-gray-200 rounded-lg w-full md:w-1/3 bg-gray-50 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                    onchange="loadGroups()">
+                    <option value="">Ҳамаи курсҳо</option>
+                </select>
+            </section>
+
+            <section>
+                <div class="overflow-x-auto bg-white rounded-lg border border-gray-200">
+                    <table class="w-full text-left">
+                        <thead class="bg-gray-50 border-b border-gray-200">
+                            <tr>
+                                <th class="p-4 text-sm font-semibold text-gray-600">Гурӯҳ</th>
+                                <th class="p-4 text-sm font-semibold text-gray-600">Курс</th>
+                                <th class="p-4 text-sm font-semibold text-gray-600">Ҳозир</th>
+                                <th class="p-4 text-sm font-semibold text-gray-600">Ғоиб</th>
+                                <th class="p-4 text-sm font-semibold text-gray-600 w-1/4">Фоизи давомот</th>
+                            </tr>
+                        </thead>
+                        <tbody id="groups-table" class="divide-y divide-gray-200"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="mt-10 text-center flex flex-wrap justify-center space-x-4 md:space-x-4 space-y-4 md:space-y-0">
+                 <button id="show-absent-btn" onclick="toggleAbsentStudents()" 
+                    class="bg-red-500 text-white px-6 py-3 rounded-lg hover:bg-red-600 transition font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                    Намоиши донишҷӯёни ғоиб
+                </button>
+                <button id="show-weekly-btn" onclick="toggleWeeklyAttendance()" 
+                    class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    Давомоти ҳафтаина
+                </button>
+                <button id="show-monthly-btn" onclick="toggleMonthlyAttendance()" 
+                    class="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                    Давомоти моҳона
+                </button>
+                <button onclick="generateMonthlyReport()" 
+                    class="bg-purple-500 text-white px-6 py-3 rounded-lg hover:bg-purple-600 transition font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+                    Удалит кардани база
+                </button>
+
+                <div id="absent-students-wrapper" class="smooth-show mt-6 text-left w-full">
+                     <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-4">Рӯйхати донишҷӯёни ғоиб (имрӯз)</h2>
+                     <div class="overflow-x-auto bg-white rounded-lg border border-gray-200">
+                         <table class="w-full text-left">
+                            <thead class="bg-gray-50 border-b border-gray-200">
+                                 <tr>
+                                     <th class="p-4 text-sm font-semibold text-gray-600">Ном ва Насаб</th>
+                                     <th class="p-4 text-sm font-semibold text-gray-600">Гурӯҳ</th>
+                                     <th class="p-4 text-sm font-semibold text-gray-600">Курс</th>
+                                 </tr>
+                             </thead>
+                             <tbody id="absent-table" class="divide-y divide-gray-200"></tbody>
+                         </table>
+                     </div>
+                </div>
+
+                <div id="weekly-attendance-wrapper" class="smooth-show mt-6 text-left w-full">
+                     <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-4">Давомоти ҳафтаина</h2>
+                     <div class="overflow-x-auto bg-white rounded-lg border border-gray-200">
+                         <table class="w-full text-left">
+                            <thead class="bg-gray-50 border-b border-gray-200">
+                                 <tr>
+                                     <th class="p-4 text-sm font-semibold text-gray-600">Ном ва Насаб</th>
+                                     <th class="p-4 text-sm font-semibold text-gray-600">Гурӯҳ</th>
+                                     <th class="p-4 text-sm font-semibold text-gray-600">Курс</th>
+                                     <th class="p-4 text-sm font-semibold text-gray-600">Шумораи ғоибӣ (ҳафта)</th>
+                                 </tr>
+                             </thead>
+                             <tbody id="weekly-table" class="divide-y divide-gray-200"></tbody>
+                         </table>
+                     </div>
+                </div>
+
+                <div id="monthly-attendance-wrapper" class="smooth-show mt-6 text-left w-full">
+                     <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-4">Давомоти моҳона</h2>
+                     <div class="overflow-x-auto bg-white rounded-lg border border-gray-200">
+                         <table class="w-full text-left">
+                            <thead class="bg-gray-50 border-b border-gray-200">
+                                 <tr>
+                                     <th class="p-4 text-sm font-semibold text-gray-600">Ном ва Насаб</th>
+                                     <th class="p-4 text-sm font-semibold text-gray-600">Гурӯҳ</th>
+                                     <th class="p-4 text-sm font-semibold text-gray-600">Курс</th>
+                                     <th class="p-4 text-sm font-semibold text-gray-600">Шумораи ғоибӣ (моҳ)</th>
+                                 </tr>
+                             </thead>
+                             <tbody id="monthly-table" class="divide-y divide-gray-200"></tbody>
+                         </table>
+                     </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-indigo-700 text-white py-4 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-sm">Барномасоз: Anushervon</p>
+        </div>
+    </footer>
+
+    <script>
+        let courseMap = new Map();
+
+        // Функсия барои нишон додани Spinner
+        function showLoading(tableId) {
+            const table = document.getElementById(tableId);
+            const colspan = tableId.includes('absent') ? 3 : (tableId.includes('weekly') || tableId.includes('monthly') ? 4 : 5);
+            table.innerHTML = `
+                <tr>
+                    <td colspan="${colspan}" class="p-8 text-center">
+                        <div class="flex justify-center items-center space-x-2">
+                            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600"></div>
+                            <span class="text-gray-600">Боркунӣ...</span>
+                        </div>
+                    </td>
+                </tr>`;
+        }
+        
+        async function loadCourses() {
+            try {
+                const response = await axios.get("/api/courses");
+                const select = document.getElementById("course-select");
+                select.innerHTML = '<option value="">Ҳамаи курсҳо</option>';
+                response.data.forEach(c => {
+                    select.innerHTML += `<option value="${c.id}">Курси ${c.year}</option>`;
+                    courseMap.set(c.id, ` ${c.year}`);
+                });
+            } catch (error) {
+                console.error("Хатогӣ ҳангоми боркунии курсҳо:", error);
+            }
+        }
+
+        async function loadGroups() {
+            showLoading("groups-table");
+            try {
+                const selectedCourseId = document.getElementById("course-select").value;
+                const groupsRes = await axios.get("/api/groups" + (selectedCourseId ? `?course_id=${selectedCourseId}` : ""));
+                const studentsRes = await axios.get("/api/students/all");
+                const attendanceRes = await axios.get("/api/attendance/today");
+
+                const groups = groupsRes.data;
+                const students = studentsRes.data;
+                const attendance = attendanceRes.data;
+
+                const table = document.getElementById("groups-table");
+                table.innerHTML = "";
+
+                let totalStudents = 0;
+                let totalPresent = 0;
+                let totalAbsent = 0;
+
+                for (let g of groups) {
+                    const groupStudents = students.filter(s => s.group_id === g.id);
+                    const total = groupStudents.length;
+                    
+                    const presentStudentsIds = new Set(attendance.filter(a => groupStudents.some(s => s.id === a.student_id) && a.status === "present").map(a => a.student_id));
+                    const present = presentStudentsIds.size;
+                    const absent = total - present;
+                    const percent = total > 0 ? Math.round((present / total) * 100) : 0;
+                    
+                    totalStudents += total;
+                    totalPresent += present;
+                    totalAbsent += absent;
+
+                    let progressBarColor = "bg-red-500";
+                    if (percent >= 80) {
+                        progressBarColor = "bg-green-500";
+                    } else if (percent >= 50) {
+                        progressBarColor = "bg-yellow-500";
+                    }
+
+                    table.innerHTML += `
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td data-label="Гурӯҳ" class="p-4 text-gray-800 font-medium">${g.number}</td>
+                            <td data-label="Курс" class="p-4 text-gray-600">${courseMap.get(g.course_id) || `ID: ${g.course_id}`}</td>
+                            <td data-label="Ҳозир" class="p-4 text-green-600 font-semibold">${present}</td>
+                            <td data-label="Ғоиб" class="p-4 text-red-600 font-semibold">${absent}</td>
+                            <td data-label="Фоизи давомот" class="p-4">
+                                <div class="flex items-center">
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5 mr-2">
+                                        <div class="${progressBarColor} h-2.5 rounded-full" style="width: ${percent}%"></div>
+                                    </div>
+                                    <span class="font-bold text-gray-700">${percent}%</span>
+                                </div>
+                            </td>
+                        </tr>`;
+                }
+                
+                if (groups.length === 0) {
+                     table.innerHTML = `<tr><td colspan="5" class="p-4 text-center text-gray-500">Гурӯҳҳо ёфт нашуданд.</td></tr>`;
+                }
+
+                // Навсозии картаҳои оморӣ
+                document.getElementById('total-students').textContent = totalStudents;
+                document.getElementById('total-present').textContent = totalPresent;
+                document.getElementById('total-absent').textContent = totalAbsent;
+                const overallPercent = totalStudents > 0 ? Math.round((totalPresent / totalStudents) * 100) : 0;
+                document.getElementById('total-percentage').textContent = `${overallPercent}%`;
+
+            } catch (error) {
+                console.error("Хатогӣ ҳангоми боркунии гурӯҳҳо:", error);
+                document.getElementById("groups-table").innerHTML = `
+                    <tr><td colspan="5" class="p-4 text-center text-red-600">Хатогӣ дар гирифтани маълумот.</td></tr>`;
+            }
+        }
+
+        async function loadAbsentStudents() {
+            showLoading("absent-table");
+            try {
+                const response = await axios.get("/api/absent_students/today");
+                const table = document.getElementById("absent-table");
+                
+                if (response.data && response.data.length > 0) {
+                    table.innerHTML = response.data.map(s => `
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td data-label="Ном ва Насаб" class="p-4 font-medium ${s.total_absences > 6 ? 'text-red-600' : 'text-gray-800'}">${s.name}</td>
+                            <td data-label="Гурӯҳ" class="p-4 text-gray-600">${s.group_number}</td>
+                            <td data-label="Курс" class="p-4 text-gray-600">${courseMap.get(s.course_id) || `ID: ${s.course_id}`}</td>
+                        </tr>`).join("");
+                } else {
+                    table.innerHTML = `
+                        <tr><td colspan="3" class="p-4 text-center text-red-600">Ҳоло астунест пурра ба анҷом нарасидааст !!!</td></tr>`;
+                }
+            } catch (error) {
+                console.error("Хатогӣ ҳангоми гирифтани ғоибон:", error);
+                document.getElementById("absent-table").innerHTML = `
+                    <tr><td colspan="3" class="p-4 text-center text-red-600">Хатогӣ дар гирифтани рӯйхати ғоибон.</td></tr>`;
+            }
+        }
+
+        async function loadWeeklyAttendance() {
+            showLoading("weekly-table");
+            try {
+                const response = await axios.get("/api/absent_summary?period=weekly");
+                const table = document.getElementById("weekly-table");
+                
+                if (response.data && response.data.length > 0) {
+                    table.innerHTML = response.data.map(s => `
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td data-label="Ном ва Насаб" class="p-4 text-gray-800 font-medium">${s.name}</td>
+                            <td data-label="Гурӯҳ" class="p-4 text-gray-600">${s.group_number}</td>
+                            <td data-label="Курс" class="p-4 text-gray-600">${courseMap.get(s.course_id) || `ID: ${s.course_id}`}</td>
+                            <td data-label="Шумораи ғоибӣ (ҳафта)" class="p-4 text-red-600 font-semibold">${s.absent_count}</td>
+                        </tr>`).join("");
+                } else {
+                    table.innerHTML = `
+                        <tr><td colspan="4" class="p-4 text-center text-green-600">Дар ҳафтаи гузашта ғоибҳо нестанд! ✅</td></tr>`;
+                }
+            } catch (error) {
+                console.error("Хатогӣ ҳангоми гирифтани давомоти ҳафтаина:", error);
+                document.getElementById("weekly-table").innerHTML = `
+                    <tr><td colspan="4" class="p-4 text-center text-red-600">Хатогӣ дар гирифтани маълумот.</td></tr>`;
+            }
+        }
+
+        async function loadMonthlyAttendance() {
+            showLoading("monthly-table");
+            try {
+                const response = await axios.get("/api/absent_summary?period=monthly");
+                const table = document.getElementById("monthly-table");
+                
+                if (response.data && response.data.length > 0) {
+                    table.innerHTML = response.data.map(s => `
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td data-label="Ном ва Насаб" class="p-4 text-gray-800 font-medium">${s.name}</td>
+                            <td data-label="Гурӯҳ" class="p-4 text-gray-600">${s.group_number}</td>
+                            <td data-label="Курс" class="p-4 text-gray-600">${courseMap.get(s.course_id) || `ID: ${s.course_id}`}</td>
+                            <td data-label="Шумораи ғоибӣ (моҳ)" class="p-4 text-red-600 font-semibold">${s.absent_count}</td>
+                        </tr>`).join("");
+                } else {
+                    table.innerHTML = `
+                        <tr><td colspan="4" class="p-4 text-center text-green-600">Дар моҳи гузашта ғоибҳо нестанд! ✅</td></tr>`;
+                }
+            } catch (error) {
+                console.error("Хатогӣ ҳангоми гирифтани давомоти моҳона:", error);
+                document.getElementById("monthly-table").innerHTML = `
+                    <tr><td colspan="4" class="p-4 text-center text-red-600">Хатогӣ дар гирифтани маълумот.</td></tr>`;
+            }
+        }
+
+        async function generateMonthlyReport() {
+            try {
+                const response = await axios.get("/api/generate_monthly_report");
+                alert(response.data.message);
+            } catch (error) {
+                console.error("Хатогӣ ҳангоми генератсияи ҳисобот:", error);
+                alert("Хатогӣ ҳангоми генератсияи ҳисоботи моҳона.");
+            }
+        }
+
+        function toggleAbsentStudents() {
+            const wrapper = document.getElementById('absent-students-wrapper');
+            const button = document.getElementById('show-absent-btn');
+            const isVisible = wrapper.classList.contains('visible');
+
+            if (isVisible) {
+                wrapper.classList.remove('visible');
+                button.textContent = 'Намоиши донишҷӯёни ғоиб';
+                button.classList.remove('bg-gray-500', 'hover:bg-gray-600');
+                button.classList.add('bg-red-500', 'hover:bg-red-600');
+            } else {
+                loadAbsentStudents();
+                wrapper.classList.add('visible');
+                button.textContent = 'Пинҳон кардани рӯйхат';
+                button.classList.remove('bg-red-500', 'hover:bg-red-600');
+                button.classList.add('bg-gray-500', 'hover:bg-gray-600');
+            }
+        }
+
+        function toggleWeeklyAttendance() {
+            const wrapper = document.getElementById('weekly-attendance-wrapper');
+            const button = document.getElementById('show-weekly-btn');
+            const isVisible = wrapper.classList.contains('visible');
+
+            if (isVisible) {
+                wrapper.classList.remove('visible');
+                button.textContent = 'Давомоти ҳафтаина';
+                button.classList.remove('bg-gray-500', 'hover:bg-gray-600');
+                button.classList.add('bg-blue-500', 'hover:bg-blue-600');
+            } else {
+                loadWeeklyAttendance();
+                wrapper.classList.add('visible');
+                button.textContent = 'Пинҳон кардани рӯйхат';
+                button.classList.remove('bg-blue-500', 'hover:bg-blue-600');
+                button.classList.add('bg-gray-500', 'hover:bg-gray-600');
+            }
+        }
+
+        function toggleMonthlyAttendance() {
+            const wrapper = document.getElementById('monthly-attendance-wrapper');
+            const button = document.getElementById('show-monthly-btn');
+            const isVisible = wrapper.classList.contains('visible');
+
+            if (isVisible) {
+                wrapper.classList.remove('visible');
+                button.textContent = 'Давомоти моҳона';
+                button.classList.remove('bg-gray-500', 'hover:bg-gray-600');
+                button.classList.add('bg-green-500', 'hover:bg-green-600');
+            } else {
+                loadMonthlyAttendance();
+                wrapper.classList.add('visible');
+                button.textContent = 'Пинҳон кардани рӯйхат';
+                button.classList.remove('bg-green-500', 'hover:bg-green-600');
+                button.classList.add('bg-gray-500', 'hover:bg-gray-600');
+            }
+        }
+        
+        // Автомат навсозӣ ҳар 30 сония
+        setInterval(loadGroups, 30000);
+
+        // Боркунии аввал
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCourses().then(() => {
+                loadGroups();
+            });
+        });
+
+    </script>
+</body>
+</html>

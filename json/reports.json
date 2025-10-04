@@ -1,0 +1,126 @@
+{
+    "daily": [
+        {
+            "date": "2025-08-31",
+            "attendance_rate": 34.599999999999994
+        },
+        {
+            "date": "2025-09-01",
+            "attendance_rate": 31.6
+        },
+        {
+            "date": "2025-09-02",
+            "attendance_rate": 36.0
+        },
+        {
+            "date": "2025-09-03",
+            "attendance_rate": 30.4
+        },
+        {
+            "date": "2025-09-04",
+            "attendance_rate": 37.4
+        },
+        {
+            "date": "2025-09-05",
+            "attendance_rate": 33.6
+        },
+        {
+            "date": "2025-09-06",
+            "attendance_rate": 32.2
+        },
+        {
+            "date": "2025-09-07",
+            "attendance_rate": 32.6
+        },
+        {
+            "date": "2025-09-08",
+            "attendance_rate": 34.2
+        },
+        {
+            "date": "2025-09-09",
+            "attendance_rate": 35.6
+        },
+        {
+            "date": "2025-09-10",
+            "attendance_rate": 32.2
+        },
+        {
+            "date": "2025-09-11",
+            "attendance_rate": 32.6
+        },
+        {
+            "date": "2025-09-12",
+            "attendance_rate": 32.800000000000004
+        },
+        {
+            "date": "2025-09-13",
+            "attendance_rate": 32.0
+        },
+        {
+            "date": "2025-09-14",
+            "attendance_rate": 35.0
+        },
+        {
+            "date": "2025-09-15",
+            "attendance_rate": 32.4
+        },
+        {
+            "date": "2025-09-16",
+            "attendance_rate": 32.800000000000004
+        },
+        {
+            "date": "2025-09-17",
+            "attendance_rate": 34.4
+        },
+        {
+            "date": "2025-09-18",
+            "attendance_rate": 34.0
+        },
+        {
+            "date": "2025-09-19",
+            "attendance_rate": 33.800000000000004
+        },
+        {
+            "date": "2025-09-20",
+            "attendance_rate": 34.8
+        },
+        {
+            "date": "2025-09-21",
+            "attendance_rate": 31.8
+        },
+        {
+            "date": "2025-09-22",
+            "attendance_rate": 30.599999999999998
+        },
+        {
+            "date": "2025-09-23",
+            "attendance_rate": 33.4
+        },
+        {
+            "date": "2025-09-24",
+            "attendance_rate": 37.2
+        },
+        {
+            "date": "2025-09-25",
+            "attendance_rate": 38.2
+        },
+        {
+            "date": "2025-09-26",
+            "attendance_rate": 30.2
+        },
+        {
+            "date": "2025-09-27",
+            "attendance_rate": 37.0
+        },
+        {
+            "date": "2025-09-28",
+            "attendance_rate": 33.0
+        },
+        {
+            "date": "2025-09-29",
+            "attendance_rate": 35.6
+        }
+    ],
+    "weekly": [],
+    "monthly": []
+}

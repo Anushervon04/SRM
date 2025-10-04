@@ -1,0 +1,5690 @@
+[
+    {
+        "id": 1,
+        "name": "Зокиров Сиёвуш",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 2,
+        "name": "Абдураҳмонзода Самандар",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 3,
+        "name": "Султонализода Муҳаммад",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 4,
+        "name": "Ҳасанов Юсуфбек",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 5,
+        "name": "Давлатзода Мирзоҷумъа",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 6,
+        "name": "Ҳакимова Париноз",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 7,
+        "name": "Файзуллоев Абубакр",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 8,
+        "name": "Калонов Бобоҷон",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 9,
+        "name": "Холзода Тоҳирҷон",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 10,
+        "name": "Сайдализода Маъруф",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 11,
+        "name": "Раҷабов Шаҳбоз",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 12,
+        "name": "Тошпулатзода Фархуддин",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 13,
+        "name": "Саломов Сорбон",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 14,
+        "name": "Шарифзода Муҳаммад",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 15,
+        "name": "Раҳмонзода Шафоат",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 16,
+        "name": "Маҷитов Маҳмудҷон",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 17,
+        "name": "Маҷидзода Алишер",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 18,
+        "name": "Мирзовализода Ёқуб",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 19,
+        "name": "Усмонов Файзиддин",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 20,
+        "name": "Розиқов Сафархон",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 21,
+        "name": "Ортихолов Сардорбек",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 22,
+        "name": "Мирзоаҳмадзода Тоҳир",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 23,
+        "name": "Мирзоев Абдураҳмон",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 24,
+        "name": "Ҷураев Юсуфҷон",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 25,
+        "name": "Ассоев Асомуддин",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 26,
+        "name": "Нуров Кароматулло",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 27,
+        "name": "Мамадзамиров Рамидин",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 28,
+        "name": "Холзода Муродали",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 29,
+        "name": "Асламшоева Азима",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 30,
+        "name": "Давлатов Толибҷон",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 31,
+        "name": "Ҷобиров Мухамадрофеъ",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 32,
+        "name": "Давлатализода Омина",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 33,
+        "name": "Муҳиддинов Сорбон",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 34,
+        "name": "Хоҷаев Самиоллоҳ",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 35,
+        "name": "Хушакзода Муҳаммадали",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 36,
+        "name": "Исмоилзода Алиҷон",
+        "group_id": 1,
+        "course_id": 1
+    },
+    {
+        "id": 37,
+        "name": "Дӯсматов Оятуллоҳ",
+        "group_id": 2,
+        "course_id": 1
+    },
+    {
+        "id": 38,
+        "name": "Каримов Абдураҳмон",
+        "group_id": 2,
+        "course_id": 1
+    },
+    {
+        "id": 39,
+        "name": "Ақёл Давлатхотун",
+        "group_id": 2,
+        "course_id": 1
+    },
+    {
+        "id": 40,
+        "name": "Иноятов Комилҷон",
+        "group_id": 2,
+        "course_id": 1
+    },
+    {
+        "id": 41,
+        "name": "Бурҳонзода Ҳабибулло",
+        "group_id": 2,
+        "course_id": 1
+    },
+    {
+        "id": 42,
+        "name": "Азимов Рауф",
+        "group_id": 2,
+        "course_id": 1
+    },
+    {
+        "id": 43,
+        "name": "Эргашев Ибодулло",
+        "group_id": 2,
+        "course_id": 1
+    },
+    {
+        "id": 44,
+        "name": "Обидов Шамсиддин",
+        "group_id": 2,
+        "course_id": 1
+    },
+    {
+        "id": 45,
+        "name": "Зоирзода Комрон",
+        "group_id": 2,
+        "course_id": 1
+    },
+    {
+        "id": 46,
+        "name": "Мирзозода Иброҳим",
+        "group_id": 2,
+        "course_id": 1
+    },
+    {
+        "id": 47,
+        "name": "Ҳакимов Фотеҳ",
+        "group_id": 2,
+        "course_id": 1
+    },
+    {
+        "id": 48,
+        "name": "Саидҷонов Зокир",
+        "group_id": 2,
+        "course_id": 1
+    },
+    {
+        "id": 49,
+        "name": "Раҳимзода Алишер",
+        "group_id": 2,
+        "course_id": 1
+    },
+    {
+        "id": 50,
+        "name": "Эгамов Абубакр",
+        "group_id": 2,
+        "course_id": 1
+    },
+    {
+        "id": 51,
+        "name": "Миров Муъиз",
+        "group_id": 2,
+        "course_id": 1
+    },
+    {
+        "id": 52,
+        "name": "Пиров Қурбоналӣ",
+        "group_id": 2,
+        "course_id": 1
+    },
+    {
+        "id": 53,
+        "name": "Абдураҳмонов Иброҳим",
+        "group_id": 2,
+        "course_id": 1
+    },
+    {
+        "id": 54,
+        "name": "Қурбонов Шаҳром",
+        "group_id": 2,
+        "course_id": 1
+    },
+    {
+        "id": 55,
+        "name": "Холиқзода Шерафган",
+        "group_id": 2,
+        "course_id": 1
+    },
+    {
+        "id": 56,
+        "name": "Урусмамадов Некруз",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 57,
+        "name": "Суҳробзода Нурсултон",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 58,
+        "name": "Аюбзода Толиб",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 59,
+        "name": "Шукурзода Нисо",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 60,
+        "name": "Ятимзода Анис",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 61,
+        "name": "Маҳмадшозода Абубакр",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 62,
+        "name": "Мирзохоҷаев Бобоҷон",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 63,
+        "name": "Амонзода Олим",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 64,
+        "name": "Баротзода Абдуссаттор",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 65,
+        "name": "Юсупов Муҳаммадҷон",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 66,
+        "name": "Қурбанов Муҳаммадҷон",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 67,
+        "name": "Раҳимзода Алӣ",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 68,
+        "name": "Абдулоев Самариддин",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 69,
+        "name": "Партоев Некруз",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 70,
+        "name": "Ғолибшоҳи Анваршо",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 71,
+        "name": "Ҳакимзода Бахтиёр",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 72,
+        "name": "Толибзода Муҳаммаднаим",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 73,
+        "name": "Шералиев Илҳомҷон",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 74,
+        "name": "Ҳасанов Муҳаммадҷон",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 75,
+        "name": "Каримов Сафарали",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 76,
+        "name": "Раҷабзода Муҳаммадали",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 77,
+        "name": "Наимов Эмомали",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 78,
+        "name": "Расулов Шерзод",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 79,
+        "name": "Сайдализода Муҳаммадҷон",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 80,
+        "name": "Изатуллозода Ҳасан",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 81,
+        "name": "Қурбонализода Меҳроҷиддин",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 82,
+        "name": "Исматуллоев Парвиз",
+        "group_id": 3,
+        "course_id": 1
+    },
+    {
+        "id": 83,
+        "name": "Одиназода Аловуддин",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 84,
+        "name": "Раҷабов Фируз",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 85,
+        "name": "Муродов Султоншоҳ",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 86,
+        "name": "Хуршедзода Эҳсон",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 87,
+        "name": "Умедзода Гулмуҳаммад",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 88,
+        "name": "Ҳамрозода Ҳикмат",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 89,
+        "name": "Бобоев Фируз",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 90,
+        "name": "Ҳайдаров Ҳайдар",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 91,
+        "name": "Ширинов Идибой",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 92,
+        "name": "Каримов Илҳом",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 93,
+        "name": "Азимов Шаҳром",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 94,
+        "name": "Давлатзода Муҳаммадҷон",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 95,
+        "name": "Турсунов Аминҷон",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 96,
+        "name": "Сулаймонзода Нозанин",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 97,
+        "name": "Рафиев Муҳаммадали",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 98,
+        "name": "Рахимов Умарали",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 99,
+        "name": "Умаров Абдураҳмон",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 100,
+        "name": "Муродов Содиқҷон",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 101,
+        "name": "Қаршиев Ҳикматулло",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 102,
+        "name": "Абдуҳамидов Улуғбек",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 103,
+        "name": "Нуров Мансур",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 104,
+        "name": "Абдизода Исломиддин",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 105,
+        "name": "Сангов Ҷаҳонгир",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 106,
+        "name": "Нуруллоев Акбар",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 107,
+        "name": "Қурбонов Бахтиёр",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 108,
+        "name": "Сафарализод Раҳматулло",
+        "group_id": 4,
+        "course_id": 1
+    },
+    {
+        "id": 109,
+        "name": "Давлатзод Исоёр",
+        "group_id": 5,
+        "course_id": 1
+    },
+    {
+        "id": 110,
+        "name": "Зарипова Аниса",
+        "group_id": 5,
+        "course_id": 1
+    },
+    {
+        "id": 111,
+        "name": "Расулзода Абубакр",
+        "group_id": 5,
+        "course_id": 1
+    },
+    {
+        "id": 112,
+        "name": "Завқибекова Роила",
+        "group_id": 5,
+        "course_id": 1
+    },
+    {
+        "id": 113,
+        "name": "Раҳимов Сафиоллоҳ",
+        "group_id": 5,
+        "course_id": 1
+    },
+    {
+        "id": 114,
+        "name": "Ёқубов Собит",
+        "group_id": 5,
+        "course_id": 1
+    },
+    {
+        "id": 115,
+        "name": "Қиличова Севинч",
+        "group_id": 5,
+        "course_id": 1
+    },
+    {
+        "id": 116,
+        "name": "Эмомзода Сафиаъло",
+        "group_id": 5,
+        "course_id": 1
+    },
+    {
+        "id": 117,
+        "name": "Рустамзода Умедҷон",
+        "group_id": 5,
+        "course_id": 1
+    },
+    {
+        "id": 118,
+        "name": "Азимов Ахлиддин",
+        "group_id": 5,
+        "course_id": 1
+    },
+    {
+        "id": 119,
+        "name": "Азимов Ибодулло",
+        "group_id": 5,
+        "course_id": 1
+    },
+    {
+        "id": 120,
+        "name": "Насриддинов Далер",
+        "group_id": 5,
+        "course_id": 1
+    },
+    {
+        "id": 121,
+        "name": "Азиззода Хайём",
+        "group_id": 5,
+        "course_id": 1
+    },
+    {
+        "id": 122,
+        "name": "Маҳмадализода Сунатулло",
+        "group_id": 5,
+        "course_id": 1
+    },
+    {
+        "id": 123,
+        "name": "Мирзоева Муниса",
+        "group_id": 5,
+        "course_id": 1
+    },
+    {
+        "id": 124,
+        "name": "Неъматов Бузургмеҳр",
+        "group_id": 5,
+        "course_id": 1
+    },
+    {
+        "id": 125,
+        "name": "Ақдодова Самира",
+        "group_id": 5,
+        "course_id": 1
+    },
+    {
+        "id": 126,
+        "name": "Ализода Сироҷиддин",
+        "group_id": 5,
+        "course_id": 1
+    },
+    {
+        "id": 127,
+        "name": "Ҳалимов Муҳаммадҷон",
+        "group_id": 5,
+        "course_id": 1
+    },
+    {
+        "id": 128,
+        "name": "Хучаков Манучеҳр",
+        "group_id": 5,
+        "course_id": 1
+    },
+    {
+        "id": 129,
+        "name": "Мирзоев Пулод",
+        "group_id": 6,
+        "course_id": 1
+    },
+    {
+        "id": 130,
+        "name": "Сафаров Хайрулло",
+        "group_id": 6,
+        "course_id": 1
+    },
+    {
+        "id": 131,
+        "name": "Шарифов Исфандиёр",
+        "group_id": 6,
+        "course_id": 1
+    },
+    {
+        "id": 132,
+        "name": "Маҳмадиев Музаффаршоҳ",
+        "group_id": 6,
+        "course_id": 1
+    },
+    {
+        "id": 133,
+        "name": "Каримов Аюб",
+        "group_id": 6,
+        "course_id": 1
+    },
+    {
+        "id": 134,
+        "name": "Ҳусейнзода Маърифат",
+        "group_id": 6,
+        "course_id": 1
+    },
+    {
+        "id": 135,
+        "name": "Ҳамрокулов Қаюмҷон",
+        "group_id": 6,
+        "course_id": 1
+    },
+    {
+        "id": 136,
+        "name": "Азимов Бахтовар",
+        "group_id": 6,
+        "course_id": 1
+    },
+    {
+        "id": 137,
+        "name": "Маҳмадҷонзода Азаматшоҳ",
+        "group_id": 6,
+        "course_id": 1
+    },
+    {
+        "id": 138,
+        "name": "Зуҳуров Амриддин",
+        "group_id": 6,
+        "course_id": 1
+    },
+    {
+        "id": 139,
+        "name": "Кароматова Умеда",
+        "group_id": 6,
+        "course_id": 1
+    },
+    {
+        "id": 140,
+        "name": "Шарипов Алиҷон",
+        "group_id": 6,
+        "course_id": 1
+    },
+    {
+        "id": 141,
+        "name": "Турахонзода Фахриддин",
+        "group_id": 6,
+        "course_id": 1
+    },
+    {
+        "id": 142,
+        "name": "Раҳмоналиев Наим",
+        "group_id": 6,
+        "course_id": 1
+    },
+    {
+        "id": 143,
+        "name": "Бобохуҷаев Анас",
+        "group_id": 6,
+        "course_id": 1
+    },
+    {
+        "id": 144,
+        "name": "Саидзода Сафар",
+        "group_id": 6,
+        "course_id": 1
+    },
+    {
+        "id": 145,
+        "name": "Камолзода Шерали",
+        "group_id": 6,
+        "course_id": 1
+    },
+    {
+        "id": 146,
+        "name": "Тоҷиддинзода Беҳрӯз",
+        "group_id": 6,
+        "course_id": 1
+    },
+    {
+        "id": 147,
+        "name": "Шарифзода Бинёмин",
+        "group_id": 6,
+        "course_id": 1
+    },
+    {
+        "id": 148,
+        "name": "Ғазалов Ариз",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 149,
+        "name": "Холиқҷонова Мохинур",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 150,
+        "name": "Ҳасанзода Шамс",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 151,
+        "name": "Ҷалилов Ҷасур",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 152,
+        "name": "Саидова Фотима",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 153,
+        "name": "Нарзуллоев Саидмурод",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 154,
+        "name": "Азиззода Исмоил",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 155,
+        "name": "Шокаримзода Рауф",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 156,
+        "name": "Маликов Муҳаммадимрон",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 157,
+        "name": "Ҳафизов Хуршед",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 158,
+        "name": "Файзуллозода Дилшод",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 159,
+        "name": "Давлатзода Рамазон",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 160,
+        "name": "Зарипов Ҷаҳонгир",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 161,
+        "name": "Гулматов Муродбек",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 162,
+        "name": "Шарифзода Акбар",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 163,
+        "name": "Ваҳобов Беҳзод",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 164,
+        "name": "Нусратзода Муҳаммадсолеҳ",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 165,
+        "name": "Абдуллоев Бинёмин",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 166,
+        "name": "Бобохонзода Сироҷиддин",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 167,
+        "name": "Ҳалимов Абдураҳмон",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 168,
+        "name": "Облоқулова Дилором",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 169,
+        "name": "Қарахонов Баҳодур",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 170,
+        "name": "Муродов Ҳабибулло",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 171,
+        "name": "Уразов Шукурҷон",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 172,
+        "name": "Холов Шаҳзод",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 173,
+        "name": "Ҷумаев Маҳмадато",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 174,
+        "name": "Кабирзода Муҳаммадҷон",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 175,
+        "name": "Назаров Зокирҷон",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 176,
+        "name": "Пираков Рустамҷон",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 177,
+        "name": "Аҳмадзода Аҳтам",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 178,
+        "name": "Сафаров Фаридун",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 179,
+        "name": "Сафарзода Алиҷон",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 180,
+        "name": "Мавлониён Абдусамеъ",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 181,
+        "name": "Ҳамидов Мавлон",
+        "group_id": 7,
+        "course_id": 1
+    },
+    {
+        "id": 182,
+        "name": "Рамхудоева Зулола",
+        "group_id": 8,
+        "course_id": 1
+    },
+    {
+        "id": 183,
+        "name": "Карамхудоева Марҷона",
+        "group_id": 8,
+        "course_id": 1
+    },
+    {
+        "id": 184,
+        "name": "Диловарзода Ҷамшед",
+        "group_id": 8,
+        "course_id": 1
+    },
+    {
+        "id": 185,
+        "name": "Абдуназарзода Хусрав",
+        "group_id": 8,
+        "course_id": 1
+    },
+    {
+        "id": 186,
+        "name": "Фируззода Фирдавс",
+        "group_id": 8,
+        "course_id": 1
+    },
+    {
+        "id": 187,
+        "name": "Солиев Мубориз",
+        "group_id": 8,
+        "course_id": 1
+    },
+    {
+        "id": 188,
+        "name": "Искандаров Нуриддин",
+        "group_id": 8,
+        "course_id": 1
+    },
+    {
+        "id": 189,
+        "name": "Ҳусенов Саидмаҳмуд",
+        "group_id": 8,
+        "course_id": 1
+    },
+    {
+        "id": 190,
+        "name": "Бобоҷонзода Баҳром",
+        "group_id": 8,
+        "course_id": 1
+    },
+    {
+        "id": 191,
+        "name": "Назарзода Шаҳром",
+        "group_id": 8,
+        "course_id": 1
+    },
+    {
+        "id": 192,
+        "name": "Сафарзод Амонулоҳ",
+        "group_id": 8,
+        "course_id": 1
+    },
+    {
+        "id": 193,
+        "name": "Шоназарова Машҳура",
+        "group_id": 8,
+        "course_id": 1
+    },
+    {
+        "id": 194,
+        "name": "Орипов Билол",
+        "group_id": 8,
+        "course_id": 1
+    },
+    {
+        "id": 195,
+        "name": "Абдуллоев Абубакр",
+        "group_id": 8,
+        "course_id": 1
+    },
+    {
+        "id": 196,
+        "name": "Абдуллоев Сафарали",
+        "group_id": 8,
+        "course_id": 1
+    },
+    {
+        "id": 197,
+        "name": "Бобохолов Муҳаммадҷон",
+        "group_id": 8,
+        "course_id": 1
+    },
+    {
+        "id": 198,
+        "name": "Қутбидинов Азизхон",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 199,
+        "name": "Ашуров Сунатулло",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 200,
+        "name": "Сафаров Сафар",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 201,
+        "name": "Булбулов Муҳамадҷон",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 202,
+        "name": "Ҷумахонзода Амирҷон",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 203,
+        "name": "Давлатов Умедҷон",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 204,
+        "name": "Саидзода Муродбек",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 205,
+        "name": "Гадозода Муниси",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 206,
+        "name": "Ёрзода Муҳаммадрофеъ",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 207,
+        "name": "Аминов Шариф",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 208,
+        "name": "Бегназарзода Эҳсонҷон",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 209,
+        "name": "Ёрзода Иброҳим",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 210,
+        "name": "Сайфуллоев Азамҷон",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 211,
+        "name": "Мирзоев Усмонҷон",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 212,
+        "name": "Назаров Ҳоҷибой",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 213,
+        "name": "Бегматзода Алимуҳаммад",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 214,
+        "name": "Маҷидов Сиёвуш",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 215,
+        "name": "Анисаи Абдулфато",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 216,
+        "name": "Шерализода Сабрина",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 217,
+        "name": "Гулматов Парвизҷон",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 218,
+        "name": "Абдулоев Билолиддин",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 219,
+        "name": "Раҷабов Эҳсон",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 220,
+        "name": "Файзализода Ҳусейн",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 221,
+        "name": "Расулзода Эҳсонҷон",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 222,
+        "name": "Салимов Сафиалоҳ",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 223,
+        "name": "Салиев Мустафо",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 224,
+        "name": "Бойзода Бунёд",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 225,
+        "name": "Маҳкамов Қосимҷон",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 226,
+        "name": "Каримов Алижон",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 227,
+        "name": "Қодиров Саидакбар",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 228,
+        "name": "Давлятов Шахзод",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 229,
+        "name": "Шарипов Зикруллоҳ",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 230,
+        "name": "Саидалиев Иброхим",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 231,
+        "name": "Давлатзода Мубориз",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 232,
+        "name": "Акрамзода Абдулло",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 233,
+        "name": "Сайидбеков Исоҷон",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 234,
+        "name": "Ғозиев Алиҷон",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 235,
+        "name": "Муҳаммадзода Ӯктам",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 236,
+        "name": "Замиров Саъди",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 237,
+        "name": "Раҳимов Қобилҷон",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 238,
+        "name": "Ҳикматуллозода Равшанҷон",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 239,
+        "name": "Абиров Абдусамад",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 240,
+        "name": "Абдуллоев Анушервон",
+        "group_id": 9,
+        "course_id": 1
+    },
+    {
+        "id": 241,
+        "name": "Ҷалилов Манишвар",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 242,
+        "name": "Мансуров Сиёвуш",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 243,
+        "name": "Мирзобекзода Муслимҷон",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 244,
+        "name": "Шоҳзода Ғазанфар",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 245,
+        "name": "Шорустамов Некруз",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 246,
+        "name": "Талбаков Шаҳриёр",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 247,
+        "name": "Сайназарзода Акмал",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 248,
+        "name": "Донаев Усмонали",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 249,
+        "name": "Искандарзода Остон",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 250,
+        "name": "Равшаналихон Равшан",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 251,
+        "name": "Курбанов Алиҷон",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 252,
+        "name": "Саидзода Тағоймурод",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 253,
+        "name": "Иброхимов Шохрух",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 254,
+        "name": "Ҷурахонов Шукрулло",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 255,
+        "name": "Исмоилов Хуршед",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 256,
+        "name": "Донабоев Комилҷон",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 257,
+        "name": "Амрихудоев Муҳаммад",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 258,
+        "name": "Мусоев Шаҳриёр",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 259,
+        "name": "Собиров Суҳайб",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 260,
+        "name": "Ҳафизов Ҳафизҷон",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 261,
+        "name": "Ғаниев Ҷаҳонгир",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 262,
+        "name": "Қодиров Фурқат",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 263,
+        "name": "Сомончиев Абдураҳмон",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 264,
+        "name": "Алиев Фарзод",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 265,
+        "name": "Хисравзода Носир",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 266,
+        "name": "Гуреззода Фаёз",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 267,
+        "name": "Паллаев Хушруз",
+        "group_id": 10,
+        "course_id": 1
+    },
+    {
+        "id": 268,
+        "name": "Мусоев Бузургмеҳр",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 269,
+        "name": "Сангов Соҳибҷон",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 270,
+        "name": "Хурсанова Шабона",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 271,
+        "name": "Шамсов Самир",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 272,
+        "name": "Саторов Шоҳин",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 273,
+        "name": "Ҷобирзода Умарҷон",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 274,
+        "name": "Қурбоналиев Саидумар",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 275,
+        "name": "Мусулмонов Фурқат",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 276,
+        "name": "Бобомуродзода Хуршед",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 277,
+        "name": "Эмомов Саидалишер",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 278,
+        "name": "Буризода Раҷабали",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 279,
+        "name": "Самончиев Муҳаммадшоҳ",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 280,
+        "name": "Набизода Зуҳалшоҳ",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 281,
+        "name": "Абдураҳимов Сорбон",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 282,
+        "name": "Абдулов Султонмурод",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 283,
+        "name": "Қодиров Мақсуд",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 284,
+        "name": "Зоирова Елена",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 285,
+        "name": "Камолов Абдулматин",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 286,
+        "name": "Ҳакимзод Азимҷон",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 287,
+        "name": "Маҳмадализода Низомуддин",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 288,
+        "name": "Миҳтоҷов Идибек",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 289,
+        "name": "Абдулохонзода Муҳаммад",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 290,
+        "name": "Шарипов Абдулҳамид",
+        "group_id": 11,
+        "course_id": 1
+    },
+    {
+        "id": 291,
+        "name": "Шарифзода Фирдавс",
+        "group_id": 12,
+        "course_id": 1
+    },
+    {
+        "id": 292,
+        "name": "Олимзода Сайдали",
+        "group_id": 12,
+        "course_id": 1
+    },
+    {
+        "id": 293,
+        "name": "Давлатзода Билолҷон",
+        "group_id": 12,
+        "course_id": 1
+    },
+    {
+        "id": 294,
+        "name": "Султонов Ардашер",
+        "group_id": 12,
+        "course_id": 1
+    },
+    {
+        "id": 295,
+        "name": "Каримов Орифҷон",
+        "group_id": 12,
+        "course_id": 1
+    },
+    {
+        "id": 296,
+        "name": "Давлатқадамов Мирзонаҷот",
+        "group_id": 12,
+        "course_id": 1
+    },
+    {
+        "id": 297,
+        "name": "Нуруллобеков Алиҷон",
+        "group_id": 12,
+        "course_id": 1
+    },
+    {
+        "id": 298,
+        "name": "Маҳмадов Дилшод",
+        "group_id": 12,
+        "course_id": 1
+    },
+    {
+        "id": 299,
+        "name": "Раҳматчозода Зоҳиршоҳ",
+        "group_id": 12,
+        "course_id": 1
+    },
+    {
+        "id": 300,
+        "name": "Мададбеков Муин",
+        "group_id": 12,
+        "course_id": 1
+    },
+    {
+        "id": 301,
+        "name": "Арабов Шохзот",
+        "group_id": 12,
+        "course_id": 1
+    },
+    {
+        "id": 302,
+        "name": "Султанов Абубакр",
+        "group_id": 12,
+        "course_id": 1
+    },
+    {
+        "id": 303,
+        "name": "Раҳматуллозода Суратулло",
+        "group_id": 12,
+        "course_id": 1
+    },
+    {
+        "id": 304,
+        "name": "Юсупов Рустам",
+        "group_id": 12,
+        "course_id": 1
+    },
+    {
+        "id": 305,
+        "name": "Худойқулов Абдулло",
+        "group_id": 12,
+        "course_id": 1
+    },
+    {
+        "id": 306,
+        "name": "Одинаев Рамазон",
+        "group_id": 12,
+        "course_id": 1
+    },
+    {
+        "id": 307,
+        "name": "Шукурзода Суҳроб",
+        "group_id": 13,
+        "course_id": 1
+    },
+    {
+        "id": 308,
+        "name": "Давлатзода Меҳрона",
+        "group_id": 13,
+        "course_id": 1
+    },
+    {
+        "id": 309,
+        "name": "Қулматов Парвиз",
+        "group_id": 13,
+        "course_id": 1
+    },
+    {
+        "id": 310,
+        "name": "Чиллаев Муҳаммадҷон",
+        "group_id": 13,
+        "course_id": 1
+    },
+    {
+        "id": 311,
+        "name": "Сафаров Абдуғаффор",
+        "group_id": 13,
+        "course_id": 1
+    },
+    {
+        "id": 312,
+        "name": "Юсупов Ҳикматулло",
+        "group_id": 13,
+        "course_id": 1
+    },
+    {
+        "id": 313,
+        "name": "Назаров Абдухолик",
+        "group_id": 13,
+        "course_id": 1
+    },
+    {
+        "id": 314,
+        "name": "Тағаймуродова Мунавара",
+        "group_id": 13,
+        "course_id": 1
+    },
+    {
+        "id": 315,
+        "name": "Зарифов Муҳаммад",
+        "group_id": 13,
+        "course_id": 1
+    },
+    {
+        "id": 316,
+        "name": "Абдурахмонов Сарварҷон",
+        "group_id": 13,
+        "course_id": 1
+    },
+    {
+        "id": 317,
+        "name": "Абдуллоев Аҳмад",
+        "group_id": 13,
+        "course_id": 1
+    },
+    {
+        "id": 318,
+        "name": "Қулматов Баҳриддин",
+        "group_id": 13,
+        "course_id": 1
+    },
+    {
+        "id": 319,
+        "name": "Назаров Ғолибшо",
+        "group_id": 13,
+        "course_id": 1
+    },
+    {
+        "id": 320,
+        "name": "Наркулова Сабоҳат",
+        "group_id": 13,
+        "course_id": 1
+    },
+    {
+        "id": 321,
+        "name": "Умаров Мансур",
+        "group_id": 13,
+        "course_id": 1
+    },
+    {
+        "id": 322,
+        "name": "Ҷамшедзода Меҳробҷон",
+        "group_id": 13,
+        "course_id": 1
+    },
+    {
+        "id": 323,
+        "name": "Одинаев Умедҷон",
+        "group_id": 13,
+        "course_id": 1
+    },
+    {
+        "id": 324,
+        "name": "Каримов Сунатулло",
+        "group_id": 13,
+        "course_id": 1
+    },
+    {
+        "id": 325,
+        "name": "Раҷабзода Фирдавс",
+        "group_id": 13,
+        "course_id": 1
+    },
+    {
+        "id": 326,
+        "name": "Қодирзода Фарух",
+        "group_id": 13,
+        "course_id": 1
+    },
+    {
+        "id": 327,
+        "name": "Абдиев Шукрулло",
+        "group_id": 13,
+        "course_id": 1
+    },
+    {
+        "id": 328,
+        "name": "Идиев Абубакр",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 329,
+        "name": "Эмомов Самандар",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 330,
+        "name": "Абдураҳимзода Азизҷон",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 331,
+        "name": "Аброров Умар",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 332,
+        "name": "Эркаев Эраҷ",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 333,
+        "name": "Одилов Муҳаммадрамзо",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 334,
+        "name": "Раҷабов Абдуҷалил",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 335,
+        "name": "Самадзода Парвин",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 336,
+        "name": "Ҳасанзода Ворисҷон",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 337,
+        "name": "Бобозода Наврӯз",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 338,
+        "name": "Кабиров Беҳруз",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 339,
+        "name": "Каримов Шаҳобиддин",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 340,
+        "name": "Мусофиров Абдуллоҷон",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 341,
+        "name": "Ҳамидов Исмоил",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 342,
+        "name": "Самадов Шукриолоҳ",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 343,
+        "name": "Эшбоев Азизҷон",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 344,
+        "name": "Тошпулатов Сунатулло",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 345,
+        "name": "Каримзода Ғайбулло",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 346,
+        "name": "Артихолов Абдулазиз",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 347,
+        "name": "Давлатов Исмоил",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 348,
+        "name": "Ҳасанов Дамир",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 349,
+        "name": "Вадудзода Фатҳулло",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 350,
+        "name": "Назаров Ораш",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 351,
+        "name": "Тошбеков Қаҳрамон",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 352,
+        "name": "Самадов Юсуф",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 353,
+        "name": "Қурбонзода Муҳаммад",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 354,
+        "name": "Мирзоев Шариф",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 355,
+        "name": "Саидакрамзода Аъзамҷон",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 356,
+        "name": "Раҳимзода Ғафур",
+        "group_id": 14,
+        "course_id": 1
+    },
+    {
+        "id": 357,
+        "name": "Боқиева Шукрона",
+        "group_id": 15,
+        "course_id": 1
+    },
+    {
+        "id": 358,
+        "name": "Мамадшоев Хуршед",
+        "group_id": 15,
+        "course_id": 1
+    },
+    {
+        "id": 359,
+        "name": "Абдувоҳидзода Сино",
+        "group_id": 15,
+        "course_id": 1
+    },
+    {
+        "id": 360,
+        "name": "Норов Мухаммадюсуф",
+        "group_id": 15,
+        "course_id": 1
+    },
+    {
+        "id": 361,
+        "name": "Азамқулова Нозия",
+        "group_id": 15,
+        "course_id": 1
+    },
+    {
+        "id": 362,
+        "name": "Махмадзода Иброҳимҷон",
+        "group_id": 15,
+        "course_id": 1
+    },
+    {
+        "id": 363,
+        "name": "Абдуҷаббори Абдузоҳир",
+        "group_id": 15,
+        "course_id": 1
+    },
+    {
+        "id": 364,
+        "name": "Ёғиев Алишер",
+        "group_id": 15,
+        "course_id": 1
+    },
+    {
+        "id": 365,
+        "name": "Назирзода Рустам",
+        "group_id": 15,
+        "course_id": 1
+    },
+    {
+        "id": 366,
+        "name": "Муродов Сироҷиддин",
+        "group_id": 15,
+        "course_id": 1
+    },
+    {
+        "id": 367,
+        "name": "Мамуров Маҳмудҷон",
+        "group_id": 15,
+        "course_id": 1
+    },
+    {
+        "id": 368,
+        "name": "Ҷаборзода Муҳаммадҷон",
+        "group_id": 15,
+        "course_id": 1
+    },
+    {
+        "id": 369,
+        "name": "Авазхонов Ризо",
+        "group_id": 15,
+        "course_id": 1
+    },
+    {
+        "id": 370,
+        "name": "Курбонов Алиҷон",
+        "group_id": 15,
+        "course_id": 1
+    },
+    {
+        "id": 371,
+        "name": "Ҳамдамов Шодибек",
+        "group_id": 15,
+        "course_id": 1
+    },
+
+
+
+
+
+
+
+
+    {
+        "id": 372,
+        "name": "Абдурамонова Нафиса",
+        "group_id": 16,
+        "course_id": 2
+    },
+    {
+        "id": 373,
+        "name": "Азизов Акбарҷон",
+        "group_id": 16,
+        "course_id": 2
+    },
+    {
+        "id": 374,
+        "name": "Анақулов Нозимҷон",
+        "group_id": 16,
+        "course_id": 2
+    },
+    {
+        "id": 375,
+        "name": "Калонов Муҳаммад",
+        "group_id": 16,
+        "course_id": 2
+    },
+    {
+        "id": 376,
+        "name": "Қосимов Ҷаҳонмеҳр",
+        "group_id": 16,
+        "course_id": 2
+    },
+    {
+        "id": 377,
+        "name": "Миров Вайсиддин",
+        "group_id": 16,
+        "course_id": 2
+    },
+    {
+        "id": 378,
+        "name": "Набизода Фазлиддин",
+        "group_id": 16,
+        "course_id": 2
+    },
+    {
+        "id": 379,
+        "name": "Раҷабалиев Маҳмуд",
+        "group_id": 16,
+        "course_id": 2
+    },
+    {
+        "id": 380,
+        "name": "Сафарализода Меҳроб",
+        "group_id": 16,
+        "course_id": 2
+    },
+    {
+        "id": 381,
+        "name": "Саъидов Ёқубҷон",
+        "group_id": 16,
+        "course_id": 2
+    },
+    {
+        "id": 382,
+        "name": "Ҳасанов Шаҳобиддин",
+        "group_id": 16,
+        "course_id": 2
+    },
+    {
+        "id": 383,
+        "name": "Шоинов Шоҳин",
+        "group_id": 16,
+        "course_id": 2
+    },
+    {
+        "id": 384,
+        "name": "Юсупов Саидҷон",
+        "group_id": 16,
+        "course_id": 2
+    },
+    {
+        "id": 385,
+        "name": "Юсуфзода Амирхон",
+        "group_id": 16,
+        "course_id": 2
+    },
+    {
+        "id": 386,
+        "name": "Раҳмонов Иршод",
+        "group_id": 16,
+        "course_id": 2
+    },
+    {
+        "id": 387,
+        "name": "Раҳмонзода Муҳаммадҷон",
+        "group_id": 16,
+        "course_id": 2
+    },
+    {
+        "id": 388,
+        "name": "Раҷабалиев Алиҷон",
+        "group_id": 16,
+        "course_id": 2
+    },
+    {
+        "id": 389,
+        "name": "Абдуалимов Самарддин",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 390,
+        "name": "Ашуров Сулаймон",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 391,
+        "name": "Изатуллозода Зафарҷон",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 392,
+        "name": "Каримзода Муҳаммадҷон",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 393,
+        "name": "Кенҷазода Мадина",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 394,
+        "name": "Маҳмудов Мехровар",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 395,
+        "name": "Маҷитзода Меҳрубон",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 396,
+        "name": "Мирзоев Насимҷон",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 397,
+        "name": "Муродов Суҳроб",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 398,
+        "name": "Назарзода Низомиддин",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 399,
+        "name": "Орипов Комрон",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 400,
+        "name": "Раҳимов Музаффар",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 401,
+        "name": "Ҳайдаров Алиҷон",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 402,
+        "name": "Ҳалимов Ҷурабек",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 403,
+        "name": "Хушвахтзода Сироҷиддин",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 404,
+        "name": "Каримов Иброҳим",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 405,
+        "name": "Ятимов Дилшод",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 406,
+        "name": "Тағоева Таманно",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 407,
+        "name": "Амонов Музаффар",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 408,
+        "name": "Бачабекзода Рамазон",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 409,
+        "name": "Ғайратзода Салоҳиддин",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 410,
+        "name": "Гафоров Беҳрӯз",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 411,
+        "name": "Ғафуров Афзалшо",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 412,
+        "name": "Давлятов Хуршед",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 413,
+        "name": "Зарипов Насибулло",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 417,
+        "name": "Икромов Насрулло",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 415,
+        "name": "Исматов Абубакр",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 416,
+        "name": "Қуронбеков Адиб",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 417,
+        "name": "Латифова Лайло",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 418,
+        "name": "Лоиқов Муҳаммад",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 419,
+        "name": "Миралиев Саидбек",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 420,
+        "name": "Мирзозода Фараҳноз",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 421,
+        "name": "Набиев Хусан",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 422,
+        "name": "Рақибов Умед",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 423,
+        "name": "Салихов Баҳодур",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 424,
+        "name": "Сатторов Шаҳриёр",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 425,
+        "name": "Сафарализода Лоиқ",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 426,
+        "name": "Сулаймонов Оятулло",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 427,
+        "name": "Холов Фирдавс",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 428,
+        "name": "Худойдодов Анас",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 429,
+        "name": "Ҳафиззода Раҳматулло",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 430,
+        "name": "Ҷалалов Умед",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 431,
+        "name": "Шамсов Меҳроб",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 432,
+        "name": "Маҳмуродов Абубакр",
+        "group_id": 17,
+        "course_id": 2
+    },
+    {
+        "id": 433,
+        "name": "Абдурахмонов Руслан",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 434,
+        "name": "Аминов Ҳофиз",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 435,
+        "name": "Амирализода Абубакр",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 436,
+        "name": "Аскарзода Муҳаммадҷон",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 437,
+        "name": "Бедимоғов Исроил",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 438,
+        "name": "Ғаниев Вайс",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 439,
+        "name": "Давлатзода Вайсиддин",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 440,
+        "name": "Давлатзода Суратулло",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 441,
+        "name": "Давлатов Саъди",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 442,
+        "name": "Зайнидинов Аслиддин",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 443,
+        "name": "Зиёев Фаридун",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 444,
+        "name": "Зокиров Шаҳром",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 445,
+        "name": "Қуноқбоев Алиҷон",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 446,
+        "name": "Мирзоев Фахриддин",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 447,
+        "name": "Насуллоев Меҳрубон",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 448,
+        "name": "Отахонов Фаромуз",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 449,
+        "name": "Очилов Махмасаид",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 450,
+        "name": "Салимов Пайрав",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 451,
+        "name": "Содатқадамов Адеш",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 452,
+        "name": "Сулаймони Маҳмад",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 453,
+        "name": "Тешаев Абубакр",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 454,
+        "name": "Фақиров Муҳаммадҷон",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 455,
+        "name": "Холов Билол",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 456,
+        "name": "Ҳусейнов Зикриоллоҳ",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 457,
+        "name": "Ҷумъаев Баҳриддин",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 458,
+        "name": "Ширинов Фаридун",
+        "group_id": 18,
+        "course_id": 2
+    },
+    {
+        "id": 459,
+        "name": "Абдулҳақзода Исмоил",
+        "group_id": 19,
+        "course_id": 2
+    },
+    {
+        "id": 460,
+        "name": "Абдурасулова Сарвиноз",
+        "group_id": 19,
+        "course_id": 2
+    },
+    {
+        "id": 461,
+        "name": "Аминов Аминҷон",
+        "group_id": 19,
+        "course_id": 2
+    },
+    {
+        "id": 462,
+        "name": "Ашурзода Мадина",
+        "group_id": 19,
+        "course_id": 2
+    },
+    {
+        "id": 463,
+        "name": "Бобоев Муҳаммадрафи",
+        "group_id": 19,
+        "course_id": 2
+    },
+    {
+        "id": 464,
+        "name": "Бобохонова Зарина",
+        "group_id": 19,
+        "course_id": 2
+    },
+    {
+        "id": 465,
+        "name": "Ғафорзода Зафар",
+        "group_id": 19,
+        "course_id": 2
+    },
+    {
+        "id": 466,
+        "name": "Додихудоева Заррина",
+        "group_id": 19,
+        "course_id": 2
+    },
+    {
+        "id": 467,
+        "name": "Дурманзода Акрам",
+        "group_id": 19,
+        "course_id": 2
+    },
+    {
+        "id": 468,
+        "name": "Қаландаров Рамазон",
+        "group_id": 19,
+        "course_id": 2
+    },
+    {
+        "id": 469,
+        "name": "Мирзозода Аюбҷон",
+        "group_id": 19,
+        "course_id": 2
+    },
+    {
+        "id": 470,
+        "name": "Муминзода Абумуслим",
+        "group_id": 19,
+        "course_id": 2
+    },
+    {
+        "id": 471,
+        "name": "Муҳаммадҷони Шерали",
+        "group_id": 19,
+        "course_id": 2
+    },
+    {
+        "id": 472,
+        "name": "Насурдинов Наврузбег",
+        "group_id": 19,
+        "course_id": 2
+    },
+    {
+        "id": 473,
+        "name": "Одинаев Абубакр",
+        "group_id": 19,
+        "course_id": 2
+    },
+    {
+        "id": 474,
+        "name": "Раҳимова Робия",
+        "group_id": 19,
+        "course_id": 2
+    },
+    {
+        "id": 475,
+        "name": "Толиббеков Алиназар",
+        "group_id": 19,
+        "course_id": 2
+    },
+    {
+        "id": 476,
+        "name": "Шукуров Фаррух",
+        "group_id": 19,
+        "course_id": 2
+    },
+    {
+        "id": 477,
+        "name": "Раҷабализода Эмомали",
+        "group_id": 19,
+        "course_id": 2
+    },
+    {
+        "id": 478,
+        "name": "Ҳукмзода Камила",
+        "group_id": 19,
+        "course_id": 2
+    },
+    {
+        "id": 479,
+        "name": "Абсайидов Муртазо",
+        "group_id": 20,
+        "course_id": 2
+    },
+    {
+        "id": 480,
+        "name": "Акрамзода Аҳлиддин",
+        "group_id": 20,
+        "course_id": 2
+    },
+    {
+        "id": 481,
+        "name": "Ашурзода Илҳомуддин",
+        "group_id": 20,
+        "course_id": 2
+    },
+    {
+        "id": 482,
+        "name": "Давлатов Абубакр",
+        "group_id": 20,
+        "course_id": 2
+    },
+    {
+        "id": 483,
+        "name": "Давлатов Бузургмеҳр",
+        "group_id": 20,
+        "course_id": 2
+    },
+    {
+        "id": 484,
+        "name": "Қаландарзода Абдували",
+        "group_id": 20,
+        "course_id": 2
+    },
+    {
+        "id": 485,
+        "name": "Қаландарзода Зайнаб",
+        "group_id": 20,
+        "course_id": 2
+    },
+    {
+        "id": 486,
+        "name": "Қурбонов Билол",
+        "group_id": 20,
+        "course_id": 2
+    },
+    {
+        "id": 487,
+        "name": "Меликов Доро",
+        "group_id": 20,
+        "course_id": 2
+    },
+    {
+        "id": 488,
+        "name": "Мирзақулова Баҳорой",
+        "group_id": 20,
+        "course_id": 2
+    },
+    {
+        "id": 489,
+        "name": "Мирзоев Эҳсон",
+        "group_id": 20,
+        "course_id": 2
+    },
+    {
+        "id": 490,
+        "name": "Муродов Далер",
+        "group_id": 20,
+        "course_id": 2
+    },
+    {
+        "id": 491,
+        "name": "Муҳиддинзода Тоҷиддин",
+        "group_id": 20,
+        "course_id": 2
+    },
+    {
+        "id": 492,
+        "name": "Нозимов Муҳиддин",
+        "group_id": 20,
+        "course_id": 2
+    },
+    {
+        "id": 493,
+        "name": "Равшанзода Меҳрубон",
+        "group_id": 20,
+        "course_id": 2
+    },
+    {
+        "id": 494,
+        "name": "Саидхонов Билол",
+        "group_id": 20,
+        "course_id": 2
+    },
+    {
+        "id": 495,
+        "name": "Самадов Баҳодур",
+        "group_id": 20,
+        "course_id": 2
+    },
+    {
+        "id": 496,
+        "name": "Султонзод Бахтиёр",
+        "group_id": 20,
+        "course_id": 2
+    },
+    {
+        "id": 497,
+        "name": "Умаров Азиз",
+        "group_id": 20,
+        "course_id": 2
+    },
+    {
+        "id": 498,
+        "name": "Ҳалимов Фирузҷон",
+        "group_id": 20,
+        "course_id": 2
+    },
+    {
+        "id": 499,
+        "name": "Шеров Шаъбон",
+        "group_id": 20,
+        "course_id": 2
+    },
+    {
+        "id": 500,
+        "name": "Шокирзода Гулноза",
+        "group_id": 20,
+        "course_id": 2
+    },
+    {
+        "id": 501,
+        "name": "Абдураҳимов Фарҳод",
+        "group_id": 21,
+        "course_id": 2
+    },
+    {
+        "id": 502,
+        "name": "Азизова Парвина",
+        "group_id": 21,
+        "course_id": 2
+    },
+    {
+        "id": 503,
+        "name": "Атоев Сайфулло",
+        "group_id": 21,
+        "course_id": 2
+    },
+    {
+        "id": 504,
+        "name": "Ғаффори Комрон",
+        "group_id": 21,
+        "course_id": 2
+    },
+    {
+        "id": 505,
+        "name": "Давлатшозода Умед",
+        "group_id": 21,
+        "course_id": 2
+    },
+    {
+        "id": 506,
+        "name": "Зиёев Ҳоширҷон",
+        "group_id": 21,
+        "course_id": 2
+    },
+    {
+        "id": 507,
+        "name": "Иброҳимов Ҳасанҷон",
+        "group_id": 21,
+        "course_id": 2
+    },
+    {
+        "id": 508,
+        "name": "Исмоилов Руҳангез",
+        "group_id": 21,
+        "course_id": 2
+    },
+    {
+        "id": 509,
+        "name": "Калонов Мустафо",
+        "group_id": 21,
+        "course_id": 2
+    },
+    {
+        "id": 510,
+        "name": "Муродзода Аниса",
+        "group_id": 21,
+        "course_id": 2
+    },
+    {
+        "id": 511,
+        "name": "Назриева Мафтуна",
+        "group_id": 21,
+        "course_id": 2
+    },
+    {
+        "id": 512,
+        "name": "Нозимҷони Зафар",
+        "group_id": 21,
+        "course_id": 2
+    },
+    {
+        "id": 513,
+        "name": "Нусратуллозода Шокирҷон",
+        "group_id": 21,
+        "course_id": 2
+    },
+    {
+        "id": 514,
+        "name": "Раджабов Аминҷон",
+        "group_id": 21,
+        "course_id": 2
+    },
+    {
+        "id": 515,
+        "name": "Саидҳомизода Сулаймон",
+        "group_id": 21,
+        "course_id": 2
+    },
+    {
+        "id": 516,
+        "name": "Содиқов Абдулло",
+        "group_id": 21,
+        "course_id": 2
+    },
+    {
+        "id": 517,
+        "name": "Ҳайдаров Субҳонҷон",
+        "group_id": 21,
+        "course_id": 2
+    },
+    {
+        "id": 521,
+        "name": "Шарипов Мирзошариф",
+        "group_id": 21,
+        "course_id": 2
+    },
+    {
+        "id": 519,
+        "name": "Асозода Парвизҷон",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 520,
+        "name": "Давлатзода Ҳасан",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 521,
+        "name": "Зиёратшоҳи Мансур",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 522,
+        "name": "Зуҳуров Акбар",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 523,
+        "name": "Идрисов Юсуф",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 524,
+        "name": "Исрофилов Хоҷимурод",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 525,
+        "name": "Кабутзода Муҳандис",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 526,
+        "name": "Каримов Идибек",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 527,
+        "name": "Қосимов Некруз",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 528,
+        "name": "Қурбонов Фазлиддин",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 529,
+        "name": "Мардаков Ораз",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 530,
+        "name": "Мирзозода Рамазон",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 531,
+        "name": "Мукарамов Сиёвуш",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 532,
+        "name": "Норов Достон",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 533,
+        "name": "Нурализода Маҳмадсолеҳ",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 534,
+        "name": "Раҳимбеков Муҳамаддовут",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 535,
+        "name": "Раҳимзода Фурузон",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 536,
+        "name": "Раҷабалиев Хуршед",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 537,
+        "name": "Садриддинзода Аҳлиддин",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 538,
+        "name": "Саидов Оятулло",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 539,
+        "name": "Содыков Азимбек",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 540,
+        "name": "Субанқулов Илҳом",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 541,
+        "name": "Хуҷамов Хушбахт",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 542,
+        "name": "Ҳайдаров Шаҳзодҷон",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 543,
+        "name": "Шарипов Ҷамолиддин",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 544,
+        "name": "Шарифзода Лутфулло",
+        "group_id": 22,
+        "course_id": 2
+    },
+    {
+        "id": 545,
+        "name": "Абдуқаҳоров Аҳмадулло",
+        "group_id": 23,
+        "course_id": 2
+    },
+    {
+        "id": 546,
+        "name": "Абдусаторов Усмонҷон",
+        "group_id": 23,
+        "course_id": 2
+    },
+    {
+        "id": 547,
+        "name": "Каримов Акбарҷон",
+        "group_id": 23,
+        "course_id": 2
+    },
+    {
+        "id": 548,
+        "name": "Қаюмзода Бузургмеҳр",
+        "group_id": 23,
+        "course_id": 2
+    },
+    {
+        "id": 549,
+        "name": "Рашидзода Комрон",
+        "group_id": 23,
+        "course_id": 2
+    },
+    {
+        "id": 550,
+        "name": "Ҳайдарова Шаҳзода",
+        "group_id": 23,
+        "course_id": 2
+    },
+    {
+        "id": 551,
+        "name": "Шамсов Алишер",
+        "group_id": 23,
+        "course_id": 2
+    },
+    {
+        "id": 552,
+        "name": "Шарифзода Юнус",
+        "group_id": 23,
+        "course_id": 2
+    },
+    {
+        "id": 553,
+        "name": "Ятимзода Фаровон",
+        "group_id": 23,
+        "course_id": 2
+    },
+    {
+        "id": 554,
+        "name": "Муҳаммадиев Рустамҷон",
+        "group_id": 23,
+        "course_id": 2
+    },
+    {
+        "id": 555,
+        "name": "Шарифзода Парвиз",
+        "group_id": 23,
+        "course_id": 2
+    },
+    {
+        "id": 556,
+        "name": "Шарипов Парвиз",
+        "group_id": 23,
+        "course_id": 2
+    },
+    {
+        "id": 557,
+        "name": "Мирзоализода Рустам",
+        "group_id": 23,
+        "course_id": 2
+    },
+    {
+        "id": 558,
+        "name": "Аюбов Нодирҷон",
+        "group_id": 23,
+        "course_id": 2
+    },
+    {
+        "id": 559,
+        "name": "Насридинов Хуршед",
+        "group_id": 23,
+        "course_id": 2
+    },
+    {
+        "id": 560,
+        "name": "Баротов Саидҷон",
+        "group_id": 23,
+        "course_id": 2
+    },
+    {
+        "id": 561,
+        "name": "Солиҳов Солеҳҷон",
+        "group_id": 23,
+        "course_id": 2
+    },
+    {
+        "id": 562,
+        "name": "Ҷураев Далерҷон",
+        "group_id": 23,
+        "course_id": 2
+    },
+    {
+        "id": 563,
+        "name": "Қурбонов Рамазон",
+        "group_id": 23,
+        "course_id": 2
+    },
+    {
+        "id": 564,
+        "name": "Манучеҳри Рустам",
+        "group_id": 23,
+        "course_id": 2
+    },
+    {
+        "id": 565,
+        "name": "Раҳимов Мусо",
+        "group_id": 23,
+        "course_id": 2
+    },
+    {
+        "id": 566,
+        "name": "Раҷабалиев Забирҷон",
+        "group_id": 23,
+        "course_id": 2
+    },
+    {
+        "id": 567,
+        "name": "Абдуллоев Муҳаммадали",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 568,
+        "name": "Абдуллозода Азизурраҳмон",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 569,
+        "name": "Азимқулов Азимҷон",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 570,
+        "name": "Алиев Фаридун",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 571,
+        "name": "Амиршоев Донодил",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 572,
+        "name": "Мирзоев Комрон",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 573,
+        "name": "Муродбекзода Салмон",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 574,
+        "name": "Негмонов Диловар",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 575,
+        "name": "Раҳимзода Алиёр",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 576,
+        "name": "Саидов Мустафо",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 577,
+        "name": "Турсунзода Меҳроб",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 578,
+        "name": "Халимзода Абдурахим",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 579,
+        "name": "Хушмуҳаммадзода Беҳруз",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 580,
+        "name": "Ҷумъаев Умедҷон",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 581,
+        "name": "Шарипзода Муқим",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 582,
+        "name": "Шодиев Муҳаммадҳадис",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 583,
+        "name": "Раҷабзода Салоҳиддин",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 584,
+        "name": "Исмоилзода Ҷовидон",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 585,
+        "name": "Ҳасанзода Зикруллоҳ",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 586,
+        "name": "Пардаев Шукрулло",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 587,
+        "name": "Қадамов Сипар",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 588,
+        "name": "Файзуллозода Бежан",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 589,
+        "name": "Холов Шукрулло",
+        "group_id": 25,
+        "course_id": 2
+    },
+    {
+        "id": 590,
+        "name": "Давлатзода Абубакр",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 591,
+        "name": "Давлатов Хисрав",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 592,
+        "name": "Изатуллозода Муҳаммадҷон",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 593,
+        "name": "Қодиров Фахриддин",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 594,
+        "name": "Муминҷонзода Амирбек",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 595,
+        "name": "Муродов Оятуллоҳ",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 596,
+        "name": "Неъматуллоев Ифтихор",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 597,
+        "name": "Раҳмонов Дилшод",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 598,
+        "name": "Тураев Диловар",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 599,
+        "name": "Халилзода Аҳлиддин",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 600,
+        "name": "Ҳидоятзод Козим",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 601,
+        "name": "Ҳусейнов Мустафо",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 602,
+        "name": "Шарифзода Муҳамад",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 603,
+        "name": "Шеров Абдуаҳад",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 604,
+        "name": "Замонов Шаҳром",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 605,
+        "name": "Эҳсони Усмон",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 606,
+        "name": "Умаров Меҳроб",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 607,
+        "name": "Шодиқулзода Теҳрон",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 608,
+        "name": "Маҳмадов Исмоил",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 609,
+        "name": "Зуҳуров Самариддин",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 610,
+        "name": "Каримзода Муҳаммадҷон",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 611,
+        "name": "Абдурашиди Мирзомурод",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 612,
+        "name": "Муҳиддинзода Аҳмад",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 613,
+        "name": "Саидҳусейнов Абуали",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 614,
+        "name": "Собиров Қандилҷон",
+        "group_id": 26,
+        "course_id": 2
+    },
+    {
+        "id": 615,
+        "name": "Абдуллоев Сӯҳроб",
+        "group_id": 27,
+        "course_id": 2
+    },
+    {
+        "id": 616,
+        "name": "Адилов Муҳаммадамин",
+        "group_id": 27,
+        "course_id": 2
+    },
+    {
+        "id": 617,
+        "name": "Гиёева Умедаҷон",
+        "group_id": 27,
+        "course_id": 2
+    },
+    {
+        "id": 618,
+        "name": "Додоев Мирзомурод",
+        "group_id": 27,
+        "course_id": 2
+    },
+    {
+        "id": 619,
+        "name": "Қадиров Муъминхон",
+        "group_id": 27,
+        "course_id": 2
+    },
+    {
+        "id": 620,
+        "name": "Меликзода Муслиҳиддин",
+        "group_id": 27,
+        "course_id": 2
+    },
+    {
+        "id": 621,
+        "name": "Миров Исмоил",
+        "group_id": 27,
+        "course_id": 2
+    },
+    {
+        "id": 622,
+        "name": "Мусоев Маъруф",
+        "group_id": 27,
+        "course_id": 2
+    },
+    {
+        "id": 627,
+        "name": "Сафарзода Абдуллоҳ",
+        "group_id": 27,
+        "course_id": 2
+    },
+    {
+        "id": 624,
+        "name": "Сафаров Сардор",
+        "group_id": 27,
+        "course_id": 2
+    },
+    {
+        "id": 625,
+        "name": "Хӯҷазода Маъруфхӯҷа",
+        "group_id": 27,
+        "course_id": 2
+    },
+    {
+        "id": 626,
+        "name": "Ҷурақулов Исломҷон",
+        "group_id": 27,
+        "course_id": 2
+    },
+    {
+        "id": 627,
+        "name": "Шаҳобиддинзода Фирӯзбахт",
+        "group_id": 27,
+        "course_id": 2
+    },
+    {
+        "id": 628,
+        "name": "Ҳасанов Муҳаммадали",
+        "group_id": 27,
+        "course_id": 2
+    },
+    {
+        "id": 629,
+        "name": "Назиров Муҳаммадҷон",
+        "group_id": 27,
+        "course_id": 2
+    },
+    {
+        "id": 630,
+        "name": "Абдумуродов Исматилло",
+        "group_id": 27,
+        "course_id": 2
+    },
+    {
+        "id": 631,
+        "name": "Асалбекзода Файзмамад",
+        "group_id": 27,
+        "course_id": 2
+    },
+    {
+        "id": 632,
+        "name": "Саидзода Фарщод",
+        "group_id": 27,
+        "course_id": 2
+    },
+
+
+
+
+
+
+    
+
+
+
+
+    {
+        "id": 633,
+        "name": "Ашурқулов Дилшод",
+        "group_id": 28,
+        "course_id": 3
+    },
+    {
+        "id": 634,
+        "name": "Баротов Шаҳриёр",
+        "group_id": 28,
+        "course_id": 3
+    },
+    {
+        "id": 635,
+        "name": "Бобоев Ораш",
+        "group_id": 28,
+        "course_id": 3
+    },
+    {
+        "id": 636,
+        "name": "Иброҳимзода Фархунда",
+        "group_id": 28,
+        "course_id": 3
+    },
+    {
+        "id": 637,
+        "name": "Қосимов Шаҳбоз",
+        "group_id": 28,
+        "course_id": 3
+    },
+    {
+        "id": 638,
+        "name": "Мирзоев Акмалҷон",
+        "group_id": 28,
+        "course_id": 3
+    },
+    {
+        "id": 639,
+        "name": "Насурдинов Саймуддин",
+        "group_id": 28,
+        "course_id": 3
+    },
+    {
+        "id": 640,
+        "name": "Рачабов Шаҳриёр",
+        "group_id": 28,
+        "course_id": 3
+    },
+    {
+        "id": 641,
+        "name": "Саймуминзода Муҳаммад",
+        "group_id": 28,
+        "course_id": 3
+    },
+    {
+        "id": 642,
+        "name": "Салимов Аминҷон",
+        "group_id": 28,
+        "course_id": 3
+    },
+    {
+        "id": 643,
+        "name": "Содаткадамова Мадина",
+        "group_id": 28,
+        "course_id": 3
+    },
+    {
+        "id": 644,
+        "name": "Ҷаборзода Маҳмуд",
+        "group_id": 28,
+        "course_id": 3
+    },
+    {
+        "id": 645,
+        "name": "Шохуморова Ҳоҷатбегим",
+        "group_id": 28,
+        "course_id": 3
+    },
+    {
+        "id": 646,
+        "name": "Нураллиев Амрулло",
+        "group_id": 28,
+        "course_id": 3
+    },
+    {
+        "id": 647,
+        "name": "Ҷуъмахонзода Муҳаммадҷон",
+        "group_id": 28,
+        "course_id": 3
+    },
+    {
+        "id": 648,
+        "name": "Бозоров Масрур",
+        "group_id": 28,
+        "course_id": 3
+    },
+    {
+        "id": 649,
+        "name": "Назарзода Алиҷон",
+        "group_id": 28,
+        "course_id": 3
+    },
+    {
+        "id": 650,
+        "name": "Абдуллоев Муҳаммадамин",
+        "group_id": 29,
+        "course_id": 3
+    },
+    {
+        "id": 651,
+        "name": "Асозода Мухаммадисо",
+        "group_id": 29,
+        "course_id": 3
+    },
+    {
+        "id": 652,
+        "name": "Зикриёи Муродали",
+        "group_id": 29,
+        "course_id": 3
+    },
+    {
+        "id": 653,
+        "name": "Имомқулзода Фаворис",
+        "group_id": 29,
+        "course_id": 3
+    },
+    {
+        "id": 654,
+        "name": "Камолов Сунаътулло",
+        "group_id": 29,
+        "course_id": 3
+    },
+    {
+        "id": 655,
+        "name": "Маматқулов Умаралӣ",
+        "group_id": 29,
+        "course_id": 3
+    },
+    {
+        "id": 656,
+        "name": "Мирзоев Абубакр",
+        "group_id": 29,
+        "course_id": 3
+    },
+    {
+        "id": 657,
+        "name": "Мирзоев Фаррух",
+        "group_id": 29,
+        "course_id": 3
+    },
+    {
+        "id": 658,
+        "name": "Мирзоева Наргис",
+        "group_id": 29,
+        "course_id": 3
+    },
+    {
+        "id": 659,
+        "name": "Наботов Султонҷон",
+        "group_id": 29,
+        "course_id": 3
+    },
+    {
+        "id": 660,
+        "name": "Пирмаҳмадзода Эмомали",
+        "group_id": 29,
+        "course_id": 3
+    },
+    {
+        "id": 661,
+        "name": "Пушкашова Ганҷина",
+        "group_id": 29,
+        "course_id": 3
+    },
+    {
+        "id": 662,
+        "name": "Раҳимова Шоҳзода",
+        "group_id": 29,
+        "course_id": 3
+    },
+    {
+        "id": 663,
+        "name": "Раҷабов Умед",
+        "group_id": 29,
+        "course_id": 3
+    },
+    {
+        "id": 664,
+        "name": "Хабибова Фарзина",
+        "group_id": 29,
+        "course_id": 3
+    },
+    {
+        "id": 665,
+        "name": "Холзода Хуҷаиброим",
+        "group_id": 29,
+        "course_id": 3
+    },
+    {
+        "id": 666,
+        "name": "Қаландарзода Амин",
+        "group_id": 29,
+        "course_id": 3
+    },
+    {
+        "id": 667,
+        "name": "Шарипов Набиҷон",
+        "group_id": 29,
+        "course_id": 3
+    },
+    {
+        "id": 668,
+        "name": "Абдуллоева Анисабону",
+        "group_id": 30,
+        "course_id": 3
+    },
+    {
+        "id": 669,
+        "name": "Абдуллозода Комрон",
+        "group_id": 30,
+        "course_id": 3
+    },
+    {
+        "id": 670,
+        "name": "Аброров Рамазон",
+        "group_id": 30,
+        "course_id": 3
+    },
+    {
+        "id": 671,
+        "name": "Ғуломов Рустам",
+        "group_id": 30,
+        "course_id": 3
+    },
+    {
+        "id": 672,
+        "name": "Исмоилзода Идимох",
+        "group_id": 30,
+        "course_id": 3
+    },
+    {
+        "id": 673,
+        "name": "Кабутзода Ҳадиятулло",
+        "group_id": 30,
+        "course_id": 3
+    },
+    {
+        "id": 674,
+        "name": "Қамчинов Суҳроб",
+        "group_id": 30,
+        "course_id": 3
+    },
+    {
+        "id": 675,
+        "name": "Қосимов Билолидин",
+        "group_id": 30,
+        "course_id": 3
+    },
+    {
+        "id": 676,
+        "name": "Қувватзода Самариддин",
+        "group_id": 30,
+        "course_id": 3
+    },
+    {
+        "id": 677,
+        "name": "Назарзода Шарифчон",
+        "group_id": 30,
+        "course_id": 3
+    },
+    {
+        "id": 678,
+        "name": "Наимов Умар",
+        "group_id": 30,
+        "course_id": 3
+    },
+    {
+        "id": 679,
+        "name": "Нозанини Чамшед",
+        "group_id": 30,
+        "course_id": 3
+    },
+    {
+        "id": 680,
+        "name": "Саидов Фазлиддин",
+        "group_id": 30,
+        "course_id": 3
+    },
+    {
+        "id": 681,
+        "name": "Сафарзода Холмуҳамад",
+        "group_id": 30,
+        "course_id": 3
+    },
+    {
+        "id": 682,
+        "name": "Фаридуни Сайҷафар",
+        "group_id": 30,
+        "course_id": 3
+    },
+    {
+        "id": 683,
+        "name": "Фозилова Камила",
+        "group_id": 30,
+        "course_id": 3
+    },
+    {
+        "id": 684,
+        "name": "Хабибзода Бахтовар",
+        "group_id": 30,
+        "course_id": 3
+    },
+    {
+        "id": 685,
+        "name": "Хошоков Муҳаммадамин",
+        "group_id": 30,
+        "course_id": 3
+    },
+    {
+        "id": 686,
+        "name": "Ҷобирзода Маҳмадали",
+        "group_id": 30,
+        "course_id": 3
+    },
+    {
+        "id": 687,
+        "name": "Шарифзода Суҳробҷон",
+        "group_id": 30,
+        "course_id": 3
+    },
+    {
+        "id": 688,
+        "name": "Ярханов Рахимҷон",
+        "group_id": 30,
+        "course_id": 3
+    },
+    {
+        "id": 689,
+        "name": "Абдуқаҳоров Исломҷон",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 690,
+        "name": "Алишеров Нур",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 691,
+        "name": "Ашуров Қодирҷон",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 692,
+        "name": "Зокирзода Қудрат",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 693,
+        "name": "Қурбонов Муҳаммадшариф",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 694,
+        "name": "Назаров Шаҳром",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 695,
+        "name": "Расулов Ёқубҷон",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 696,
+        "name": "Раҷабова Фархунда",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 697,
+        "name": "Сафарзода Саъдӣ",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 698,
+        "name": "Тураев Шаҳбоз",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 699,
+        "name": "Фаридуни Убайдулло",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 700,
+        "name": "Ҳавлоев Фарух",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 701,
+        "name": "Ҳасанов Меҳроб",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 702,
+        "name": "Ҳусайнов Сафарбег",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 703,
+        "name": "Ҳусенов Муҳаммадшо",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 704,
+        "name": "Шайхов Насимҷон",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 705,
+        "name": "Шарипов Абубакр",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 706,
+        "name": "Шарифзода Рамазон",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 707,
+        "name": "Эмомзода Дилафруз",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 708,
+        "name": "Сатторов Муҳаммад",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 709,
+        "name": "Сангов Хурсандмурод",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 710,
+        "name": "Бобохонов Муртазо",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 711,
+        "name": "Сафармаҳмазода Саидмаҳмуд",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 712,
+        "name": "Шаҳруллоҳи Одил",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 713,
+        "name": "Камолзода Амрулло",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 714,
+        "name": "Каримзода Хушназар",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 715,
+        "name": "Саидов Зоиршоҳ",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 716,
+        "name": "Манонов Сорбон",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 717,
+        "name": "Гулов Раҷабмаҳмад",
+        "group_id": 31,
+        "course_id": 3
+    },
+    {
+        "id": 718,
+        "name": "Абдураҳимзода Мухаммадёсин",
+        "group_id": 32,
+        "course_id": 3
+    },
+    {
+        "id": 719,
+        "name": "Акобирзода Хаёмиддин",
+        "group_id": 32,
+        "course_id": 3
+    },
+    {
+        "id": 720,
+        "name": "Ахмадчони Саймуддин",
+        "group_id": 32,
+        "course_id": 3
+    },
+    {
+        "id": 721,
+        "name": "Давлатов Раҷабали",
+        "group_id": 32,
+        "course_id": 3
+    },
+    {
+        "id": 722,
+        "name": "Исоев Мухибулло",
+        "group_id": 32,
+        "course_id": 3
+    },
+    {
+        "id": 723,
+        "name": "Меликзода Илҳомуддин",
+        "group_id": 32,
+        "course_id": 3
+    },
+    {
+        "id": 724,
+        "name": "Насуллоева Тутёбегим",
+        "group_id": 32,
+        "course_id": 3
+    },
+    {
+        "id": 725,
+        "name": "Одинаев Илёс",
+        "group_id": 32,
+        "course_id": 3
+    },
+    {
+        "id": 726,
+        "name": "Парвинзода Абрунисо",
+        "group_id": 32,
+        "course_id": 3
+    },
+    {
+        "id": 732,
+        "name": "Рафизода Муҳсин",
+        "group_id": 32,
+        "course_id": 3
+    },
+    {
+        "id": 728,
+        "name": "Раҳимов Ҳайдаршоҳ",
+        "group_id": 32,
+        "course_id": 3
+    },
+    {
+        "id": 729,
+        "name": "Раҳмонов Маҳфулло",
+        "group_id": 32,
+        "course_id": 3
+    },
+    {
+        "id": 730,
+        "name": "Сафаров Исмоил",
+        "group_id": 32,
+        "course_id": 3
+    },
+    {
+        "id": 731,
+        "name": "Хушмуроди Сафархон",
+        "group_id": 32,
+        "course_id": 3
+    },
+    {
+        "id": 732,
+        "name": "Ҳабибуллозода Субҳон",
+        "group_id": 32,
+        "course_id": 3
+    },
+    {
+        "id": 733,
+        "name": "Ҷалолов Суҳбатиллоҳ",
+        "group_id": 32,
+        "course_id": 3
+    },
+    {
+        "id": 734,
+        "name": "Сангов Шаҳром",
+        "group_id": 32,
+        "course_id": 3
+    },
+    {
+        "id": 735,
+        "name": "Раҳимов Мудасир",
+        "group_id": 32,
+        "course_id": 3
+    },
+    {
+        "id": 736,
+        "name": "Алиев Беҳзод",
+        "group_id": 33,
+        "course_id": 3
+    },
+    {
+        "id": 737,
+        "name": "Алиев Ҷаҳонгир",
+        "group_id": 33,
+        "course_id": 3
+    },
+    {
+        "id": 738,
+        "name": "Алматов Саидхон",
+        "group_id": 33,
+        "course_id": 3
+    },
+    {
+        "id": 739,
+        "name": "Вадудов Орифшоҳ",
+        "group_id": 33,
+        "course_id": 3
+    },
+    {
+        "id": 740,
+        "name": "Гуреззода Аслиддин",
+        "group_id": 33,
+        "course_id": 3
+    },
+    {
+        "id": 741,
+        "name": "Додхудоев Ҳилол",
+        "group_id": 33,
+        "course_id": 3
+    },
+    {
+        "id": 742,
+        "name": "Доробекова Зуҳро",
+        "group_id": 33,
+        "course_id": 3
+    },
+    {
+        "id": 743,
+        "name": "Маҳмадшарифов Эҳсон",
+        "group_id": 33,
+        "course_id": 3
+    },
+    {
+        "id": 744,
+        "name": "Мусофиров Умар",
+        "group_id": 33,
+        "course_id": 3
+    },
+    {
+        "id": 745,
+        "name": "Негматов Наимҷон",
+        "group_id": 33,
+        "course_id": 3
+    },
+    {
+        "id": 746,
+        "name": "Одиназода Абдураҳим",
+        "group_id": 33,
+        "course_id": 3
+    },
+    {
+        "id": 747,
+        "name": "Саидшоев Аюбҷон",
+        "group_id": 33,
+        "course_id": 3
+    },
+    {
+        "id": 748,
+        "name": "Сатторов Нурмаҳмад",
+        "group_id": 33,
+        "course_id": 3
+    },
+    {
+        "id": 749,
+        "name": "Усмонов Аслиддин",
+        "group_id": 33,
+        "course_id": 3
+    },
+    {
+        "id": 750,
+        "name": "Ҳазратқулов Исломиддин",
+        "group_id": 33,
+        "course_id": 3
+    },
+    {
+        "id": 751,
+        "name": "Саипов Комрон",
+        "group_id": 33,
+        "course_id": 3
+    },
+    {
+        "id": 752,
+        "name": "Қурбонов Шоҳрух",
+        "group_id": 33,
+        "course_id": 3
+    },
+    {
+        "id": 753,
+        "name": "Маҳмадов Давлатшо",
+        "group_id": 33,
+        "course_id": 3
+    },
+    {
+        "id": 754,
+        "name": "Ғулосавдаров Рамазон",
+        "group_id": 33,
+        "course_id": 3
+    },
+    {
+        "id": 755,
+        "name": "Акобиров Аслиддин",
+        "group_id": 34,
+        "course_id": 3
+    },
+    {
+        "id": 756,
+        "name": "Амаков Абдумубин",
+        "group_id": 34,
+        "course_id": 3
+    },
+    {
+        "id": 757,
+        "name": "Гулов Сомонҷон",
+        "group_id": 34,
+        "course_id": 3
+    },
+    {
+        "id": 758,
+        "name": "Ёров Акбар",
+        "group_id": 34,
+        "course_id": 3
+    },
+    {
+        "id": 759,
+        "name": "Ёров Искандар",
+        "group_id": 34,
+        "course_id": 3
+    },
+    {
+        "id": 760,
+        "name": "Идиев Муслим",
+        "group_id": 34,
+        "course_id": 3
+    },
+    {
+        "id": 761,
+        "name": "Қодиров Султон",
+        "group_id": 34,
+        "course_id": 3
+    },
+    {
+        "id": 762,
+        "name": "Қурбонализода Насимхон",
+        "group_id": 34,
+        "course_id": 3
+    },
+    {
+        "id": 763,
+        "name": "Қурбонов Муҳаммадорзу",
+        "group_id": 34,
+        "course_id": 3
+    },
+    {
+        "id": 764,
+        "name": "Мираминов Ҳусейн",
+        "group_id": 34,
+        "course_id": 3
+    },
+    {
+        "id": 765,
+        "name": "Михточшои Мироҷиддин",
+        "group_id": 34,
+        "course_id": 3
+    },
+    {
+        "id": 766,
+        "name": "Назиров Абубакр",
+        "group_id": 34,
+        "course_id": 3
+    },
+    {
+        "id": 767,
+        "name": "Сирожев Маъруфҷон",
+        "group_id": 34,
+        "course_id": 3
+    },
+    {
+        "id": 768,
+        "name": "Туразода Муҳаммад",
+        "group_id": 34,
+        "course_id": 3
+    },
+    {
+        "id": 769,
+        "name": "Холов Тоҳирҷон",
+        "group_id": 34,
+        "course_id": 3
+    },
+    {
+        "id": 770,
+        "name": "Ҷумаев Мухиддин",
+        "group_id": 34,
+        "course_id": 3
+    },
+    {
+        "id": 771,
+        "name": "Қурбонов Яҳё",
+        "group_id": 34,
+        "course_id": 3
+    },
+    {
+        "id": 772,
+        "name": "Табаров Диловар",
+        "group_id": 34,
+        "course_id": 3
+    },
+    {
+        "id": 773,
+        "name": "Иброҳимзода Ҳусейн",
+        "group_id": 34,
+        "course_id": 3
+    },
+    {
+        "id": 774,
+        "name": "Яқубов Саидмумин",
+        "group_id": 34,
+        "course_id": 3
+    },
+    {
+        "id": 775,
+        "name": "Абдуллозода Шеркавич",
+        "group_id": 35,
+        "course_id": 3
+    },
+    {
+        "id": 776,
+        "name": "Ализода Бобоҷон",
+        "group_id": 35,
+        "course_id": 3
+    },
+    {
+        "id": 777,
+        "name": "Гадоев Ҳумайни",
+        "group_id": 35,
+        "course_id": 3
+    },
+    {
+        "id": 778,
+        "name": "Гадоев Шарифчон",
+        "group_id": 35,
+        "course_id": 3
+    },
+    {
+        "id": 779,
+        "name": "Иброҳимзода Меҳрон",
+        "group_id": 35,
+        "course_id": 3
+    },
+    {
+        "id": 780,
+        "name": "Камилов Сиёвуш",
+        "group_id": 35,
+        "course_id": 3
+    },
+    {
+        "id": 781,
+        "name": "Муслимов Резвон",
+        "group_id": 35,
+        "course_id": 3
+    },
+    {
+        "id": 782,
+        "name": "Нуров Беҳруз",
+        "group_id": 35,
+        "course_id": 3
+    },
+    {
+        "id": 783,
+        "name": "Равшанзода Қосимҷон",
+        "group_id": 35,
+        "course_id": 3
+    },
+    {
+        "id": 784,
+        "name": "Раҳматов Абдулбасир",
+        "group_id": 35,
+        "course_id": 3
+    },
+    {
+        "id": 785,
+        "name": "Холов Шукрулло",
+        "group_id": 35,
+        "course_id": 3
+    },
+    {
+        "id": 786,
+        "name": "Хуршедзода Сулҳия",
+        "group_id": 35,
+        "course_id": 3
+    },
+    {
+        "id": 787,
+        "name": "Ҷабборов Муҳаммадҷон",
+        "group_id": 35,
+        "course_id": 3
+    },
+    {
+        "id": 788,
+        "name": "Қурбонов Меҳроб",
+        "group_id": 35,
+        "course_id": 3
+    },
+    {
+        "id": 789,
+        "name": "Аббосзода Ораш",
+        "group_id": 36,
+        "course_id": 3
+    },
+    {
+        "id": 790,
+        "name": "Абдувалиев Акмалхон",
+        "group_id": 36,
+        "course_id": 3
+    },
+    {
+        "id": 791,
+        "name": "Абдувалиев Акрамхон",
+        "group_id": 36,
+        "course_id": 3
+    },
+    {
+        "id": 792,
+        "name": "Аминов Парвиз",
+        "group_id": 36,
+        "course_id": 3
+    },
+    {
+        "id": 793,
+        "name": "Исмоилов Тоҳир",
+        "group_id": 36,
+        "course_id": 3
+    },
+    {
+        "id": 794,
+        "name": "Махматшоев Икромҷон",
+        "group_id": 36,
+        "course_id": 3
+    },
+    {
+        "id": 795,
+        "name": "Маҳмадиев Мансурҷон",
+        "group_id": 36,
+        "course_id": 3
+    },
+    {
+        "id": 796,
+        "name": "Нарзуллозода Иқбол",
+        "group_id": 36,
+        "course_id": 3
+    },
+    {
+        "id": 797,
+        "name": "Рустамов Фурӯзон",
+        "group_id": 36,
+        "course_id": 3
+    },
+    {
+        "id": 798,
+        "name": "Саидзода Садриддин",
+        "group_id": 36,
+        "course_id": 3
+    },
+    {
+        "id": 799,
+        "name": "Тағоев Нуриддин",
+        "group_id": 36,
+        "course_id": 3
+    },
+    {
+        "id": 800,
+        "name": "Шодиев Фозилбек",
+        "group_id": 36,
+        "course_id": 3
+    },
+    {
+        "id": 801,
+        "name": "Шоҳзода Шодмеҳр",
+        "group_id": 36,
+        "course_id": 3
+    },
+    {
+        "id": 802,
+        "name": "Қодири Муқим",
+        "group_id": 36,
+        "course_id": 3
+    },
+    {
+        "id": 803,
+        "name": "Умарзода Муҳаммад",
+        "group_id": 36,
+        "course_id": 3
+    },
+    {
+        "id": 804,
+        "name": "Фозилзода Фирдавс",
+        "group_id": 36,
+        "course_id": 3
+    },
+    {
+        "id": 805,
+        "name": "Тоҷов Салмон",
+        "group_id": 36,
+        "course_id": 3
+    },
+    {
+        "id": 806,
+        "name": "Абдулназарзода Билол",
+        "group_id": 37,
+        "course_id": 3
+    },
+    {
+        "id": 807,
+        "name": "Амонуллоев Азизулло",
+        "group_id": 37,
+        "course_id": 3
+    },
+    {
+        "id": 808,
+        "name": "Ашуров Саймурод",
+        "group_id": 37,
+        "course_id": 3
+    },
+    {
+        "id": 809,
+        "name": "Идриси Саймехточ",
+        "group_id": 37,
+        "course_id": 3
+    },
+    {
+        "id": 810,
+        "name": "Камолзода Амирчон",
+        "group_id": 37,
+        "course_id": 3
+    },
+    {
+        "id": 811,
+        "name": "Қучқорбекова Файзигул",
+        "group_id": 37,
+        "course_id": 3
+    },
+    {
+        "id": 812,
+        "name": "Мирсаидова Нӯшофарин",
+        "group_id": 37,
+        "course_id": 3
+    },
+    {
+        "id": 813,
+        "name": "Раҷабова Аниса",
+        "group_id": 37,
+        "course_id": 3
+    },
+    {
+        "id": 814,
+        "name": "Саидшоева Гулроза",
+        "group_id": 37,
+        "course_id": 3
+    },
+    {
+        "id": 815,
+        "name": "Файзов Идибек",
+        "group_id": 37,
+        "course_id": 3
+    },
+    {
+        "id": 816,
+        "name": "Холдонова Омина",
+        "group_id": 37,
+        "course_id": 3
+    },
+    {
+        "id": 817,
+        "name": "Хуморов Муҳаммад",
+        "group_id": 37,
+        "course_id": 3
+    },
+    {
+        "id": 818,
+        "name": "Ҳасанзода Сиёвуш",
+        "group_id": 37,
+        "course_id": 3
+    },
+    {
+        "id": 819,
+        "name": "Чилахонзода Комрон",
+        "group_id": 37,
+        "course_id": 3
+    },
+    {
+        "id": 820,
+        "name": "Шарипзода Хочикурбон",
+        "group_id": 37,
+        "course_id": 3
+    },
+    {
+        "id": 821,
+        "name": "Шоҳзода Яқуб",
+        "group_id": 37,
+        "course_id": 3
+    },
+    {
+        "id": 822,
+        "name": "Туфонов Исмоил",
+        "group_id": 37,
+        "course_id": 3
+    },
+
+
+
+
+
+
+
+
+
+
+    
+    {
+        "id": 823,
+        "name": "Абдуллоев Самариддин",
+        "group_id": 38,
+        "course_id": 4
+    },
+    {
+        "id": 824,
+        "name": "Азизов Шохинчон",
+        "group_id": 38,
+        "course_id": 4
+    },
+    {
+        "id": 825,
+        "name": "Ғаниев Шамсиддин",
+        "group_id": 38,
+        "course_id": 4
+    },
+    {
+        "id": 826,
+        "name": "Зиёева Оиша",
+        "group_id": 38,
+        "course_id": 4
+    },
+    {
+        "id": 827,
+        "name": "Каримзода Бахтовар",
+        "group_id": 38,
+        "course_id": 4
+    },
+    {
+        "id": 828,
+        "name": "Нуриддинзода Фазлиддин",
+        "group_id": 38,
+        "course_id": 4
+    },
+    {
+        "id": 829,
+        "name": "Равшанов Равшан",
+        "group_id": 38,
+        "course_id": 4
+    },
+    {
+        "id": 830,
+        "name": "Раҷабзода Хусрав",
+        "group_id": 38,
+        "course_id": 4
+    },
+    {
+        "id": 831,
+        "name": "Сафарзода Зайдулло",
+        "group_id": 38,
+        "course_id": 4
+    },
+    {
+        "id": 832,
+        "name": "Худойбердиева Парвина",
+        "group_id": 38,
+        "course_id": 4
+    },
+    {
+        "id": 833,
+        "name": "Ҳикматов Фаридун",
+        "group_id": 38,
+        "course_id": 4
+    },
+    {
+        "id": 834,
+        "name": "Шарифзода Сумая",
+        "group_id": 38,
+        "course_id": 4
+    },
+    {
+        "id": 835,
+        "name": "Бегиҷонов Алиҷон",
+        "group_id": 38,
+        "course_id": 4
+    },
+    {
+        "id": 836,
+        "name": "Биёбониева Рудоба",
+        "group_id": 38,
+        "course_id": 4
+    },
+    {
+        "id": 837,
+        "name": "Абдуллоев Ахмадҷон",
+        "group_id": 39,
+        "course_id": 4
+    },
+    {
+        "id": 838,
+        "name": "Азизов Мираҳмад",
+        "group_id": 39,
+        "course_id": 4
+    },
+    {
+        "id": 839,
+        "name": "Бозоров Хокимшох",
+        "group_id": 39,
+        "course_id": 4
+    },
+    {
+        "id": 840,
+        "name": "Ватаншозода Ёсимин",
+        "group_id": 39,
+        "course_id": 4
+    },
+    {
+        "id": 841,
+        "name": "Исоқзода Файзиддин",
+        "group_id": 39,
+        "course_id": 4
+    },
+    {
+        "id": 842,
+        "name": "Кодиров Бахтиёр",
+        "group_id": 39,
+        "course_id": 4
+    },
+    {
+        "id": 843,
+        "name": "Қурбонзода Содиқ",
+        "group_id": 39,
+        "course_id": 4
+    },
+    {
+        "id": 844,
+        "name": "Мақбулшоева Дилафруз",
+        "group_id": 39,
+        "course_id": 4
+    },
+    {
+        "id": 845,
+        "name": "Мусульманова Фариза",
+        "group_id": 39,
+        "course_id": 4
+    },
+    {
+        "id": 846,
+        "name": "Наимзода Эҳсони",
+        "group_id": 39,
+        "course_id": 4
+    },
+    {
+        "id": 847,
+        "name": "Нуралиева Дилоро",
+        "group_id": 39,
+        "course_id": 4
+    },
+    {
+        "id": 848,
+        "name": "Нурхонзода Фирдавс",
+        "group_id": 39,
+        "course_id": 4
+    },
+    {
+        "id": 849,
+        "name": "Саидов Хушбахт",
+        "group_id": 39,
+        "course_id": 4
+    },
+    {
+        "id": 850,
+        "name": "Худойдодов Муҳаммадаюбҷон",
+        "group_id": 39,
+        "course_id": 4
+    },
+    {
+        "id": 851,
+        "name": "Ҳаётов Азизҷон",
+        "group_id": 39,
+        "course_id": 4
+    },
+    {
+        "id": 852,
+        "name": "Шарипов Фозил",
+        "group_id": 39,
+        "course_id": 4
+    },
+    {
+        "id": 853,
+        "name": "Асадулоев Умар",
+        "group_id": 40,
+        "course_id": 4
+    },
+    {
+        "id": 854,
+        "name": "Ғарибмамадова Нурафшон",
+        "group_id": 40,
+        "course_id": 4
+    },
+    {
+        "id": 855,
+        "name": "Зайналобиддини Давлатмурод",
+        "group_id": 40,
+        "course_id": 4
+    },
+    {
+        "id": 856,
+        "name": "Зокирова Маҳина",
+        "group_id": 40,
+        "course_id": 4
+    },
+    {
+        "id": 857,
+        "name": "Қурбонов Обидҷон",
+        "group_id": 40,
+        "course_id": 4
+    },
+    {
+        "id": 858,
+        "name": "Маконов Абдубасир",
+        "group_id": 40,
+        "course_id": 4
+    },
+    {
+        "id": 859,
+        "name": "Мамадаминбеков Назмия",
+        "group_id": 40,
+        "course_id": 4
+    },
+    {
+        "id": 860,
+        "name": "Муҳаммадии Иброҳими",
+        "group_id": 40,
+        "course_id": 4
+    },
+    {
+        "id": 861,
+        "name": "Неъмонов Точиддин",
+        "group_id": 40,
+        "course_id": 4
+    },
+    {
+        "id": 862,
+        "name": "Рабизода Ҷаҳоншои",
+        "group_id": 40,
+        "course_id": 4
+    },
+    {
+        "id": 863,
+        "name": "Сабзаев Беҳрӯз",
+        "group_id": 40,
+        "course_id": 4
+    },
+    {
+        "id": 864,
+        "name": "Саидзода Саҳобиддин",
+        "group_id": 40,
+        "course_id": 4
+    },
+    {
+        "id": 865,
+        "name": "Сувонов Субхон",
+        "group_id": 40,
+        "course_id": 4
+    },
+    {
+        "id": 866,
+        "name": "Ҳабибов Маҳмадсаид",
+        "group_id": 40,
+        "course_id": 4
+    },
+    {
+        "id": 867,
+        "name": "Ҷаборзода Икромҷон",
+        "group_id": 40,
+        "course_id": 4
+    },
+    {
+        "id": 868,
+        "name": "Ҷонова Наргиса",
+        "group_id": 40,
+        "course_id": 4
+    },
+    {
+        "id": 869,
+        "name": "Шарифзода Эмомали",
+        "group_id": 40,
+        "course_id": 4
+    },
+    {
+        "id": 870,
+        "name": "Абдураҳимов Мустафо",
+        "group_id": 41,
+        "course_id": 4
+    },
+    {
+        "id": 871,
+        "name": "Алиев Муродали",
+        "group_id": 41,
+        "course_id": 4
+    },
+    {
+        "id": 872,
+        "name": "Болтаев Бахтиёр",
+        "group_id": 41,
+        "course_id": 4
+    },
+    {
+        "id": 873,
+        "name": "Камолов Сафар",
+        "group_id": 41,
+        "course_id": 4
+    },
+    {
+        "id": 874,
+        "name": "Курбонов Юсуфчон",
+        "group_id": 41,
+        "course_id": 4
+    },
+    {
+        "id": 875,
+        "name": "Одинаев Абдулвоҳид",
+        "group_id": 41,
+        "course_id": 4
+    },
+    {
+        "id": 876,
+        "name": "Сайдалиев Содиқ",
+        "group_id": 41,
+        "course_id": 4
+    },
+    {
+        "id": 877,
+        "name": "Темиров Дилсафо",
+        "group_id": 41,
+        "course_id": 4
+    },
+    {
+        "id": 878,
+        "name": "Хасанзода Барзу",
+        "group_id": 41,
+        "course_id": 4
+    },
+    {
+        "id": 879,
+        "name": "Ҳомидов Кабирҷон",
+        "group_id": 41,
+        "course_id": 4
+    },
+    {
+        "id": 880,
+        "name": "Эҳсони Эҳромиддин",
+        "group_id": 41,
+        "course_id": 4
+    },
+    {
+        "id": 881,
+        "name": "Абдукаримзода Муҳаммад",
+        "group_id": 41,
+        "course_id": 4
+    },
+    {
+        "id": 882,
+        "name": "Исупов Изайршоҳ",
+        "group_id": 41,
+        "course_id": 4
+    },
+    {
+        "id": 883,
+        "name": "Шарифов Аврангзеб",
+        "group_id": 41,
+        "course_id": 4
+    },
+    {
+        "id": 884,
+        "name": "Подшоева Мавҷигул",
+        "group_id": 41,
+        "course_id": 4
+    },
+    {
+        "id": 885,
+        "name": "Саъдуллоев Раҳмиддин",
+        "group_id": 41,
+        "course_id": 4
+    },
+    {
+        "id": 886,
+        "name": "Балосов Фируз",
+        "group_id": 41,
+        "course_id": 4
+    },
+    {
+        "id": 887,
+        "name": "Артиков Исломҷон",
+        "group_id": 42,
+        "course_id": 4
+    },
+    {
+        "id": 888,
+        "name": "Икромов Хайём",
+        "group_id": 42,
+        "course_id": 4
+    },
+    {
+        "id": 889,
+        "name": "Иноятов Бузургмеҳр",
+        "group_id": 42,
+        "course_id": 4
+    },
+    {
+        "id": 890,
+        "name": "Исмоилзода Муҳаммадисоқ",
+        "group_id": 42,
+        "course_id": 4
+    },
+    {
+        "id": 891,
+        "name": "Кенҷаев Саидашраф",
+        "group_id": 42,
+        "course_id": 4
+    },
+    {
+        "id": 892,
+        "name": "Қодиров Баҳовиддин",
+        "group_id": 42,
+        "course_id": 4
+    },
+    {
+        "id": 893,
+        "name": "Қуватов Меҳровар",
+        "group_id": 42,
+        "course_id": 4
+    },
+    {
+        "id": 894,
+        "name": "Қурбонов Исмоил",
+        "group_id": 42,
+        "course_id": 4
+    },
+    {
+        "id": 895,
+        "name": "Назрулозода Иброҳим",
+        "group_id": 42,
+        "course_id": 4
+    },
+    {
+        "id": 896,
+        "name": "Нарзуллозода Тоҳир",
+        "group_id": 42,
+        "course_id": 4
+    },
+    {
+        "id": 897,
+        "name": "Негматов Азизҷон",
+        "group_id": 42,
+        "course_id": 4
+    },
+    {
+        "id": 898,
+        "name": "Ниёзматов Сирожон",
+        "group_id": 42,
+        "course_id": 4
+    },
+    {
+        "id": 899,
+        "name": "Ниёзова Дилноза",
+        "group_id": 42,
+        "course_id": 4
+    },
+    {
+        "id": 900,
+        "name": "Раҷабов Қамариддин",
+        "group_id": 42,
+        "course_id": 4
+    },
+    {
+        "id": 901,
+        "name": "Усмонов Ҳидоятулло",
+        "group_id": 42,
+        "course_id": 4
+    },
+    {
+        "id": 902,
+        "name": "Фахриддинов Сайидали",
+        "group_id": 42,
+        "course_id": 4
+    },
+    {
+        "id": 903,
+        "name": "Ҳайдаров Муҳаммадҷон",
+        "group_id": 42,
+        "course_id": 4
+    },
+    {
+        "id": 904,
+        "name": "Ҳасанов Фараҳҷон",
+        "group_id": 42,
+        "course_id": 4
+    },
+    {
+        "id": 905,
+        "name": "Ҳусайнов Исфандиёр",
+        "group_id": 42,
+        "course_id": 4
+    },
+    {
+        "id": 906,
+        "name": "Ҷаъмахонзода Салоҳиддин",
+        "group_id": 42,
+        "course_id": 4
+    },
+    {
+        "id": 907,
+        "name": "Шукуров Илёсиддин",
+        "group_id": 42,
+        "course_id": 4
+    },
+    {
+        "id": 908,
+        "name": "Абдураҳимов Беназиршоҳ",
+        "group_id": 43,
+        "course_id": 4
+    },
+    {
+        "id": 909,
+        "name": "Аминов Муҳаммадҷон",
+        "group_id": 43,
+        "course_id": 4
+    },
+    {
+        "id": 910,
+        "name": "Ашурализода Шаҳбоз",
+        "group_id": 43,
+        "course_id": 4
+    },
+    {
+        "id": 911,
+        "name": "Қурбонов Нумон",
+        "group_id": 43,
+        "course_id": 4
+    },
+    {
+        "id": 912,
+        "name": "Маҳмадшарифи Мастоншо",
+        "group_id": 43,
+        "course_id": 4
+    },
+    {
+        "id": 913,
+        "name": "Муҳидинов Эҳсон",
+        "group_id": 43,
+        "course_id": 4
+    },
+    {
+        "id": 914,
+        "name": "Тозаҷонзода Муҳаммад",
+        "group_id": 43,
+        "course_id": 4
+    },
+    {
+        "id": 915,
+        "name": "Файзализода Муҳаммад",
+        "group_id": 43,
+        "course_id": 4
+    },
+    {
+        "id": 916,
+        "name": "Фаррухи Баҳром",
+        "group_id": 43,
+        "course_id": 4
+    },
+    {
+        "id": 917,
+        "name": "Холиқов Фирдавс",
+        "group_id": 43,
+        "course_id": 4
+    },
+    {
+        "id": 918,
+        "name": "Хуҷаназаров Хоҷа",
+        "group_id": 43,
+        "course_id": 4
+    },
+    {
+        "id": 919,
+        "name": "Ҳомидзода Муҳаммаднаби",
+        "group_id": 43,
+        "course_id": 4
+    },
+    {
+        "id": 920,
+        "name": "Шодиев Диловар",
+        "group_id": 43,
+        "course_id": 4
+    },
+    {
+        "id": 921,
+        "name": "Яқубзода Абдулло",
+        "group_id": 43,
+        "course_id": 4
+    },
+    {
+        "id": 922,
+        "name": "Рауфов Муҳаммадҷон",
+        "group_id": 43,
+        "course_id": 4
+    },
+    {
+        "id": 923,
+        "name": "Муҳиддинзода Саъдӣ",
+        "group_id": 43,
+        "course_id": 4
+    },
+    {
+        "id": 924,
+        "name": "Олимзода Қурбонали",
+        "group_id": 43,
+        "course_id": 4
+    },
+    {
+        "id": 925,
+        "name": "Раҳимов Нуриддин",
+        "group_id": 43,
+        "course_id": 4
+    },
+    {
+        "id": 926,
+        "name": "Мамадраимов Бовар",
+        "group_id": 43,
+        "course_id": 4
+    },
+    {
+        "id": 927,
+        "name": "Абдурасулов Файзали",
+        "group_id": 44,
+        "course_id": 4
+    },
+    {
+        "id": 928,
+        "name": "Акдодов Иршод",
+        "group_id": 44,
+        "course_id": 4
+    },
+    {
+        "id": 929,
+        "name": "Вализода Муҳамадалӣ",
+        "group_id": 44,
+        "course_id": 4
+    },
+    {
+        "id": 930,
+        "name": "Исмоилов Шохон",
+        "group_id": 44,
+        "course_id": 4
+    },
+    {
+        "id": 931,
+        "name": "Маҳмудов Нодирбек",
+        "group_id": 44,
+        "course_id": 4
+    },
+    {
+        "id": 932,
+        "name": "Маҷидов Абдулваҳоб",
+        "group_id": 44,
+        "course_id": 4
+    },
+    {
+        "id": 933,
+        "name": "Мусоев Ҷаҳонгир",
+        "group_id": 44,
+        "course_id": 4
+    },
+    {
+        "id": 934,
+        "name": "Олимов Максуд",
+        "group_id": 44,
+        "course_id": 4
+    },
+    {
+        "id": 935,
+        "name": "Рустамов Шахриёр",
+        "group_id": 44,
+        "course_id": 4
+    },
+    {
+        "id": 936,
+        "name": "Саидов Шодмон",
+        "group_id": 44,
+        "course_id": 4
+    },
+    {
+        "id": 937,
+        "name": "Сиёвуши Сайвали",
+        "group_id": 44,
+        "course_id": 4
+    },
+    {
+        "id": 938,
+        "name": "Собиров Меҳроб",
+        "group_id": 44,
+        "course_id": 4
+    },
+    {
+        "id": 939,
+        "name": "Турсунов Шоҳрух",
+        "group_id": 44,
+        "course_id": 4
+    },
+    {
+        "id": 940,
+        "name": "Холов Садриддин",
+        "group_id": 44,
+        "course_id": 4
+    },
+    {
+        "id": 941,
+        "name": "Давлатов Фаррух",
+        "group_id": 44,
+        "course_id": 4
+    },
+    {
+        "id": 942,
+        "name": "Файзуллоев Амриддин",
+        "group_id": 44,
+        "course_id": 4
+    },
+    {
+        "id": 943,
+        "name": "Муҳаммадшарифи Муҳаммадалӣ",
+        "group_id": 44,
+        "course_id": 4
+    }
+]
