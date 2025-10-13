@@ -110,13 +110,10 @@ async def record_attendance(
     students = load_json("students")
     group_students = [s["id"] for s in students if s["group_id"] == group_id]
 
-    if not date:
-        date = datetime.now().strftime("%Y-%m-%d")
-    else:
-        try:
-            datetime.strptime(date, "%Y-%m-%d")
-        except ValueError:
-            raise HTTPException(status_code=422, detail="Санаи нодуруст")
+    try:
+        datetime.strptime(date, "%Y-%m-%d")
+    except ValueError:
+        raise HTTPException(status_code=422, detail="Санаи нодуруст")
 
     if not group_id or not any(g["id"] == group_id for g in load_json("groups")):
         raise HTTPException(status_code=422, detail="Гурӯҳи интихобшуда вуҷуд надорад")
@@ -153,21 +150,20 @@ async def record_attendance(
     save_json("attendance", attendance)
     return {"status": "success", "message": f"Ҳузур барои гурӯҳ {group_id} дар сана {date} бо муваффақият захира шуд!"}
 
-@app.get("/api/attendance/today")
-async def get_attendance_today(current_user: Dict = Depends(get_current_user)):
+@app.get("/api/attendance")
+async def get_attendance(date: str = None, group_id: int = None, current_user: Dict = Depends(get_current_user)):
     if current_user["role"] not in ["admin", "director"]:
         raise HTTPException(status_code=403, detail="Танҳо барои админ ва директор дастрас аст")
-    today = datetime.now().strftime("%Y-%m-%d")
-    attendance = load_json("attendance")
-    students = load_json("students")
-    filtered_attendance = [a for a in attendance if a["date"] == today]
-    for a in filtered_attendance:
-        student = next((s for s in students if s["id"] == a["student_id"]), None)
-        if student:
-            a["name"] = student["name"]
-            a["group_id"] = student["group_id"]
-            a["course_id"] = student["course_id"]
-    return filtered_attendance
+    if not date:
+        date = datetime.now().strftime("%Y-%m-%d")
+    attendance = [a for a in load_json("attendance") if a["date"] == date]
+    if group_id:
+        attendance = [a for a in attendance if a["group_id"] == group_id]
+    return attendance
+
+@app.get("/api/attendance/today")
+async def get_attendance_today(group_id: int = None, current_user: Dict = Depends(get_current_user)):
+    return await get_attendance(date=None, group_id=group_id, current_user=current_user)
 
 @app.get("/api/attendance/all")
 async def get_all_attendance(current_user: Dict = Depends(get_current_user)):
@@ -188,13 +184,10 @@ async def get_absent_students_today(current_user: Dict = Depends(get_current_use
     if current_user["role"] not in ["director"]:
         raise HTTPException(status_code=403, detail="Танҳо барои директор дастрас аст")
 
-    print(current_user)  # Debug: Check user role
     attendance = load_json("attendance")
     students = load_json("students")
     groups = load_json("groups")
-    courses = load_json("courses")
     today = datetime.now().strftime("%Y-%m-%d")
-    print(f"Checking absent students for date: {today}")  # Debug: Verify date
     problem = []
 
     for student in students:
@@ -209,7 +202,30 @@ async def get_absent_students_today(current_user: Dict = Depends(get_current_use
             }
             problem.append(student_info)
 
-    print(f"Found {len(problem)} absent students")  # Debug: Check result count
+    return problem
+
+@app.get("/api/problem_students")
+async def get_problem_students(current_user: Dict = Depends(get_current_user)):
+    if current_user["role"] not in ["director"]:
+        raise HTTPException(status_code=403, detail="Танҳо барои директор дастрас аст")
+
+    attendance = load_json("attendance")
+    students = load_json("students")
+    groups = load_json("groups")
+    problem = []
+
+    for student in students:
+        total_absences = len(set(a["date"] for a in attendance if a["student_id"] == student["id"] and a["status"] == "absent"))
+        if total_absences > 6:
+            student_info = {
+                "name": student["name"],
+                "group_number": next((g["number"] for g in groups if g["id"] == student["group_id"]), "Unknown"),
+                "course_id": student["course_id"],
+                "total_absences": total_absences
+            }
+            problem.append(student_info)
+
+    problem.sort(key=lambda x: x["total_absences"], reverse=True)
     return problem
 
 @app.get("/api/absent_summary")
@@ -220,7 +236,6 @@ async def get_absent_summary(period: str = "weekly", current_user: Dict = Depend
     attendance = load_json("attendance")
     students = load_json("students")
     groups = load_json("groups")
-    courses = load_json("courses")
 
     if period == "weekly":
         days_back = 7
@@ -250,17 +265,47 @@ async def get_absent_summary(period: str = "weekly", current_user: Dict = Depend
     summary.sort(key=lambda x: x["absent_count"], reverse=True)
     return summary
 
+@app.get("/api/group_summary/{group_id}")
+async def get_group_summary(group_id: int, current_user: Dict = Depends(get_current_user)):
+    if current_user["role"] not in ["admin", "director"]:
+        raise HTTPException(status_code=403, detail="Дастрасӣ манъ аст")
+    students = [s for s in load_json("students") if s["group_id"] == group_id]
+    attendance = load_json("attendance")
+    summary = []
+    for s in students:
+        absents = [a["date"] for a in attendance if a["student_id"] == s["id"] and a["status"] == "absent"]
+        summary.append({
+            "id": s["id"],
+            "name": s["name"],
+            "absent_count": len(set(absents)),
+            "absent_dates": sorted(set(absents))
+        })
+    return summary
+
+@app.get("/api/student_attendance/{student_id}")
+async def get_student_attendance(student_id: int, current_user: Dict = Depends(get_current_user)):
+    if current_user["role"] not in ["admin", "director"]:
+        raise HTTPException(status_code=403, detail="Дастрасӣ манъ аст")
+    attendance = [a for a in load_json("attendance") if a["student_id"] == student_id]
+    return attendance
+
 @app.get("/api/generate_monthly_report")
 async def generate_monthly_report(current_user: Dict = Depends(get_current_user)):
     if current_user["role"] not in ["director"]:
         raise HTTPException(status_code=403, detail="Танҳо барои директор дастрас аст")
+
+    # Санҷиши оё моҳ пурра ба охир расидааст
+    today = datetime.now()
+    current_year_month = today.strftime("%Y-%m")
+    last_day_of_month = (today.replace(day=28) + timedelta(days=4)).replace(day=1) - timedelta(days=1)
+    if today < last_day_of_month:
+        raise HTTPException(status_code=400, detail="Ҳисоботи моҳона танҳо пас аз анҷоми моҳ дастрас аст!")
 
     attendance = load_json("attendance")
     students = load_json("students")
     groups = load_json("groups")
     courses = load_json("courses")
 
-    current_year_month = datetime.now().strftime("%Y-%m")
     monthly_attendance = [a for a in attendance if a["date"].startswith(current_year_month)]
 
     if not monthly_attendance:

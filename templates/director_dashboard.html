@@ -2,249 +2,743 @@
 <html lang="tj">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Панели Директор</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <style>
-        /* Барои аниматсияи ҳамвор */
-        .smooth-show {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-in-out;
+        /* Анимацияҳо */
+        .fade-in {
+            animation: fadeIn 0.3s ease-in;
         }
-        .smooth-show.visible {
-            max-height: 1000px; /* Қимати калон барои он ки ҳамаи контент ҷойгир шавад */
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Responsive tables for mobile */
-        @media (max-width: 640px) {
-            table {
-                display: block;
-            }
-            thead {
+        /* Табҳо барои мобайл */
+        .mobile-tabs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            padding: 1rem;
+        }
+
+        .mobile-tab {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 0.5rem;
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #6b7280;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            min-height: 80px;
+        }
+
+        .mobile-tab:active:not([disabled]) {
+            transform: scale(0.95);
+        }
+
+        .mobile-tab.active {
+            background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+            color: white;
+            border-color: #4f46e5;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+
+        .mobile-tab[disabled] {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .mobile-tab-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Desktop табҳо */
+        .desktop-tabs {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-tabs {
                 display: none;
             }
-            tr {
-                display: block;
-                margin-bottom: 1rem;
-                border-bottom: 1px solid #e5e7eb;
+            .desktop-tabs {
+                display: flex;
+                border-bottom: 2px solid #e5e7eb;
+                background: #f9fafb;
+                overflow-x: auto;
             }
-            td {
+            .tab-button {
+                position: relative;
+                padding: 1rem 1.5rem;
+                font-weight: 600;
+                color: #6b7280;
+                transition: all 0.3s ease;
+                white-space: nowrap;
+                border: none;
+                background: none;
+                cursor: pointer;
+            }
+            .tab-button.active {
+                color: #4f46e5;
+            }
+            .tab-button.active::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: #4f46e5;
+            }
+            .tab-button[disabled] {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+        }
+
+        /* Бахшҳо */
+        .section-content {
+            display: none;
+        }
+        
+        .section-content.active {
+            display: block;
+        }
+
+        /* Картаҳои статистика барои мобайл */
+        .stat-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card-mobile {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        /* Ҷадвалҳо барои мобайл */
+        @media (max-width: 767px) {
+            .mobile-table-card {
+                background: white;
+                border-radius: 1rem;
+                padding: 1rem;
+                margin-bottom: 0.75rem;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                border-left: 4px solid #4f46e5;
+            }
+            
+            .mobile-table-row {
                 display: flex;
                 justify-content: space-between;
-                padding: 0.5rem 1rem;
-                border-bottom: 1px solid #e5e7eb;
+                align-items: center;
+                padding: 0.5rem 0;
+                border-bottom: 1px solid #f3f4f6;
             }
-            td:last-child {
+            
+            .mobile-table-row:last-child {
                 border-bottom: none;
             }
-            td::before {
-                content: attr(data-label);
+            
+            .mobile-table-label {
+                font-size: 0.875rem;
+                color: #6b7280;
+                font-weight: 500;
+            }
+            
+            .mobile-table-value {
+                font-size: 0.875rem;
                 font-weight: 600;
-                color: #4b5563;
-                width: 50%;
+                color: #1f2937;
+            }
+
+            .desktop-table {
+                display: none;
             }
         }
 
-        /* Buttons stack vertically on small screens */
-        @media (max-width: 640px) {
-            .space-x-4 {
-                flex-direction: column;
-                space-x-0;
-                space-y-4;
+        @media (min-width: 768px) {
+            .mobile-table-card {
+                display: none;
             }
-            .space-x-4 button {
-                width: 100%;
+        }
+
+        /* Loading spinner */
+        .spinner {
+            border: 3px solid #f3f4f6;
+            border-top: 3px solid #4f46e5;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            transition: width 0.5s ease;
+        }
+
+        /* Тугмаҳо барои мобайл */
+        .mobile-action-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: #4f46e5;
+            color: white;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .mobile-action-btn:active {
+            transform: scale(0.98);
+            background: #4338ca;
+        }
+
+        /* Floating action button барои мобайл */
+        .fab {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .fab:active {
+            transform: scale(0.9);
+        }
+
+        @media (min-width: 768px) {
+            .fab {
+                display: none;
+            }
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Hover эффект */
+        .hover-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .hover-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header барои мобайл */
+        @media (max-width: 767px) {
+            .mobile-header {
+                padding: 1rem;
+            }
+            .mobile-header h1 {
+                font-size: 1.25rem;
+            }
+            .mobile-header p {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Контейнери асосӣ */
+        .main-container {
+            padding-bottom: 5rem;
+        }
+
+        @media (min-width: 768px) {
+            .main-container {
+                padding-bottom: 2rem;
+            }
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .breadcrumb {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 0.875rem;
+                color: #6b7280;
                 margin-bottom: 1rem;
             }
+            
+            .breadcrumb-item:not(:last-child)::after {
+                content: '›';
+                margin-left: 0.5rem;
+                color: #9ca3af;
+            }
         }
 
-        /* Cards adjustments for very small screens */
-        @media (max-width: 400px) {
-            .grid > div {
-                padding: 1rem;
-                min-width: 0;
+        /* Select барои мобайл */
+        @media (max-width: 767px) {
+            select {
+                font-size: 1rem;
+                padding: 0.875rem;
+                border-radius: 0.75rem;
             }
+        }
+
+        /* Кнопкаи бозгашт */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            color: #4f46e5;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 1rem;
+        }
+
+        .back-button:active {
+            transform: scale(0.95);
+            background: #f3f4f6;
         }
     </style>
 </head>
-<body class="bg-gray-100 min-h-screen flex flex-col font-sans">
-    <header class="bg-indigo-700 text-white py-4 shadow-md sticky top-0 z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-            <h1 class="text-2xl md:text-3xl font-bold">Панели Идоракунӣ</h1>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-indigo-600 to-indigo-800 text-white shadow-xl sticky top-0 z-50">
+        <div class="mobile-header max-w-7xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-xl md:text-3xl font-bold">📊 Панели Идоракунӣ</h1>
+                    <p class="text-indigo-200 text-xs md:text-sm mt-1">Системаи назорати давомот</p>
+                </div>
+                <div class="text-right text-xs md:text-base">
+                    <p class="text-indigo-200 text-xs">Имрӯз</p>
+                    <p class="font-semibold" id="current-date"></p>
+                </div>
+            </div>
         </div>
     </header>
 
-    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+    <main class="flex-grow max-w-7xl mx-auto px-4 py-4 md:py-8 w-full main-container">
         
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Омори умумӣ (имрӯз)</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white rounded-xl shadow-lg p-6 flex items-center space-x-4">
-                    <div class="bg-blue-100 p-3 rounded-full">
-                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                    </div>
-                    <div>
-                        <p class="text-gray-500 text-sm font-medium">Шумораи донишҷӯён</p>
-                        <p id="total-students" class="text-2xl font-bold text-gray-800">...</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg p-6 flex items-center space-x-4">
-                    <div class="bg-green-100 p-3 rounded-full">
-                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <div>
-                        <p class="text-gray-500 text-sm font-medium">Ҳозирон</p>
-                        <p id="total-present" class="text-2xl font-bold text-gray-800">...</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-xl shadow-lg p-6 flex items-center space-x-4">
-                    <div class="bg-red-100 p-3 rounded-full">
-                        <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <div>
-                        <p class="text-gray-500 text-sm font-medium">Ғоибон</p>
-                        <p id="total-absent" class="text-2xl font-bold text-gray-800">...</p>
+        <!-- Breadcrumb барои desktop -->
+        <div class="breadcrumb">
+            <span class="breadcrumb-item cursor-pointer hover:text-indigo-600" onclick="showSection('dashboard')">Асосӣ</span>
+            <span class="breadcrumb-item" id="breadcrumb-current">Омори умумӣ</span>
+        </div>
+
+        <!-- Картаҳои статистика -->
+        <section class="mb-4 md:mb-8 fade-in">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+                <div class="stat-card">
+                    <div class="stat-card-mobile md:flex md:items-center md:justify-between">
+                        <div class="flex-1">
+                            <p class="text-gray-500 text-xs md:text-sm font-medium mb-1">Донишҷӯён</p>
+                            <p id="total-students" class="text-xl md:text-3xl font-bold text-gray-800">...</p>
+                        </div>
+                        <div class="stat-icon bg-blue-100 hidden md:flex">
+                            👥
+                        </div>
                     </div>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg p-6 flex items-center space-x-4">
-                    <div class="bg-indigo-100 p-3 rounded-full">
-                         <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"></path></svg>
+                
+                <div class="stat-card">
+                    <div class="stat-card-mobile md:flex md:items-center md:justify-between">
+                        <div class="flex-1">
+                            <p class="text-gray-500 text-xs md:text-sm font-medium mb-1">Ҳозирон</p>
+                            <p id="total-present" class="text-xl md:text-3xl font-bold text-green-600">...</p>
+                        </div>
+                        <div class="stat-icon bg-green-100 hidden md:flex">
+                            ✅
+                        </div>
                     </div>
-                    <div>
-                        <p class="text-gray-500 text-sm font-medium">Давомоти умумӣ</p>
-                        <p id="total-percentage" class="text-2xl font-bold text-gray-800">...</p>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-card-mobile md:flex md:items-center md:justify-between">
+                        <div class="flex-1">
+                            <p class="text-gray-500 text-xs md:text-sm font-medium mb-1">Ғоибон</p>
+                            <p id="total-absent" class="text-xl md:text-3xl font-bold text-red-600">...</p>
+                        </div>
+                        <div class="stat-icon bg-red-100 hidden md:flex">
+                            ❌
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-card-mobile md:flex md:items-center md:justify-between">
+                        <div class="flex-1">
+                            <p class="text-gray-500 text-xs md:text-sm font-medium mb-1">Фоизи умумӣ</p>
+                            <p id="total-percentage" class="text-xl md:text-3xl font-bold text-indigo-600">...</p>
+                        </div>
+                        <div class="stat-icon bg-indigo-100 hidden md:flex">
+                            📊
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8">
-            <section class="mb-8 md:flex justify-between items-center">
-                <div>
-                    <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-2">Вазъи гурӯҳҳо</h2>
-                    <p class="text-gray-500">Интихоб кунед, то гурӯҳҳои курси муайянро бубинед.</p>
-                </div>
-                <select id="course-select"
-                    class="mt-4 md:mt-0 p-3 border border-gray-200 rounded-lg w-full md:w-1/3 bg-gray-50 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
-                    onchange="loadGroups()">
-                    <option value="">Ҳамаи курсҳо</option>
-                </select>
-            </section>
+        <!-- Навигатсияи мобилӣ (Grid Style) -->
+        <div class="mobile-tabs">
+            <button class="mobile-tab active" onclick="showSection('dashboard')" data-section="dashboard">
+                <div class="mobile-tab-icon">📋</div>
+                <div>Гурӯҳҳо</div>
+            </button>
+            <button class="mobile-tab" onclick="showSection('absent-today')" data-section="absent-today">
+                <div class="mobile-tab-icon">❌</div>
+                <div>Ғоибон</div>
+            </button>
+            <button class="mobile-tab" onclick="showSection('weekly')" data-section="weekly">
+                <div class="mobile-tab-icon">📅</div>
+                <div>Ҳафтаина</div>
+            </button>
+            <button class="mobile-tab" onclick="showSection('monthly')" data-section="monthly">
+                <div class="mobile-tab-icon">📆</div>
+                <div>Моҳона</div>
+            </button>
+            <button class="mobile-tab" onclick="showSection('problem')" data-section="problem">
+                <div class="mobile-tab-icon">⚠️</div>
+                <div>Проблема</div>
+            </button>
+            <button class="mobile-tab" onclick="generateMonthlyReport()" data-section="report">
+                <div class="mobile-tab-icon">📄</div>
+                <div>Ҳисобот</div>
+            </button>
+        </div>
 
-            <section>
-                <div class="overflow-x-auto bg-white rounded-lg border border-gray-200">
-                    <table class="w-full text-left">
-                        <thead class="bg-gray-50 border-b border-gray-200">
-                            <tr>
-                                <th class="p-4 text-sm font-semibold text-gray-600">Гурӯҳ</th>
-                                <th class="p-4 text-sm font-semibold text-gray-600">Курс</th>
-                                <th class="p-4 text-sm font-semibold text-gray-600">Ҳозир</th>
-                                <th class="p-4 text-sm font-semibold text-gray-600">Ғоиб</th>
-                                <th class="p-4 text-sm font-semibold text-gray-600 w-1/4">Фоизи давомот</th>
-                            </tr>
-                        </thead>
-                        <tbody id="groups-table" class="divide-y divide-gray-200"></tbody>
-                    </table>
-                </div>
-            </section>
-
-            <section class="mt-10 text-center flex flex-wrap justify-center space-x-4 md:space-x-4 space-y-4 md:space-y-0">
-                 <button id="show-absent-btn" onclick="toggleAbsentStudents()" 
-                    class="bg-red-500 text-white px-6 py-3 rounded-lg hover:bg-red-600 transition font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
-                    Намоиши донишҷӯёни ғоиб
+        <!-- Desktop табҳо -->
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div class="desktop-tabs">
+                <button class="tab-button active" onclick="showSection('dashboard')" data-tab="dashboard">
+                    📊 Гурӯҳҳо
                 </button>
-                <button id="show-weekly-btn" onclick="toggleWeeklyAttendance()" 
-                    class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                    Давомоти ҳафтаина
+                <button class="tab-button" onclick="showSection('absent-today')" data-tab="absent-today">
+                    ❌ Ғоибон (имрӯз)
                 </button>
-                <button id="show-monthly-btn" onclick="toggleMonthlyAttendance()" 
-                    class="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
-                    Давомоти моҳона
+                <button class="tab-button" onclick="showSection('weekly')" data-tab="weekly">
+                    📅 Ҳафтаина
                 </button>
-                <button onclick="generateMonthlyReport()" 
-                    class="bg-purple-500 text-white px-6 py-3 rounded-lg hover:bg-purple-600 transition font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
-                    Удалит кардани база
+                <button class="tab-button" onclick="showSection('monthly')" data-tab="monthly">
+                    📆 Моҳона
                 </button>
+                <button class="tab-button" onclick="showSection('problem')" data-tab="problem">
+                    ⚠️ Проблема
+                </button>
+                <button class="tab-button" onclick="generateMonthlyReport()" data-tab="report">
+                    📄 Ҳисобот
+                </button>
+            </div>
 
-                <div id="absent-students-wrapper" class="smooth-show mt-6 text-left w-full">
-                     <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-4">Рӯйхати донишҷӯёни ғоиб (имрӯз)</h2>
-                     <div class="overflow-x-auto bg-white rounded-lg border border-gray-200">
-                         <table class="w-full text-left">
-                            <thead class="bg-gray-50 border-b border-gray-200">
-                                 <tr>
-                                     <th class="p-4 text-sm font-semibold text-gray-600">Ном ва Насаб</th>
-                                     <th class="p-4 text-sm font-semibold text-gray-600">Гурӯҳ</th>
-                                     <th class="p-4 text-sm font-semibold text-gray-600">Курс</th>
-                                 </tr>
-                             </thead>
-                             <tbody id="absent-table" class="divide-y divide-gray-200"></tbody>
-                         </table>
-                     </div>
+            <div class="p-4 md:p-8">
+                <!-- Бахши Гурӯҳҳо -->
+                <div id="section-dashboard" class="section-content active fade-in">
+                    <div class="mb-4 md:mb-6">
+                        <h2 class="text-lg md:text-2xl font-bold text-gray-800 mb-2 md:mb-4">Вазъи гурӯҳҳо</h2>
+                        <select id="course-select" class="w-full p-3 border-2 border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition" onchange="loadGroups()">
+                            <option value="">Ҳамаи курсҳо</option>
+                        </select>
+                    </div>
+
+                    <!-- Mobile Cards -->
+                    <div id="groups-mobile" class="block md:hidden"></div>
+
+                    <!-- Desktop Table -->
+                    <div class="desktop-table overflow-x-auto rounded-lg border border-gray-200">
+                        <table class="w-full">
+                            <thead class="bg-gradient-to-r from-gray-50 to-gray-100 border-b-2 border-gray-200">
+                                <tr>
+                                    <th class="p-4 text-left text-sm font-semibold text-gray-700">Гурӯҳ</th>
+                                    <th class="p-4 text-left text-sm font-semibold text-gray-700">Курс</th>
+                                    <th class="p-4 text-center text-sm font-semibold text-gray-700">Ҳозир</th>
+                                    <th class="p-4 text-center text-sm font-semibold text-gray-700">Ғоиб</th>
+                                    <th class="p-4 text-left text-sm font-semibold text-gray-700">Давомот</th>
+                                    <th class="p-4 text-center text-sm font-semibold text-gray-700">Амалиёт</th>
+                                </tr>
+                            </thead>
+                            <tbody id="groups-table" class="divide-y divide-gray-200"></tbody>
+                        </table>
+                    </div>
+
+                    <!-- Рӯйхати донишҷӯён -->
+                    <div id="group-detail" class="mt-4 md:mt-8 hidden"></div>
+                    
+                    <!-- Профили донишҷӯ -->
+                    <div id="student-profile" class="mt-4 md:mt-6 hidden"></div>
                 </div>
 
-                <div id="weekly-attendance-wrapper" class="smooth-show mt-6 text-left w-full">
-                     <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-4">Давомоти ҳафтаина</h2>
-                     <div class="overflow-x-auto bg-white rounded-lg border border-gray-200">
-                         <table class="w-full text-left">
-                            <thead class="bg-gray-50 border-b border-gray-200">
-                                 <tr>
-                                     <th class="p-4 text-sm font-semibold text-gray-600">Ном ва Насаб</th>
-                                     <th class="p-4 text-sm font-semibold text-gray-600">Гурӯҳ</th>
-                                     <th class="p-4 text-sm font-semibold text-gray-600">Курс</th>
-                                     <th class="p-4 text-sm font-semibold text-gray-600">Шумораи ғоибӣ (ҳафта)</th>
-                                 </tr>
-                             </thead>
-                             <tbody id="weekly-table" class="divide-y divide-gray-200"></tbody>
-                         </table>
-                     </div>
+                <!-- Бахши Ғоибон (имрӯз) -->
+                <div id="section-absent-today" class="section-content">
+                    <h2 class="text-lg md:text-2xl font-bold text-gray-800 mb-4 md:mb-6">Рӯйхати ғоибон (имрӯз)</h2>
+                    
+                    <!-- Mobile Cards -->
+                    <div id="absent-mobile" class="block md:hidden"></div>
+
+                    <!-- Desktop Table -->
+                    <div class="desktop-table overflow-x-auto rounded-lg border border-gray-200">
+                        <table class="w-full">
+                            <thead class="bg-gradient-to-r from-gray-50 to-gray-100 border-b-2 border-gray-200">
+                                <tr>
+                                    <th class="p-4 text-left text-sm font-semibold text-gray-700">Ном ва Насаб</th>
+                                    <th class="p-4 text-left text-sm font-semibold text-gray-700">Гурӯҳ</th>
+                                    <th class="p-4 text-left text-sm font-semibold text-gray-700">Курс</th>
+                                </tr>
+                            </thead>
+                            <tbody id="absent-table" class="divide-y divide-gray-200"></tbody>
+                        </table>
+                    </div>
                 </div>
 
-                <div id="monthly-attendance-wrapper" class="smooth-show mt-6 text-left w-full">
-                     <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-4">Давомоти моҳона</h2>
-                     <div class="overflow-x-auto bg-white rounded-lg border border-gray-200">
-                         <table class="w-full text-left">
-                            <thead class="bg-gray-50 border-b border-gray-200">
-                                 <tr>
-                                     <th class="p-4 text-sm font-semibold text-gray-600">Ном ва Насаб</th>
-                                     <th class="p-4 text-sm font-semibold text-gray-600">Гурӯҳ</th>
-                                     <th class="p-4 text-sm font-semibold text-gray-600">Курс</th>
-                                     <th class="p-4 text-sm font-semibold text-gray-600">Шумораи ғоибӣ (моҳ)</th>
-                                 </tr>
-                             </thead>
-                             <tbody id="monthly-table" class="divide-y divide-gray-200"></tbody>
-                         </table>
-                     </div>
+                <!-- Бахши Ҳафтаина -->
+                <div id="section-weekly" class="section-content">
+                    <h2 class="text-lg md:text-2xl font-bold text-gray-800 mb-4 md:mb-6">Давомоти ҳафтаина</h2>
+                    
+                    <!-- Mobile Cards -->
+                    <div id="weekly-mobile" class="block md:hidden"></div>
+
+                    <!-- Desktop Table -->
+                    <div class="desktop-table overflow-x-auto rounded-lg border border-gray-200">
+                        <table class="w-full">
+                            <thead class="bg-gradient-to-r from-gray-50 to-gray-100 border-b-2 border-gray-200">
+                                <tr>
+                                    <th class="p-4 text-left text-sm font-semibold text-gray-700">Ном ва Насаб</th>
+                                    <th class="p-4 text-left text-sm font-semibold text-gray-700">Гурӯҳ</th>
+                                    <th class="p-4 text-left text-sm font-semibold text-gray-700">Курс</th>
+                                    <th class="p-4 text-center text-sm font-semibold text-gray-700">Ғоибӣ</th>
+                                </tr>
+                            </thead>
+                            <tbody id="weekly-table" class="divide-y divide-gray-200"></tbody>
+                        </table>
+                    </div>
                 </div>
-            </section>
+
+                <!-- Бахши Моҳона -->
+                <div id="section-monthly" class="section-content">
+                    <h2 class="text-lg md:text-2xl font-bold text-gray-800 mb-4 md:mb-6">Давомоти моҳона</h2>
+                    
+                    <!-- Mobile Cards -->
+                    <div id="monthly-mobile" class="block md:hidden"></div>
+
+                    <!-- Desktop Table -->
+                    <div class="desktop-table overflow-x-auto rounded-lg border border-gray-200">
+                        <table class="w-full">
+                            <thead class="bg-gradient-to-r from-gray-50 to-gray-100 border-b-2 border-gray-200">
+                                <tr>
+                                    <th class="p-4 text-left text-sm font-semibold text-gray-700">Ном ва Насаб</th>
+                                    <th class="p-4 text-left text-sm font-semibold text-gray-700">Гурӯҳ</th>
+                                    <th class="p-4 text-left text-sm font-semibold text-gray-700">Курс</th>
+                                    <th class="p-4 text-center text-sm font-semibold text-gray-700">Ғоибӣ</th>
+                                </tr>
+                            </thead>
+                            <tbody id="monthly-table" class="divide-y divide-gray-200"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Бахши Проблема -->
+                <div id="section-problem" class="section-content">
+                    <h2 class="text-lg md:text-2xl font-bold text-gray-800 mb-4 md:mb-6">Шахсони проблема (>6 ғоибӣ)</h2>
+                    
+                    <!-- Mobile Cards -->
+                    <div id="problem-mobile" class="block md:hidden"></div>
+
+                    <!-- Desktop Table -->
+                    <div class="desktop-table overflow-x-auto rounded-lg border border-gray-200">
+                        <table class="w-full">
+                            <thead class="bg-gradient-to-r from-gray-50 to-gray-100 border-b-2 border-gray-200">
+                                <tr>
+                                    <th class="p-4 text-left text-sm font-semibold text-gray-700">Ном ва Насаб</th>
+                                    <th class="p-4 text-left text-sm font-semibold text-gray-700">Гурӯҳ</th>
+                                    <th class="p-4 text-left text-sm font-semibold text-gray-700">Курс</th>
+                                    <th class="p-4 text-center text-sm font-semibold text-gray-700">Ғоибӣ</th>
+                                </tr>
+                            </thead>
+                            <tbody id="problem-table" class="divide-y divide-gray-200"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
-    <footer class="bg-indigo-700 text-white py-4 mt-auto">
+    <footer class="bg-gradient-to-r from-indigo-600 to-indigo-800 text-white py-4 mt-4">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-sm">Барномасоз: Anushervon</p>
+            <p class="text-xs md:text-sm">💻 Барномасоз: Anushervon | © 2024</p>
         </div>
     </footer>
 
     <script>
         let courseMap = new Map();
+        let groupMap = new Map();
+        let currentSection = 'dashboard';
 
-        // Функсия барои нишон додани Spinner
-        function showLoading(tableId) {
-            const table = document.getElementById(tableId);
-            const colspan = tableId.includes('absent') ? 3 : (tableId.includes('weekly') || tableId.includes('monthly') ? 4 : 5);
-            table.innerHTML = `
-                <tr>
-                    <td colspan="${colspan}" class="p-8 text-center">
-                        <div class="flex justify-center items-center space-x-2">
-                            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600"></div>
-                            <span class="text-gray-600">Боркунӣ...</span>
-                        </div>
-                    </td>
-                </tr>`;
+        // Функсия барои нишон додани паёмҳои Toast
+        function showToast(message, type = 'success') {
+            const toast = document.createElement('div');
+            toast.className = `fixed bottom-5 right-5 bg-${type === 'success' ? 'green' : 'red'}-600 text-white px-6 py-3 rounded-lg shadow-2xl flex items-center gap-3 max-w-[90%] sm:max-w-md z-[1000] fade-in`;
+            toast.innerHTML = `
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                        d="${type === 'success' ? 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' : 'M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z'}"></path>
+                </svg>
+                <span class="text-sm md:text-base">${message}</span>`;
+            document.body.appendChild(toast);
+            setTimeout(() => { toast.remove(); }, 3000);
         }
-        
+
+        // Санаи ҷорӣ
+        function updateCurrentDate() {
+            const options = { month: 'short', day: 'numeric' };
+            const dateStr = new Date().toLocaleDateString('tg-TJ', options);
+            document.getElementById('current-date').textContent = dateStr;
+        }
+
+        // Санҷиши оё моҳ пурра шудааст
+        function isMonthComplete() {
+            const today = new Date();
+            const lastDayOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+            return today.getDate() >= lastDayOfMonth.getDate();
+        }
+
+        // Навсозии дастрасии тугмаи ҳисобот
+        function updateReportButtonState() {
+            const reportButtons = document.querySelectorAll('.mobile-tab[data-section="report"], .tab-button[data-tab="report"]');
+            const isEnabled = isMonthComplete();
+            
+            reportButtons.forEach(btn => {
+                if (!isEnabled) {
+                    btn.classList.add('opacity-50', 'cursor-not-allowed');
+                    btn.setAttribute('disabled', 'true');
+                    btn.setAttribute('title', 'Ҳисобот танҳо пас аз анҷоми моҳ дастрас аст');
+                } else {
+                    btn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    btn.removeAttribute('disabled');
+                    btn.removeAttribute('title');
+                }
+            });
+        }
+
+        // Loading
+        function showLoading(containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = `
+                <div class="flex flex-col justify-center items-center py-12">
+                    <div class="spinner"></div>
+                    <span class="text-gray-600 font-medium mt-3">Боркунӣ...</span>
+                </div>`;
+        }
+
+        // Гузаштан ба бахшҳо
+        function showSection(sectionName) {
+            document.querySelectorAll('.section-content').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            document.getElementById('group-detail').classList.add('hidden');
+            document.getElementById('student-profile').classList.add('hidden');
+
+            document.querySelectorAll('.mobile-tab').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            const section = document.getElementById(`section-${sectionName}`);
+            if (section) {
+                section.classList.add('active');
+                section.classList.add('fade-in');
+            }
+
+            const mobileTab = document.querySelector(`.mobile-tab[data-section="${sectionName}"]`);
+            if (mobileTab) mobileTab.classList.add('active');
+
+            const desktopTab = document.querySelector(`.tab-button[data-tab="${sectionName}"]`);
+            if (desktopTab) desktopTab.classList.add('active');
+
+            const breadcrumbTexts = {
+                'dashboard': 'Гурӯҳҳо',
+                'absent-today': 'Ғоибон',
+                'weekly': 'Ҳафтаина',
+                'monthly': 'Моҳона',
+                'problem': 'Проблема'
+            };
+            const breadcrumb = document.getElementById('breadcrumb-current');
+            if (breadcrumb) breadcrumb.textContent = breadcrumbTexts[sectionName] || 'Маълумот';
+
+            currentSection = sectionName;
+
+            switch(sectionName) {
+                case 'absent-today':
+                    loadAbsentStudents();
+                    break;
+                case 'weekly':
+                    loadWeeklyAttendance();
+                    break;
+                case 'monthly':
+                    loadMonthlyAttendance();
+                    break;
+                case 'problem':
+                    loadProblemStudents();
+                    break;
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
         async function loadCourses() {
             try {
                 const response = await axios.get("/api/courses");
@@ -252,31 +746,40 @@
                 select.innerHTML = '<option value="">Ҳамаи курсҳо</option>';
                 response.data.forEach(c => {
                     select.innerHTML += `<option value="${c.id}">Курси ${c.year}</option>`;
-                    courseMap.set(c.id, ` ${c.year}`);
+                    courseMap.set(c.id, c.year);
                 });
             } catch (error) {
-                console.error("Хатогӣ ҳангоми боркунии курсҳо:", error);
+                console.error("Хатогӣ:", error);
+                showToast("Хатогӣ дар боркунии курсҳо", 'error');
             }
         }
 
         async function loadGroups() {
-            showLoading("groups-table");
+            showLoading("groups-mobile");
+            const tableBody = document.getElementById("groups-table");
+            if (tableBody) tableBody.innerHTML = '<tr><td colspan="6" class="p-8 text-center"><div class="spinner mx-auto"></div></td></tr>';
+            
             try {
                 const selectedCourseId = document.getElementById("course-select").value;
                 const groupsRes = await axios.get("/api/groups" + (selectedCourseId ? `?course_id=${selectedCourseId}` : ""));
                 const studentsRes = await axios.get("/api/students/all");
-                const attendanceRes = await axios.get("/api/attendance/today");
+                const attendanceRes = await axios.get("/api/attendance?date=" + new Date().toISOString().split('T')[0]);
 
                 const groups = groupsRes.data;
                 const students = studentsRes.data;
                 const attendance = attendanceRes.data;
 
-                const table = document.getElementById("groups-table");
-                table.innerHTML = "";
+                const mobileContainer = document.getElementById("groups-mobile");
+                const desktopTable = document.getElementById("groups-table");
+                
+                mobileContainer.innerHTML = "";
+                desktopTable.innerHTML = "";
 
                 let totalStudents = 0;
                 let totalPresent = 0;
                 let totalAbsent = 0;
+
+                groups.forEach(g => groupMap.set(g.id, g.number));
 
                 for (let g of groups) {
                     const groupStudents = students.filter(s => s.group_id === g.id);
@@ -292,34 +795,67 @@
                     totalAbsent += absent;
 
                     let progressBarColor = "bg-red-500";
-                    if (percent >= 80) {
-                        progressBarColor = "bg-green-500";
-                    } else if (percent >= 50) {
-                        progressBarColor = "bg-yellow-500";
-                    }
+                    if (percent >= 80) progressBarColor = "bg-green-500";
+                    else if (percent >= 50) progressBarColor = "bg-yellow-500";
 
-                    table.innerHTML += `
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td data-label="Гурӯҳ" class="p-4 text-gray-800 font-medium">${g.number}</td>
-                            <td data-label="Курс" class="p-4 text-gray-600">${courseMap.get(g.course_id) || `ID: ${g.course_id}`}</td>
-                            <td data-label="Ҳозир" class="p-4 text-green-600 font-semibold">${present}</td>
-                            <td data-label="Ғоиб" class="p-4 text-red-600 font-semibold">${absent}</td>
-                            <td data-label="Фоизи давомот" class="p-4">
-                                <div class="flex items-center">
-                                    <div class="w-full bg-gray-200 rounded-full h-2.5 mr-2">
-                                        <div class="${progressBarColor} h-2.5 rounded-full" style="width: ${percent}%"></div>
-                                    </div>
-                                    <span class="font-bold text-gray-700">${percent}%</span>
+                    mobileContainer.innerHTML += `
+                        <div class="mobile-table-card">
+                            <div class="flex justify-between items-center mb-3">
+                                <div>
+                                    <h3 class="text-lg font-bold text-gray-800">Гурӯҳи ${g.number}</h3>
+                                    <p class="text-sm text-gray-500">Курси ${courseMap.get(g.course_id) || g.course_id}</p>
                                 </div>
+                                <div class="text-right">
+                                    <div class="text-2xl font-bold text-indigo-600">${percent}%</div>
+                                </div>
+                            </div>
+                            <div class="mobile-table-row">
+                                <span class="mobile-table-label">Ҳозир</span>
+                                <span class="mobile-table-value text-green-600">✅ ${present}</span>
+                            </div>
+                            <div class="mobile-table-row">
+                                <span class="mobile-table-label">Ғоиб</span>
+                                <span class="mobile-table-value text-red-600">❌ ${absent}</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2 mt-3 mb-3">
+                                <div class="${progressBarColor} h-2 progress-bar rounded-full" style="width: ${percent}%"></div>
+                            </div>
+                            <button onclick="loadGroupStudents(${g.id})" class="mobile-action-btn">
+                                Дидани рӯйхат →
+                            </button>
+                        </div>`;
+
+                    desktopTable.innerHTML += `
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="p-4 font-bold text-gray-800">${g.number}</td>
+                            <td class="p-4 text-gray-600">Курси ${courseMap.get(g.course_id) || g.course_id}</td>
+                            <td class="p-4 text-center">
+                                <span class="badge bg-green-100 text-green-700">${present}</span>
+                            </td>
+                            <td class="p-4 text-center">
+                                <span class="badge bg-red-100 text-red-700">${absent}</span>
+                            </td>
+                            <td class="p-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="flex-grow bg-gray-200 rounded-full h-3">
+                                        <div class="${progressBarColor} h-3 progress-bar rounded-full" style="width: ${percent}%"></div>
+                                    </div>
+                                    <span class="font-bold text-gray-700 text-sm">${percent}%</span>
+                                </div>
+                            </td>
+                            <td class="p-4 text-center">
+                                <button onclick="loadGroupStudents(${g.id})" class="text-indigo-600 hover:text-indigo-800 font-medium hover:underline">
+                                    Рӯйхат →
+                                </button>
                             </td>
                         </tr>`;
                 }
                 
                 if (groups.length === 0) {
-                     table.innerHTML = `<tr><td colspan="5" class="p-4 text-center text-gray-500">Гурӯҳҳо ёфт нашуданд.</td></tr>`;
+                    mobileContainer.innerHTML = '<div class="text-center py-12 text-gray-500">Гурӯҳҳо ёфт нашуданд</div>';
+                    desktopTable.innerHTML = '<tr><td colspan="6" class="p-8 text-center text-gray-500">Гурӯҳҳо ёфт нашуданд</td></tr>';
                 }
 
-                // Навсозии картаҳои оморӣ
                 document.getElementById('total-students').textContent = totalStudents;
                 document.getElementById('total-present').textContent = totalPresent;
                 document.getElementById('total-absent').textContent = totalAbsent;
@@ -327,163 +863,408 @@
                 document.getElementById('total-percentage').textContent = `${overallPercent}%`;
 
             } catch (error) {
-                console.error("Хатогӣ ҳангоми боркунии гурӯҳҳо:", error);
-                document.getElementById("groups-table").innerHTML = `
-                    <tr><td colspan="5" class="p-4 text-center text-red-600">Хатогӣ дар гирифтани маълумот.</td></tr>`;
+                console.error("Хатогӣ:", error);
+                showToast("Хатогӣ дар боркунии гурӯҳҳо", 'error');
             }
         }
 
+        async function loadGroupStudents(groupId) {
+            try {
+                const response = await axios.get(`/api/group_summary/${groupId}`);
+                const detail = document.getElementById('group-detail');
+                const groupNumber = groupMap.get(groupId) || 'Unknown';
+                
+                let mobileCards = '';
+                let desktopRows = '';
+
+                response.data.forEach(s => {
+                    const badgeColor = s.absent_count > 6 ? 'bg-red-100 text-red-700' : s.absent_count > 3 ? 'bg-yellow-100 text-yellow-700' : 'bg-green-100 text-green-700';
+                    
+                    mobileCards += `
+                        <div class="mobile-table-card">
+                            <div class="flex justify-between items-center mb-3">
+                                <h3 class="text-base font-bold text-gray-800">${s.name}</h3>
+                                <span class="badge ${badgeColor}">${s.absent_count} ғоибӣ</span>
+                            </div>
+                            <button onclick="loadStudentProfile(${s.id}, '${s.name}')" class="mobile-action-btn">
+                                Дидани профил →
+                            </button>
+                        </div>`;
+
+                    desktopRows += `
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="p-4 font-medium text-gray-800">${s.name}</td>
+                            <td class="p-4 text-center">
+                                <span class="badge ${badgeColor}">${s.absent_count}</span>
+                            </td>
+                            <td class="p-4 text-center">
+                                <button onclick="loadStudentProfile(${s.id}, '${s.name}')" class="text-indigo-600 hover:text-indigo-800 font-medium hover:underline">
+                                    Профил →
+                                </button>
+                            </td>
+                        </tr>`;
+                });
+
+                let html = `
+                    <button onclick="hideGroupDetail()" class="back-button">
+                        ← Бозгашт
+                    </button>
+                    <div class="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-xl p-4 md:p-6 border-l-4 border-indigo-500 mb-4 fade-in">
+                        <h3 class="text-lg md:text-xl font-bold text-gray-800">📋 Гурӯҳи ${groupNumber}</h3>
+                        <p class="text-sm text-gray-600 mt-1">Рӯйхати донишҷӯён</p>
+                    </div>
+                    
+                    <div class="block md:hidden">${mobileCards}</div>
+                    
+                    <div class="desktop-table overflow-x-auto rounded-lg border border-gray-200">
+                        <table class="w-full">
+                            <thead class="bg-gradient-to-r from-gray-50 to-gray-100 border-b-2 border-gray-200">
+                                <tr>
+                                    <th class="p-4 text-left text-sm font-semibold text-gray-700">Ном ва Насаб</th>
+                                    <th class="p-4 text-center text-sm font-semibold text-gray-700">Ғоибӣ</th>
+                                    <th class="p-4 text-center text-sm font-semibold text-gray-700">Амалиёт</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">${desktopRows}</tbody>
+                        </table>
+                    </div>`;
+                
+                detail.innerHTML = html;
+                detail.classList.remove('hidden');
+                document.getElementById('student-profile').classList.add('hidden');
+                detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+            } catch (error) {
+                console.error("Хатогӣ:", error);
+                showToast("Хатогӣ дар боркунии рӯйхати донишҷӯён", 'error');
+            }
+        }
+
+        function hideGroupDetail() {
+            document.getElementById('group-detail').classList.add('hidden');
+            document.getElementById('student-profile').classList.add('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        async function loadStudentProfile(studentId, name) {
+            try {
+                const response = await axios.get(`/api/student_attendance/${studentId}`);
+                const profile = document.getElementById('student-profile');
+                const absentDates = response.data
+                    .filter(a => a.status === "absent")
+                    .map(a => new Date(a.date).toLocaleDateString('tg-TJ', { month: 'short', day: 'numeric' }))
+                    .sort()
+                    .join(', ');
+                
+                const absentCount = response.data.filter(a => a.status === "absent").length;
+                const badgeColor = absentCount > 6 ? 'bg-red-100 text-red-700' : absentCount > 3 ? 'bg-yellow-100 text-yellow-700' : 'bg-green-100 text-green-700';
+                
+                let html = `
+                    <button onclick="hideStudentProfile()" class="back-button">
+                        ← Бозгашт
+                    </button>
+                    <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4 md:p-6 border-l-4 border-purple-500 fade-in">
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4 gap-3">
+                            <div>
+                                <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-1">👤 Профили донишҷӯ</h3>
+                                <p class="text-base md:text-lg font-semibold text-gray-700">${name}</p>
+                            </div>
+                            <span class="badge ${badgeColor} text-base px-4 py-2 self-start">
+                                ${absentCount} ғоибӣ
+                            </span>
+                        </div>
+                        <div class="bg-white rounded-lg p-4">
+                            <p class="text-sm font-semibold text-gray-600 mb-2">📅 Рӯзҳои ғоиб:</p>
+                            <p class="text-sm md:text-base text-gray-800">${absentDates || 'Ғоибӣ нест ✅'}</p>
+                        </div>
+                    </div>`;
+                
+                profile.innerHTML = html;
+                profile.classList.remove('hidden');
+                profile.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+            } catch (error) {
+                console.error("Хатогӣ:", error);
+                showToast("Хатогӣ дар боркунии профили донишҷӯ", 'error');
+            }
+        }
+
+        function hideStudentProfile() {
+            document.getElementById('student-profile').classList.add('hidden');
+        }
+
         async function loadAbsentStudents() {
-            showLoading("absent-table");
+            showLoading("absent-mobile");
+            const tableBody = document.getElementById("absent-table");
+            if (tableBody) tableBody.innerHTML = '<tr><td colspan="3" class="p-8 text-center"><div class="spinner mx-auto"></div></td></tr>';
+            
             try {
                 const response = await axios.get("/api/absent_students/today");
-                const table = document.getElementById("absent-table");
+                const mobileContainer = document.getElementById("absent-mobile");
+                const desktopTable = document.getElementById("absent-table");
                 
                 if (response.data && response.data.length > 0) {
-                    table.innerHTML = response.data.map(s => `
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td data-label="Ном ва Насаб" class="p-4 font-medium ${s.total_absences > 6 ? 'text-red-600' : 'text-gray-800'}">${s.name}</td>
-                            <td data-label="Гурӯҳ" class="p-4 text-gray-600">${s.group_number}</td>
-                            <td data-label="Курс" class="p-4 text-gray-600">${courseMap.get(s.course_id) || `ID: ${s.course_id}`}</td>
-                        </tr>`).join("");
+                    let mobileCards = '';
+                    let desktopRows = '';
+
+                    response.data.forEach(s => {
+                        const isProblematic = s.total_absences > 6;
+                        
+                        mobileCards += `
+                            <div class="mobile-table-card ${isProblematic ? 'border-red-500' : ''}">
+                                <h3 class="text-base font-bold ${isProblematic ? 'text-red-600' : 'text-gray-800'} mb-2">
+                                    ${s.name}
+                                    ${isProblematic ? '<span class="badge bg-red-100 text-red-700 ml-2 text-xs">Проблема</span>' : ''}
+                                </h3>
+                                <div class="mobile-table-row">
+                                    <span class="mobile-table-label">Гурӯҳ</span>
+                                    <span class="mobile-table-value">${s.group_number}</span>
+                                </div>
+                                <div class="mobile-table-row">
+                                    <span class="mobile-table-label">Курс</span>
+                                    <span class="mobile-table-value">Курси ${courseMap.get(s.course_id) || s.course_id}</span>
+                                </div>
+                            </div>`;
+
+                        desktopRows += `
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="p-4 font-medium ${isProblematic ? 'text-red-600' : 'text-gray-800'}">
+                                    ${s.name}
+                                    ${isProblematic ? '<span class="badge bg-red-100 text-red-700 ml-2 text-xs">Проблема</span>' : ''}
+                                </td>
+                                <td class="p-4 text-gray-600">${s.group_number}</td>
+                                <td class="p-4 text-gray-600">Курси ${courseMap.get(s.course_id) || s.course_id}</td>
+                            </tr>`;
+                    });
+
+                    mobileContainer.innerHTML = mobileCards;
+                    desktopTable.innerHTML = desktopRows;
                 } else {
-                    table.innerHTML = `
-                        <tr><td colspan="3" class="p-4 text-center text-red-600">Ҳоло астунест пурра ба анҷом нарасидааст !!!</td></tr>`;
+                    const emptyMessage = `
+                        <div class="text-center py-12">
+                            <div class="text-5xl mb-3">📅</div>
+                            <p class="text-red-600 font-semibold text-base md:text-lg">Ҳоло астунест ба анҷом нарасидааст!</p>
+                        </div>`;
+                    mobileContainer.innerHTML = emptyMessage;
+                    desktopTable.innerHTML = `<tr><td colspan="3" class="p-12">${emptyMessage}</td></tr>`;
                 }
             } catch (error) {
-                console.error("Хатогӣ ҳангоми гирифтани ғоибон:", error);
-                document.getElementById("absent-table").innerHTML = `
-                    <tr><td colspan="3" class="p-4 text-center text-red-600">Хатогӣ дар гирифтани рӯйхати ғоибон.</td></tr>`;
+                console.error("Хатогӣ:", error);
+                showToast("Хатогӣ дар боркунии рӯйхати ғоибон", 'error');
             }
         }
 
         async function loadWeeklyAttendance() {
-            showLoading("weekly-table");
+            showLoading("weekly-mobile");
+            const tableBody = document.getElementById("weekly-table");
+            if (tableBody) tableBody.innerHTML = '<tr><td colspan="4" class="p-8 text-center"><div class="spinner mx-auto"></div></td></tr>';
+            
             try {
                 const response = await axios.get("/api/absent_summary?period=weekly");
-                const table = document.getElementById("weekly-table");
+                const mobileContainer = document.getElementById("weekly-mobile");
+                const desktopTable = document.getElementById("weekly-table");
                 
                 if (response.data && response.data.length > 0) {
-                    table.innerHTML = response.data.map(s => `
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td data-label="Ном ва Насаб" class="p-4 text-gray-800 font-medium">${s.name}</td>
-                            <td data-label="Гурӯҳ" class="p-4 text-gray-600">${s.group_number}</td>
-                            <td data-label="Курс" class="p-4 text-gray-600">${courseMap.get(s.course_id) || `ID: ${s.course_id}`}</td>
-                            <td data-label="Шумораи ғоибӣ (ҳафта)" class="p-4 text-red-600 font-semibold">${s.absent_count}</td>
-                        </tr>`).join("");
+                    let mobileCards = '';
+                    let desktopRows = '';
+
+                    response.data.forEach(s => {
+                        const badgeColor = s.absent_count > 3 ? 'bg-red-100 text-red-700' : 'bg-yellow-100 text-yellow-700';
+                        
+                        mobileCards += `
+                            <div class="mobile-table-card">
+                                <div class="flex justify-between items-center mb-3">
+                                    <div class="flex-1">
+                                        <h3 class="text-base font-bold text-gray-800">${s.name}</h3>
+                                        <p class="text-sm text-gray-500">${s.group_number} • Курси ${courseMap.get(s.course_id) || s.course_id}</p>
+                                    </div>
+                                    <span class="badge ${badgeColor} text-base">${s.absent_count}</span>
+                                </div>
+                            </div>`;
+
+                        desktopRows += `
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="p-4 font-medium text-gray-800">${s.name}</td>
+                                <td class="p-4 text-gray-600">${s.group_number}</td>
+                                <td class="p-4 text-gray-600">Курси ${courseMap.get(s.course_id) || s.course_id}</td>
+                                <td class="p-4 text-center">
+                                    <span class="badge ${badgeColor}">${s.absent_count}</span>
+                                </td>
+                            </tr>`;
+                    });
+
+                    mobileContainer.innerHTML = mobileCards;
+                    desktopTable.innerHTML = desktopRows;
                 } else {
-                    table.innerHTML = `
-                        <tr><td colspan="4" class="p-4 text-center text-green-600">Дар ҳафтаи гузашта ғоибҳо нестанд! ✅</td></tr>`;
+                    const emptyMessage = `
+                        <div class="text-center py-12">
+                            <div class="text-5xl mb-3">✅</div>
+                            <p class="text-green-600 font-semibold text-base md:text-lg">Дар ҳафтаи гузашта ғоибҳо нестанд!</p>
+                        </div>`;
+                    mobileContainer.innerHTML = emptyMessage;
+                    desktopTable.innerHTML = `<tr><td colspan="4" class="p-12">${emptyMessage}</td></tr>`;
                 }
             } catch (error) {
-                console.error("Хатогӣ ҳангоми гирифтани давомоти ҳафтаина:", error);
-                document.getElementById("weekly-table").innerHTML = `
-                    <tr><td colspan="4" class="p-4 text-center text-red-600">Хатогӣ дар гирифтани маълумот.</td></tr>`;
+                console.error("Хатогӣ:", error);
+                showToast("Хатогӣ дар боркунии давомоти ҳафтаина", 'error');
             }
         }
 
         async function loadMonthlyAttendance() {
-            showLoading("monthly-table");
+            showLoading("monthly-mobile");
+            const tableBody = document.getElementById("monthly-table");
+            if (tableBody) tableBody.innerHTML = '<tr><td colspan="4" class="p-8 text-center"><div class="spinner mx-auto"></div></td></tr>';
+            
             try {
                 const response = await axios.get("/api/absent_summary?period=monthly");
-                const table = document.getElementById("monthly-table");
+                const mobileContainer = document.getElementById("monthly-mobile");
+                const desktopTable = document.getElementById("monthly-table");
                 
                 if (response.data && response.data.length > 0) {
-                    table.innerHTML = response.data.map(s => `
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td data-label="Ном ва Насаб" class="p-4 text-gray-800 font-medium">${s.name}</td>
-                            <td data-label="Гурӯҳ" class="p-4 text-gray-600">${s.group_number}</td>
-                            <td data-label="Курс" class="p-4 text-gray-600">${courseMap.get(s.course_id) || `ID: ${s.course_id}`}</td>
-                            <td data-label="Шумораи ғоибӣ (моҳ)" class="p-4 text-red-600 font-semibold">${s.absent_count}</td>
-                        </tr>`).join("");
+                    let mobileCards = '';
+                    let desktopRows = '';
+
+                    response.data.forEach(s => {
+                        const badgeColor = s.absent_count > 6 ? 'bg-red-100 text-red-700' : s.absent_count > 3 ? 'bg-orange-100 text-orange-700' : 'bg-yellow-100 text-yellow-700';
+                        
+                        mobileCards += `
+                            <div class="mobile-table-card">
+                                <div class="flex justify-between items-center mb-3">
+                                    <div class="flex-1">
+                                        <h3 class="text-base font-bold text-gray-800">${s.name}</h3>
+                                        <p class="text-sm text-gray-500">${s.group_number} • Курси ${courseMap.get(s.course_id) || s.course_id}</p>
+                                    </div>
+                                    <span class="badge ${badgeColor} text-base">${s.absent_count}</span>
+                                </div>
+                            </div>`;
+
+                        desktopRows += `
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="p-4 font-medium text-gray-800">${s.name}</td>
+                                <td class="p-4 text-gray-600">${s.group_number}</td>
+                                <td class="p-4 text-gray-600">Курси ${courseMap.get(s.course_id) || s.course_id}</td>
+                                <td class="p-4 text-center">
+                                    <span class="badge ${badgeColor}">${s.absent_count}</span>
+                                </td>
+                            </tr>`;
+                    });
+
+                    mobileContainer.innerHTML = mobileCards;
+                    desktopTable.innerHTML = desktopRows;
                 } else {
-                    table.innerHTML = `
-                        <tr><td colspan="4" class="p-4 text-center text-green-600">Дар моҳи гузашта ғоибҳо нестанд! ✅</td></tr>`;
+                    const emptyMessage = `
+                        <div class="text-center py-12">
+                            <div class="text-5xl mb-3">✅</div>
+                            <p class="text-green-600 font-semibold text-base md:text-lg">Дар моҳи гузашта ғоибҳо нестанд!</p>
+                        </div>`;
+                    mobileContainer.innerHTML = emptyMessage;
+                    desktopTable.innerHTML = `<tr><td colspan="4" class="p-12">${emptyMessage}</td></tr>`;
                 }
             } catch (error) {
-                console.error("Хатогӣ ҳангоми гирифтани давомоти моҳона:", error);
-                document.getElementById("monthly-table").innerHTML = `
-                    <tr><td colspan="4" class="p-4 text-center text-red-600">Хатогӣ дар гирифтани маълумот.</td></tr>`;
+                console.error("Хатогӣ:", error);
+                showToast("Хатогӣ дар боркунии давомоти моҳона", 'error');
+            }
+        }
+
+        async function loadProblemStudents() {
+            showLoading("problem-mobile");
+            const tableBody = document.getElementById("problem-table");
+            if (tableBody) tableBody.innerHTML = '<tr><td colspan="4" class="p-8 text-center"><div class="spinner mx-auto"></div></td></tr>';
+            
+            try {
+                const response = await axios.get("/api/problem_students");
+                const mobileContainer = document.getElementById("problem-mobile");
+                const desktopTable = document.getElementById("problem-table");
+                
+                if (response.data && response.data.length > 0) {
+                    let mobileCards = '';
+                    let desktopRows = '';
+
+                    response.data.forEach(s => {
+                        mobileCards += `
+                            <div class="mobile-table-card border-red-500">
+                                <div class="flex justify-between items-center mb-3">
+                                    <div class="flex-1">
+                                        <h3 class="text-base font-bold text-red-600">⚠️ ${s.name}</h3>
+                                        <p class="text-sm text-gray-500">${s.group_number} • Курси ${courseMap.get(s.course_id) || s.course_id}</p>
+                                    </div>
+                                    <span class="badge bg-red-100 text-red-700 text-base font-bold">${s.total_absences}</span>
+                                </div>
+                            </div>`;
+
+                        desktopRows += `
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="p-4 font-medium text-gray-800">${s.name}</td>
+                                <td class="p-4 text-gray-600">${s.group_number}</td>
+                                <td class="p-4 text-gray-600">Курси ${courseMap.get(s.course_id) || s.course_id}</td>
+                                <td class="p-4 text-center">
+                                    <span class="badge bg-red-100 text-red-700">⚠️ ${s.total_absences}</span>
+                                </td>
+                            </tr>`;
+                    });
+
+                    mobileContainer.innerHTML = mobileCards;
+                    desktopTable.innerHTML = desktopRows;
+                } else {
+                    const emptyMessage = `
+                        <div class="text-center py-12">
+                            <div class="text-5xl mb-3">✅</div>
+                            <p class="text-green-600 font-semibold text-base md:text-lg">Шахсони проблема нестанд!</p>
+                        </div>`;
+                    mobileContainer.innerHTML = emptyMessage;
+                    desktopTable.innerHTML = `<tr><td colspan="4" class="p-12">${emptyMessage}</td></tr>`;
+                }
+            } catch (error) {
+                console.error("Хатогӣ:", error);
+                showToast("Хатогӣ дар боркунии рӯйхати шахсони проблема", 'error');
             }
         }
 
         async function generateMonthlyReport() {
+            if (!isMonthComplete()) {
+                showToast("Ҳисоботи моҳона танҳо пас аз анҷоми моҳ дастрас аст!", 'error');
+                return;
+            }
+
+            const buttons = document.querySelectorAll('.mobile-tab[data-section="report"], .tab-button[data-tab="report"]');
+            const originalTexts = Array.from(buttons).map(btn => btn.innerHTML);
+            
+            buttons.forEach(btn => {
+                btn.innerHTML = '<div class="mobile-tab-icon">⏳</div><div>Сабр...</div>';
+                btn.disabled = true;
+            });
+            
             try {
                 const response = await axios.get("/api/generate_monthly_report");
-                alert(response.data.message);
+                showToast(response.data.message, 'success');
             } catch (error) {
-                console.error("Хатогӣ ҳангоми генератсияи ҳисобот:", error);
-                alert("Хатогӣ ҳангоми генератсияи ҳисоботи моҳона.");
+                console.error("Хатогӣ:", error);
+                const errorMessage = error.response?.data?.detail || "Хатогӣ ҳангоми генератсияи ҳисоботи моҳона";
+                showToast(errorMessage, 'error');
+            } finally {
+                buttons.forEach((btn, index) => {
+                    btn.innerHTML = originalTexts[index];
+                    btn.disabled = !isMonthComplete();
+                });
             }
         }
 
-        function toggleAbsentStudents() {
-            const wrapper = document.getElementById('absent-students-wrapper');
-            const button = document.getElementById('show-absent-btn');
-            const isVisible = wrapper.classList.contains('visible');
-
-            if (isVisible) {
-                wrapper.classList.remove('visible');
-                button.textContent = 'Намоиши донишҷӯёни ғоиб';
-                button.classList.remove('bg-gray-500', 'hover:bg-gray-600');
-                button.classList.add('bg-red-500', 'hover:bg-red-600');
-            } else {
-                loadAbsentStudents();
-                wrapper.classList.add('visible');
-                button.textContent = 'Пинҳон кардани рӯйхат';
-                button.classList.remove('bg-red-500', 'hover:bg-red-600');
-                button.classList.add('bg-gray-500', 'hover:bg-gray-600');
+        setInterval(() => {
+            if (currentSection === 'dashboard') {
+                loadGroups();
             }
-        }
+        }, 60000);
 
-        function toggleWeeklyAttendance() {
-            const wrapper = document.getElementById('weekly-attendance-wrapper');
-            const button = document.getElementById('show-weekly-btn');
-            const isVisible = wrapper.classList.contains('visible');
-
-            if (isVisible) {
-                wrapper.classList.remove('visible');
-                button.textContent = 'Давомоти ҳафтаина';
-                button.classList.remove('bg-gray-500', 'hover:bg-gray-600');
-                button.classList.add('bg-blue-500', 'hover:bg-blue-600');
-            } else {
-                loadWeeklyAttendance();
-                wrapper.classList.add('visible');
-                button.textContent = 'Пинҳон кардани рӯйхат';
-                button.classList.remove('bg-blue-500', 'hover:bg-blue-600');
-                button.classList.add('bg-gray-500', 'hover:bg-gray-600');
-            }
-        }
-
-        function toggleMonthlyAttendance() {
-            const wrapper = document.getElementById('monthly-attendance-wrapper');
-            const button = document.getElementById('show-monthly-btn');
-            const isVisible = wrapper.classList.contains('visible');
-
-            if (isVisible) {
-                wrapper.classList.remove('visible');
-                button.textContent = 'Давомоти моҳона';
-                button.classList.remove('bg-gray-500', 'hover:bg-gray-600');
-                button.classList.add('bg-green-500', 'hover:bg-green-600');
-            } else {
-                loadMonthlyAttendance();
-                wrapper.classList.add('visible');
-                button.textContent = 'Пинҳон кардани рӯйхат';
-                button.classList.remove('bg-green-500', 'hover:bg-green-600');
-                button.classList.add('bg-gray-500', 'hover:bg-gray-600');
-            }
-        }
-        
-        // Автомат навсозӣ ҳар 30 сония
-        setInterval(loadGroups, 30000);
-
-        // Боркунии аввал
         document.addEventListener('DOMContentLoaded', () => {
+            updateCurrentDate();
+            updateReportButtonState();
+            setInterval(updateCurrentDate, 60000);
+            setInterval(updateReportButtonState, 60000);
+            
             loadCourses().then(() => {
                 loadGroups();
             });
         });
-
     </script>
 </body>
 </html>

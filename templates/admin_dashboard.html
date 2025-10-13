@@ -7,30 +7,435 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <style>
-        /* Smooth animation for toast notifications */
+        /* ===== ОСНОВНЫЕ ПЕРЕМЕННЫЕ И НАСТРОЙКИ ===== */
+        :root {
+            --primary-color: #4f46e5; /* indigo-600 */
+            --primary-dark: #4338ca; /* indigo-700 */
+            --success-color: #16a34a; /* green-600 */
+            --error-color: #dc2626; /* red-600 */
+            --text-dark: #1f2937; /* gray-800 */
+            --text-light: #6b7280; /* gray-500 */
+            --bg-light: #f9fafb; /* gray-50 */
+            --border-light: #e5e7eb; /* gray-200 */
+            --transition-standard: all 0.3s ease;
+        }
+
+        /* ===== БАЗОВЫЕ СТИЛИ ===== */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
+        }
+
+        /* ===== КОМПОНЕНТЫ ИНТЕРФЕЙСА ===== */
+
+        /* Панели и карточки */
+        .panel {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .panel {
+                padding: 2rem;
+            }
+        }
+
+        /* Заголовки панелей с нумерацией */
+        .panel-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .panel-number {
+            width: 2rem;
+            height: 2rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        @media (min-width: 640px) {
+            .panel-number {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+        }
+
+        /* Элементы формы */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-light);
+            border-radius: 0.5rem;
+            background-color: var(--bg-light);
+            transition: var(--transition-standard);
+            font-size: 0.875rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+        }
+
+        @media (min-width: 640px) {
+            .form-control {
+                font-size: 1rem;
+            }
+        }
+
+        /* Кнопки */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            transition: var(--transition-standard);
+            cursor: pointer;
+            border: none;
+            font-size: 0.875rem;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background-color: #f3f4f6;
+            color: #374151;
+        }
+
+        .btn-secondary:hover {
+            background-color: #e5e7eb;
+        }
+
+        .btn-full {
+            width: 100%;
+        }
+
+        @media (min-width: 640px) {
+            .btn {
+                font-size: 1rem;
+                padding: 0.625rem 1.5rem;
+            }
+        }
+
+        /* Таблица */
+        .table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            border: 1px solid var(--border-light);
+            border-radius: 0.5rem;
+            max-height: 24rem;
+        }
+
+        .table {
+            width: 100%;
+            text-align: left;
+            min-width: 320px;
+            border-collapse: collapse;
+        }
+
+        .table thead {
+            background-color: var(--bg-light);
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+        }
+
+        .table th {
+            padding: 0.75rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .table td {
+            padding: 0.75rem 1rem;
+            font-size: 0.875rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .table tbody tr {
+            transition: background-color 0.2s;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f9fafb;
+        }
+
+        .table tbody tr:not(:last-child) {
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        @media (min-width: 640px) {
+            .table th {
+                font-size: 0.875rem;
+                padding: 1rem;
+            }
+            
+            .table td {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+        }
+
+        /* Кастомные чекбоксы */
+        .checkbox-custom {
+            width: 1.25rem;
+            height: 1.25rem;
+            background-color: var(--bg-light);
+            border: 1px solid #d1d5db;
+            border-radius: 0.25rem;
+            appearance: none;
+            cursor: pointer;
+            position: relative;
+            transition: var(--transition-standard);
+        }
+
+        .checkbox-custom:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .checkbox-custom:checked::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 45%;
+            width: 0.375rem;
+            height: 0.75rem;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        @media (min-width: 640px) {
+            .checkbox-custom {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+            
+            .checkbox-custom:checked::before {
+                width: 0.4375rem;
+                height: 0.875rem;
+            }
+        }
+
+        /* Уведомления (тосты) */
         .toast {
+            position: fixed;
+            bottom: 1.25rem;
+            right: 0.75rem;
+            background-color: var(--success-color);
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            max-width: 90%;
             visibility: hidden;
             opacity: 0;
-            transition: opacity 0.5s, transform 0.5s, visibility 0.5s;
-            transform: translateY(20px);
+            transform: translateY(1.25rem);
+            transition: var(--transition-standard);
+            z-index: 50;
         }
+
         .toast.show {
             visibility: visible;
             opacity: 1;
             transform: translateY(0);
         }
-        /* Custom checkbox style */
-        .custom-checkbox:checked {
-            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+
+        .toast-error {
+            background-color: var(--error-color);
         }
-        /* Ensure table doesn't overflow on mobile */
-        .table-container {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+
+        .toast-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .toast-message {
+            font-size: 0.875rem;
+        }
+
+        @media (min-width: 640px) {
+            .toast {
+                right: 1.25rem;
+                padding: 0.75rem 1.5rem;
+                max-width: 28rem;
+            }
+            
+            .toast-icon {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+            
+            .toast-message {
+                font-size: 1rem;
+            }
+        }
+
+        /* Индикатор загрузки */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+            padding: 1.5rem;
+        }
+
+        .spinner {
+            width: 1.5rem;
+            height: 1.5rem;
+            border: 2px solid transparent;
+            border-top: 2px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Сетка */
+        .grid-responsive {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .grid-responsive {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        /* Утилитарные классы */
+        .hidden {
+            display: none;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .flex-row {
+            flex-direction: row;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .justify-end {
+            justify-content: flex-end;
+        }
+
+        .gap-2 {
+            gap: 0.5rem;
+        }
+
+        .gap-3 {
+            gap: 0.75rem;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .w-auto {
+            width: auto;
+        }
+
+        .mt-4 {
+            margin-top: 1rem;
+        }
+
+        .mt-6 {
+            margin-top: 1.5rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Адаптивные классы */
+        @media (min-width: 640px) {
+            .sm\:flex-row {
+                flex-direction: row;
+            }
+            
+            .sm\:w-auto {
+                width: auto;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-100 min-h-screen flex flex-col font-sans">
+<body class="bg-gray-100 min-h-screen flex flex-col">
     <header class="bg-indigo-700 text-white py-3 sm:py-4 shadow-md sticky top-0 z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
             <h1 class="text-xl sm:text-2xl md:text-3xl font-bold">Панели Администратор</h1>
@@ -43,26 +448,30 @@
             <p class="text-gray-500 mt-2 text-sm sm:text-base">Ҷараёни бақайдгирии ҳозир ва ғоиби донишҷӯён</p>
         </div>
 
-        <div class="bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 mb-6">
-            <div class="flex items-center mb-4 sm:mb-6">
-                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-base sm:text-lg mr-3 sm:mr-4">1</div>
+        <div class="panel">
+            <div class="panel-header">
+                <div class="panel-number">1</div>
                 <h2 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800">Интихоби Гурӯҳ</h2>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                <div>
-                    <label for="course-select" class="block text-sm font-medium text-gray-700 mb-1">Курс</label>
-                    <select id="course-select" class="p-3 border border-gray-200 rounded-lg w-full bg-gray-50 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition text-sm sm:text-base" onchange="loadGroups()"></select>
+            <div class="grid-responsive">
+                <div class="form-group">
+                    <label for="course-select" class="form-label">Курс</label>
+                    <select id="course-select" class="form-control" onchange="loadGroups()"></select>
                 </div>
-                <div>
-                    <label for="group-select" class="block text-sm font-medium text-gray-700 mb-1">Гурӯҳ</label>
-                    <select id="group-select" class="p-3 border border-gray-200 rounded-lg w-full bg-gray-50 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition text-sm sm:text-base" onchange="loadStudents()"></select>
+                <div class="form-group">
+                    <label for="group-select" class="form-label">Гурӯҳ</label>
+                    <select id="group-select" class="form-control" onchange="loadStudents()"></select>
+                </div>
+                <div class="form-group">
+                    <label for="date-select" class="form-label">Сана</label>
+                    <input type="date" id="date-select" class="form-control" onchange="loadStudents()">
                 </div>
             </div>
         </div>
 
-        <div id="students-panel" class="bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 hidden">
-            <div class="flex items-center mb-4 sm:mb-6">
-                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-base sm:text-lg mr-3 sm:mr-4">2</div>
+        <div id="students-panel" class="panel hidden">
+            <div class="panel-header">
+                <div class="panel-number">2</div>
                 <div>
                     <h2 class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800">Рӯйхати Донишҷӯён</h2>
                     <p id="panel-subtitle" class="text-gray-500 text-xs sm:text-sm"></p>
@@ -70,24 +479,24 @@
             </div>
             
             <div class="flex flex-col sm:flex-row justify-end gap-3 mb-4">
-                <button onclick="toggleAllCheckboxes(true)" class="text-sm bg-indigo-100 text-indigo-700 px-3 py-2 sm:px-4 sm:py-2 rounded-lg hover:bg-indigo-200 transition w-full sm:w-auto">Ҳамаро ҳозиранд</button>
-                <button onclick="toggleAllCheckboxes(false)" class="text-sm bg-gray-100 text-gray-700 px-3 py-2 sm:px-4 sm:py-2 rounded-lg hover:bg-gray-200 transition w-full sm:w-auto">Бекор кардан</button>
+                <button onclick="toggleAllCheckboxes(true)" class="btn btn-secondary w-full sm:w-auto">Ҳамаро ҳозиранд</button>
+                <button onclick="toggleAllCheckboxes(false)" class="btn btn-secondary w-full sm:w-auto">Бекор кардан</button>
             </div>
             
-            <div class="table-container max-h-96 border border-gray-200 rounded-lg">
-                <table class="w-full text-left min-w-[320px]">
-                    <thead class="bg-gray-50 border-b border-gray-200 sticky top-0">
+            <div class="table-container">
+                <table class="table">
+                    <thead>
                         <tr>
-                            <th class="p-3 sm:p-4 text-xs sm:text-sm font-semibold text-gray-600">Номи Донишҷӯ</th>
-                            <th class="p-3 sm:p-4 text-xs sm:text-sm font-semibold text-gray-600 text-center w-16 sm:w-24">Ҳозир</th>
+                            <th>Номи Донишҷӯ</th>
+                            <th class="text-center w-16 sm:w-24">Ҳозир</th>
                         </tr>
                     </thead>
-                    <tbody id="students-table" class="divide-y divide-gray-200"></tbody>
+                    <tbody id="students-table"></tbody>
                 </table>
             </div>
 
             <button id="save-button" onclick="saveAttendance()" 
-                    class="bg-indigo-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg w-full mt-4 sm:mt-6 hover:bg-indigo-700 transition font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 flex items-center justify-center gap-2 text-sm sm:text-base">
+                    class="btn btn-primary btn-full mt-4 sm:mt-6">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 sm:w-5 h-4 sm:h-5" 
                      fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" 
@@ -99,9 +508,9 @@
             </button>
         </div>
 
-        <div id="toast" class="toast fixed bottom-5 right-3 sm:right-5 bg-green-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg shadow-lg flex items-center gap-2 sm:gap-3 max-w-[90%] sm:max-w-md">
-            <span id="toast-icon"></span>
-            <span id="toast-message" class="text-sm sm:text-base"></span>
+        <div id="toast" class="toast">
+            <span id="toast-icon" class="toast-icon"></span>
+            <span id="toast-message" class="toast-message"></span>
         </div>
     </main>
 
@@ -115,9 +524,14 @@
         // --- Variables ---
         const courseSelect = document.getElementById("course-select");
         const groupSelect = document.getElementById("group-select");
+        const dateSelect = document.getElementById("date-select");
         const studentsPanel = document.getElementById("students-panel");
         const studentsTable = document.getElementById("students-table");
         const saveButton = document.getElementById("save-button");
+
+        // Set default date to today
+        const today = new Date().toISOString().split('T')[0];
+        dateSelect.value = today;
 
         // --- Utility Functions ---
         function showToast(message, type = 'success') {
@@ -125,13 +539,16 @@
             const toastMessage = document.getElementById("toast-message");
             const toastIcon = document.getElementById("toast-icon");
             
-            toast.className = 'toast fixed bottom-5 right-3 sm:right-5 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg shadow-lg flex items-center gap-2 sm:gap-3 max-w-[90%] sm:max-w-md';
+            // Reset classes
+            toast.className = 'toast';
+            
+            // Set type-specific classes
             if (type === 'success') {
                 toast.classList.add('bg-green-600');
-                toastIcon.innerHTML = `<svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
+                toastIcon.innerHTML = `<svg class="toast-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
             } else {
-                toast.classList.add('bg-red-600');
-                toastIcon.innerHTML = `<svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
+                toast.classList.add('toast-error');
+                toastIcon.innerHTML = `<svg class="toast-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
             }
 
             toastMessage.textContent = message;
@@ -140,7 +557,7 @@
         }
 
         function showLoading(tableBody) {
-            tableBody.innerHTML = `<tr><td colspan="2" class="p-6 sm:p-8 text-center"><div class="flex justify-center items-center gap-2 text-gray-500"><div class="animate-spin rounded-full h-6 sm:h-8 w-6 sm:w-8 border-b-2 border-indigo-600"></div><span class="text-sm sm:text-base">Маълумот бор шуда истодааст...</span></div></td></tr>`;
+            tableBody.innerHTML = `<tr><td colspan="2"><div class="loading"><div class="spinner"></div><span>Маълумот бор шуда истодааст...</span></div></td></tr>`;
         }
 
         // --- Core Logic ---
@@ -171,7 +588,8 @@
 
         async function loadStudents() {
             const groupId = groupSelect.value;
-            if (!groupId) {
+            const date = dateSelect.value;
+            if (!groupId || !date) {
                 studentsPanel.classList.add('hidden');
                 return;
             }
@@ -179,37 +597,36 @@
             studentsPanel.classList.remove('hidden');
             showLoading(studentsTable);
             
-            const today = new Date().toISOString().split('T')[0];
-            document.getElementById('panel-subtitle').textContent = `Санаи имрӯза: ${today}`;
+            document.getElementById('panel-subtitle').textContent = `Сана: ${date}`;
 
             try {
                 const [studentsRes, attendanceRes] = await Promise.all([
                     axios.get(`/api/students?group_id=${groupId}`),
-                    axios.get(`/api/attendance/today?group_id=${groupId}`)
+                    axios.get(`/api/attendance?date=${date}&group_id=${groupId}`)
                 ]);
 
                 const students = studentsRes.data;
-                const presentStudentIds = new Set(attendanceRes.data.map(att => att.student_id));
+                const presentStudentIds = new Set(attendanceRes.data.filter(att => att.status === "present").map(att => att.student_id));
                 
                 if (students.length === 0) {
-                    studentsTable.innerHTML = `<tr><td colspan="2" class="text-center p-6 sm:p-8 text-gray-500 text-sm sm:text-base">Дар ин гурӯҳ донишҷū вуҷуд надорад.</td></tr>`;
+                    studentsTable.innerHTML = `<tr><td colspan="2" class="text-center p-6 text-gray-500">Дар ин гурӯҳ донишҷӯ вуҷуд надорад.</td></tr>`;
                     return;
                 }
 
                 studentsTable.innerHTML = students.map(s => {
                     const isPresent = presentStudentIds.has(s.id);
-                    return `<tr class="hover:bg-gray-50 transition-colors">
-                        <td class="p-3 sm:p-4 text-gray-800 font-medium text-sm sm:text-base">${s.name}</td>
-                        <td class="p-3 sm:p-4 text-center">
+                    return `<tr>
+                        <td>${s.name}</td>
+                        <td class="text-center">
                             <input type="checkbox" data-id="${s.id}" ${isPresent ? 'checked' : ''} 
-                                   class="custom-checkbox w-5 h-5 sm:w-6 sm:h-6 text-indigo-600 bg-gray-100 border-gray-300 rounded focus:ring-indigo-500 focus:ring-2 cursor-pointer">
+                                   class="checkbox-custom">
                         </td>
                     </tr>`;
                 }).join("");
 
             } catch (error) {
-                showToast('Хатогӣ дар гирифтани рӯйхати донишҷūён!', 'error');
-                studentsTable.innerHTML = `<tr><td colspan="2" class="text-center p-6 sm:p-8 text-red-600 text-sm sm:text-base">Хатогӣ! Маълумотро гирифта натавонистем.</td></tr>`;
+                showToast('Хатогӣ дар гирифтани рӯйхати донишҷӯён!', 'error');
+                studentsTable.innerHTML = `<tr><td colspan="2" class="text-center p-6 text-red-600">Хатогӣ! Маълумотро гирифта натавонистем.</td></tr>`;
             }
         }
 
@@ -220,8 +637,13 @@
 
         async function saveAttendance() {
             const groupId = groupSelect.value;
+            const date = dateSelect.value;
             if (!groupId) {
                 showToast("Лутфан гурӯҳро интихоб кунед!", "error");
+                return;
+            }
+            if (!date) {
+                showToast("Лутфан санаро интихоб кунед!", "error");
                 return;
             }
 
@@ -231,10 +653,9 @@
                 .map(cb => cb.dataset.id)
                 .join(",");
             
-            const date = new Date().toISOString().split('T')[0];
 
             saveButton.disabled = true;
-            saveButton.innerHTML = `<div class="animate-spin rounded-full h-4 sm:h-5 w-4 sm:w-5 border-b-2 border-white"></div><span class="text-sm sm:text-base">Ирсол шуда истодааст...</span>`;
+            saveButton.innerHTML = `<div class="spinner"></div><span>Ирсол шуда истодааст...</span>`;
 
             try {
                 const response = await axios.post("/api/attendance", new URLSearchParams({ date, group_id: groupId, present_students }).toString(), {
@@ -257,7 +678,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2z" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M7 3v5h10V3" />
                     </svg>
-                    <span class="text-sm sm:text-base">Сабт кардан</span>`;
+                    <span>Сабт кардан</span>`;
             }
         }
 
